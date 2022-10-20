@@ -128,7 +128,7 @@ photo17 = URI.open("https://thumbs.dreamstime.com/z/happy-young-adult-mother-cut
 profe17.photo.attach(io: photo17, filename: "profe17.png", content_type: "image/png")
 profe17.save
 
-# user parents 
+# user parents
 
 padre18 = User.new(first_name:"Duvan", last_name: "Ariel", role: 2,
                   email: "dadon@email.com", password: "123456")
@@ -170,7 +170,7 @@ post1.save
 
 post2 = Post.new(title: "Museo El Castillo", descrption: "El lunes 24 de octubre tendremos la salida pedagógica al museo el castillo ubicado en el poblado. Saldremos del colegio a las 9 AM y regresaremos a la 1 PM.
   Recuerden que iremos con uniforme de educación física.", type: "ludico", user_id: profe11.id, grade_id: grade3.id)
-documents1 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQYFaQj3EfSdByeXDRq-zXwzjU1LElvBZQjA&usqp=CU")
+documents2 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQYFaQj3EfSdByeXDRq-zXwzjU1LElvBZQjA&usqp=CU")
 post2.documents.attach(io: documents2, filename: "documents2.png", content_type: "image/png")
 post2.save
 
@@ -195,7 +195,7 @@ post5.documents.attach(io: documents5, filename: "documents5.png", content_type:
 post5.save
 
 post6 = Post.new(title: "Taller porcentajes - 7°", descrption: "Teniendo en cuenta los diferentes ejemplos vistos en clase, resolver el taller de manera individual. Fecha máxima de entrega: viernes 21 de octubre.", type: "academico", user_id: profe14.id, grade_id: grade4.id)
-documents1 = URI.open("https://colegioconcepcionlosangeles.cl/pdf_2020/guias_2020/17_08_2020/matematica/ma_leiva/7mo-basico-matematica-guia-porcentaje.pdf")
+documents6 = URI.open("https://colegioconcepcionlosangeles.cl/pdf_2020/guias_2020/17_08_2020/matematica/ma_leiva/7mo-basico-matematica-guia-porcentaje.pdf")
 post6.documents.attach(io: documents6, filename: "documents6.png", content_type: "file/pdf")
 post6.save
 
@@ -300,20 +300,35 @@ g_sub10.save
 # course teachers
 
 c_tcher1 = CourseTeacher.new(user_id: profe12.id, grade_id: grade4.id)
+c_tcher1.save
 c_tcher2 = CourseTeacher.new(user_id: profe11.id, grade_id: grade3.id)
+c_tcher2.save
 c_tcher3 = CourseTeacher.new(user_id: profe17.id, grade_id: grade2.id)
+c_tcher3.save
 c_tcher4 = CourseTeacher.new(user_id: profe16.id, grade_id: grade6.id)
+c_tcher4.save
 c_tcher5 = CourseTeacher.new(user_id: profe15.id, grade_id: grade1.id)
+c_tcher5.save
 c_tcher6 = CourseTeacher.new(user_id: profe14.id, grade_id: grade4.id)
+c_tcher6.save
 c_tcher7 = CourseTeacher.new(user_id: profe13.id, grade_id: grade2.id)
+c_tcher7.save
 c_tcher8 = CourseTeacher.new(user_id: profe12.id, grade_id: grade1.id)
+c_tcher8.save
 c_tcher9 = CourseTeacher.new(user_id: profe11.id, grade_id: grade3.id)
+c_tcher9.save
 c_tcher10 = CourseTeacher.new(user_id: profe11.id, grade_id: grade6.id)
+c_tcher10.save
 
 # comments
 
 comment1 = Comment.new(post_id: post1.id, user_id: profe12.id, content: "¿Que tal estuvo el día de sol en el @Aeroparque_Juan_Pablo_II?")
+comment1.save
 comment2 = Comment.new(post_id: post1.id, user_id: padre18.id, content: "Muy caluroso el día, estuvo super!")
-commen3 = Comment.new(post_id: post4.id, user_id: profe16.id, content: "¿Que nos gustó del @Parque_Explora?")
+comment2.save
+comment3 = Comment.new(post_id: post4.id, user_id: profe16.id, content: "¿Que nos gustó del @Parque_Explora?")
+comment3.save
 comment4 = Comment.new(post_id: post4.id, user_id: padre20, content: "Quedé encantado con las nuevas oportunidades para la educación enfocadas a: la ciencia, tecnología e innovación.")
+comment4.save
 comment5 = Comment.new(post_id: post4.id, user_id: padre22, content: "¿Grata experiencia visitando el acuario")
+comment5.save
