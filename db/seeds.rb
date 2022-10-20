@@ -328,7 +328,7 @@ comment2 = Comment.new(post_id: post1.id, user_id: padre18.id, content: "Muy cal
 comment2.save
 comment3 = Comment.new(post_id: post4.id, user_id: profe16.id, content: "¿Que nos gustó del @Parque_Explora?")
 comment3.save
-comment4 = Comment.new(post_id: post4.id, user_id: padre20, content: "Quedé encantado con las nuevas oportunidades para la educación enfocadas a: la ciencia, tecnología e innovación.")
+comment4 = Comment.new(post_id: post4.id, user_id: padre20.id, content: "Quedé encantado con las nuevas oportunidades para la educación enfocadas a: la ciencia, tecnología e innovación.")
 comment4.save
-comment5 = Comment.new(post_id: post4.id, user_id: padre22, content: "¿Grata experiencia visitando el acuario")
+comment5 = Comment.new(post_id: post4.id, user_id: padre22.id, content: "¿Grata experiencia visitando el acuario")
 comment5.save
