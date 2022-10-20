@@ -167,7 +167,7 @@ post1.save
 
 post2 = Post.new(title: "Museo El Castillo", descrption: "El lunes 24 de octubre tendremos la salida pedagógica al museo el castillo ubicado en el poblado. Saldremos del colegio a las 9 AM y regresaremos a la 1 PM.
   Recuerden que iremos con uniforme de educación física.", type: "ludico", user_id: profe11.id, grade_id: grade3.id)
-documents1 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQYFaQj3EfSdByeXDRq-zXwzjU1LElvBZQjA&usqp=CU")
+documents2 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQYFaQj3EfSdByeXDRq-zXwzjU1LElvBZQjA&usqp=CU")
 post2.documents.attach(io: documents2, filename: "documents2.png", content_type: "image/png")
 post2.save
 
@@ -192,7 +192,7 @@ post5.documents.attach(io: documents5, filename: "documents5.png", content_type:
 post5.save
 
 post6 = Post.new(title: "Taller porcentajes - 7°", descrption: "Teniendo en cuenta los diferentes ejemplos vistos en clase, resolver el taller de manera individual. Fecha máxima de entrega: viernes 21 de octubre.", type: "academico", user_id: profe14.id, grade_id: grade4.id)
-documents1 = URI.open("https://colegioconcepcionlosangeles.cl/pdf_2020/guias_2020/17_08_2020/matematica/ma_leiva/7mo-basico-matematica-guia-porcentaje.pdf")
+documents6 = URI.open("https://colegioconcepcionlosangeles.cl/pdf_2020/guias_2020/17_08_2020/matematica/ma_leiva/7mo-basico-matematica-guia-porcentaje.pdf")
 post6.documents.attach(io: documents6, filename: "documents6.png", content_type: "file/pdf")
 post6.save
 
