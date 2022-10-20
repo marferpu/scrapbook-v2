@@ -12,7 +12,7 @@
 require "open-uri"
 puts "Borando datos"
 
-
+# user students
 puts "Creando usuarios"
 student1 = User.new(first_name: "Ana", last_name: "Ariel", role: 3,
                     email: "ana@email.com", password: "123456")
@@ -83,7 +83,8 @@ student10 = User.new(first_name:"Camilo", last_name: "Soto", role: 3,
 photo10 = URI.open("https://previews.123rf.com/images/dolgachov/dolgachov1711/dolgachov171101175/89513306-ni%C3%B1o-estudiante-feliz-escribiendo-en-el-cuaderno-en-casa.jpg")
 student10.photo.attach(io: photo10, filename: "student10.png", content_type: "image/png")
 student10.save
-###
+
+# user teachers
 profe11 = User.new(first_name:"Dana", last_name: "Soto", role: 1,
                     email: "dana@email.com", password: "123456")
 #
@@ -126,7 +127,8 @@ profe17 = User.new(first_name:"ivanio", last_name: "Casas", role: 1,
 photo17 = URI.open("https://thumbs.dreamstime.com/z/happy-young-adult-mother-cute-child-enjoy-talking-relaxing-sit-sofa-understanding-mom-friend-having-sincere-conversation-164954528.jpg")
 profe17.photo.attach(io: photo17, filename: "profe17.png", content_type: "image/png")
 profe17.save
-##
+
+# user parents 
 
 padre18 = User.new(first_name:"Duvan", last_name: "Ariel", role: 2,
                   email: "dadon@email.com", password: "123456")
@@ -158,7 +160,8 @@ photo22 = URI.open("https://thumbs.dreamstime.com/z/happy-family-african-america
 padre22.photo.attach(io: photo22, filename: "padre22.png", content_type: "image/png")
 padre22.save
 
-####
+# posts
+
 post1 = Post.new(title: "Aeroparque Juan Pablo II", descrption: "Este viernes 21 de octubre nos iremos de excursión al aeroparque Juan pablo II. Deben estar puntuales en el colegio a las 8 AM.
   Recuerden traer vestido de baño y alimentación.", type: "ludico", user_id: profe12.id, grade_id: grade4.id)
 documents1 = URI.open("http://colombiamaspositiva.com/wp-content/uploads/2021/03/jp2.jpg")
@@ -222,7 +225,7 @@ documents10 = URI.open("https://eduardomath.files.wordpress.com/2011/01/taller-i
 post10.documents.attach(io: documents10, filename: "documents10.png", content_type: "file/pdf")
 post10.save
 
-####
+# grades
 
 grade1 = Grade.new(name: "Quinto")
 grade1.save
@@ -237,7 +240,8 @@ grade5.save
 grade6 = Grade.new(name: "Decimo")
 grade6.save
 
-###
+# subjects
+
 sub1 = Subject.new(name: "Matematicas")
 sub1.save
 sub2 = Subject.new(name: "Ciencias naturales")
@@ -247,7 +251,7 @@ sub3.save
 sub4 = Subject.new(name: "Consejería")
 sub4.save
 
-###
+# classrooms
 
 classroom1 = Classroom.new(user_id: student1.id, grade_id: grade1.id)
 classroom1.save
@@ -270,7 +274,7 @@ classroom9.save
 classroom10 = Classroom.new(user_id: student10.id, grade_id: grade6.id)
 classroom10.save
 
-###
+# grade subjects
 
 g_sub1 = GradeSubject.new(grade_id: grade1.id, subject_id: sub2.id)
 g_sub1.save
@@ -292,3 +296,24 @@ g_sub9 = GradeSubject.new(grade_id: grade6.id, subject_id: sub1.id)
 g_sub9.save
 g_sub10 = GradeSubject.new(grade_id: grade6.id, subject_id: sub4.id)
 g_sub10.save
+
+# course teachers
+
+c_tcher1 = CourseTeacher.new(user_id: profe12.id, grade_id: grade4.id)
+c_tcher2 = CourseTeacher.new(user_id: profe11.id, grade_id: grade3.id)
+c_tcher3 = CourseTeacher.new(user_id: profe17.id, grade_id: grade2.id)
+c_tcher4 = CourseTeacher.new(user_id: profe16.id, grade_id: grade6.id)
+c_tcher5 = CourseTeacher.new(user_id: profe15.id, grade_id: grade1.id)
+c_tcher6 = CourseTeacher.new(user_id: profe14.id, grade_id: grade4.id)
+c_tcher7 = CourseTeacher.new(user_id: profe13.id, grade_id: grade2.id)
+c_tcher8 = CourseTeacher.new(user_id: profe12.id, grade_id: grade1.id)
+c_tcher9 = CourseTeacher.new(user_id: profe11.id, grade_id: grade3.id)
+c_tcher10 = CourseTeacher.new(user_id: profe11.id, grade_id: grade6.id)
+
+# comments
+
+comment1 = Comment.new(post_id: post1.id, user_id: profe12.id, content: "¿Que tal estuvo el día de sol en el @Aeroparque_Juan_Pablo_II?")
+comment2 = Comment.new(post_id: post1.id, user_id: padre18.id, content: "Muy caluroso el día, estuvo super!")
+commen3 = Comment.new(post_id: post4.id, user_id: profe16.id, content: "¿Que nos gustó del @Parque_Explora?")
+comment4 = Comment.new(post_id: post4.id, user_id: padre20, content: "Quedé encantado con las nuevas oportunidades para la educación enfocadas a: la ciencia, tecnología e innovación.")
+comment5 = Comment.new(post_id: post4.id, user_id: padre22, content: "¿Grata experiencia visitando el acuario")
