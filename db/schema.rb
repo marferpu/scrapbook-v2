@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_19_012904) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_21_224209) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -95,7 +95,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_012904) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "subject_id", null: false
     t.index ["grade_id"], name: "index_posts_on_grade_id"
+    t.index ["subject_id"], name: "index_posts_on_subject_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -132,5 +134,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_012904) do
   add_foreign_key "grade_subjects", "grades"
   add_foreign_key "grade_subjects", "subjects"
   add_foreign_key "posts", "grades"
+  add_foreign_key "posts", "subjects"
   add_foreign_key "posts", "users"
 end
