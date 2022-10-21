@@ -86,7 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_19_012904) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "type"
+    t.string "type_activity"
     t.text "description"
     t.string "title"
     t.boolean "status"
