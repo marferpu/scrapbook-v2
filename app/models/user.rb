@@ -5,6 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :photo
+  has_one :classroom
+  has_one :grade, through: :classroom
   has_many :course_teachers
   has_many :classrooms
   has_many :comments

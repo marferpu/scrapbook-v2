@@ -145,13 +145,13 @@ photo18 = URI.open("https://thumbs.dreamstime.com/z/mom-psychologist-tries-to-ta
 padre18.photo.attach(io: photo18, filename: "padre18.png", content_type: "image/png")
 padre18.save
 padre19 = User.new(first_name:"Juan", last_name: "Cano", role: 2,
-                   email: "carlo@email.com", password: "123456")
+                  email: "carlo@email.com", password: "123456")
 #
 photo19 = URI.open("https://thumbs.dreamstime.com/z/attractive-women-little-girl-sitting-comfortable-couch-home-young-mother-talking-communicates-small-adorable-130567938.jpg")
 padre19.photo.attach(io: photo19, filename: "padre19.png", content_type: "image/png")
 padre19.save
 padre20 = User.new(first_name:"Camila", last_name: "Soto", role: 2,
-                   email: "cami@email.com", password: "123456")
+                  email: "cami@email.com", password: "123456")
 #
 photo20 = URI.open("https://thumbs.dreamstime.com/z/loving-worried-mom-psychologist-consoling-counseling-talking-to-upset-little-child-girl-showing-care-give-love-support-single-141458546.jpg")
 padre20.photo.attach(io: photo20, filename: "padre20.png", content_type: "image/png")
@@ -163,7 +163,7 @@ photo21 = URI.open("https://thumbs.dreamstime.com/z/child-psychologist-talking-t
 padre21.photo.attach(io: photo21, filename: "padre21.png", content_type: "image/png")
 padre21.save
 padre22 = User.new(first_name:"Sebas", last_name: "Loro", role: 2,
-                   email: "sebas@email.com", password: "123456")
+                  email: "sebas@email.com", password: "123456")
 photo22 = URI.open("https://thumbs.dreamstime.com/z/happy-family-african-american-reunion-smiling-black-dad-holding-talking-to-kid-daughter-caring-mixed-race-father-return-back-home-152761104.jpg")
 padre22.photo.attach(io: photo22, filename: "padre22.png", content_type: "image/png")
 padre22.save
