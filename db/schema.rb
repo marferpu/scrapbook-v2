@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_21_224209) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_21_230228) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -101,6 +101,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_224209) do
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
+  create_table "sonparents", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "son_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["son_id"], name: "index_sonparents_on_son_id"
+    t.index ["user_id"], name: "index_sonparents_on_user_id"
+  end
+
   create_table "subjects", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -136,4 +145,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_21_224209) do
   add_foreign_key "posts", "grades"
   add_foreign_key "posts", "subjects"
   add_foreign_key "posts", "users"
+  add_foreign_key "sonparents", "users"
+  add_foreign_key "sonparents", "users", column: "son_id"
 end
