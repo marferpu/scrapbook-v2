@@ -168,6 +168,14 @@ photo22 = URI.open("https://thumbs.dreamstime.com/z/happy-family-african-america
 padre22.photo.attach(io: photo22, filename: "padre22.png", content_type: "image/png")
 padre22.save
 
+# user admins
+admin23 = User.new(first_name:"Mario", last_name: "Zapata", role: 0,
+  email: "mario@email.com", password: "123456")
+#
+photo23 = URI.open("https://infoes.goconqr.com/files/2017/05/mate12.jpg")
+admin23.photo.attach(io: photo23, filename: "admin23.png", content_type: "image/png")
+admin23.save
+
 # subjects
 
 sub1 = Subject.new(name: "Matematicas")
