@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save!
-      redirect_to root_path, notice: "Post guardado exitosamente"
+      redirect_to posts_path, notice: "Post guardado exitosamente"
     else
       render :new, status: :unprocessable_entity
     end
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to post_path, notice: "Eliminación exitosa", status: :see_other
+    redirect_to posts_path, notice: "Eliminación exitosa", status: :see_other
   end
 
   private
