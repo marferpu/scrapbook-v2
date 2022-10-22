@@ -1,2 +1,18 @@
-<h1>Grades#show</h1>
-<p>Find me in app/views/grades/show.html.erb</p>
+<div class='container center-block'>
+  <h1 class='text-center'><%= @grade.name %></h1>
+  <%= link_to "Regresar", grades_path%>
+  <div class="center-block">
+    <h2 class='text-center'>Publicaciones</h2>
+  </div>
+
+  <div class="d-flex">
+    <%#las siguientes opciones son solo para admin%>
+    
+    <a><%= link_to "Agregar un grado", new_grade_path(@grade) %></a>
+    <a><%= link_to "Editar grado", edit_grade_path %></a>
+    <a><%= link_to "Borrar grado", grade_path(@grade), data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"} %></a>
+
+  </div>
+
+
+</div>

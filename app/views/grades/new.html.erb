@@ -1,2 +1,11 @@
-<h1>Grades#new</h1>
-<p>Find me in app/views/grades/new.html.erb</p>
+<h1>GRADOS</h1>
+<h3>Agregar un nuevo grado</h3>
+<%= simple_form_for(@grade) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :name, label:'Nombre'  %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit "Guardar", class: "btn btn-primary m-3" %>
+    <a class="mb-5"><%= link_to "Regresar", grades_path, class:"btn btn-link"%></a>
+  </div>
+<% end %>

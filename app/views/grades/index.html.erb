@@ -1,2 +1,13 @@
-<h1>Grades#index</h1>
-<p>Find me in app/views/grades/index.html.erb</p>
+<div class='container'>
+  <h1 class='text-center'>GRADOS</h1>
+  <h4 class='text-center'>Selecciona el grado al cual quieres acceder</h4>
+  <div class='container'>
+    <ul>
+      <% @grades.each do |grade| %>
+        <li>
+          <%= link_to grade.name, grade_path(grade) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
