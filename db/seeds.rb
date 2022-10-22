@@ -168,6 +168,14 @@ photo22 = URI.open("https://thumbs.dreamstime.com/z/happy-family-african-america
 padre22.photo.attach(io: photo22, filename: "padre22.png", content_type: "image/png")
 padre22.save
 
+# user admins
+admin23 = User.new(first_name:"Mario", last_name: "Zapata", role: 0,
+                  email: "mario@email.com", password: "123456")
+#
+photo23 = URI.open("https://infoes.goconqr.com/files/2017/05/mate12.jpg")
+admin23.photo.attach(io: photo23, filename: "admin23.png", content_type: "image/png")
+admin23.save
+
 # subjects
 
 sub1 = Subject.new(name: "Matematicas")
@@ -180,19 +188,28 @@ sub4 = Subject.new(name: "Consejería")
 sub4.save
 
 # grades
-
+grade11 = Grade.new(name: "Primero")
+grade11.save
+grade10 = Grade.new(name: "Segundo")
+grade10.save
+grade9 = Grade.new(name: "Tercero")
+grade9.save
+grade8 = Grade.new(name: "Cuarto")
+grade8.save
 grade1 = Grade.new(name: "Quinto")
 grade1.save
 grade2 = Grade.new(name: "Sexto")
 grade2.save
-grade3 = Grade.new(name: "Octavo")
+grade3 = Grade.new(name: "Séptimo")
 grade3.save
-grade4 = Grade.new(name: "Septimo")
+grade4 = Grade.new(name: "Octavo")
 grade4.save
 grade5 = Grade.new(name: "Noveno")
 grade5.save
-grade6 = Grade.new(name: "Decimo")
+grade6 = Grade.new(name: "Décimo")
 grade6.save
+grade7 = Grade.new(name: "Undécimo")
+grade7.save
 
 
 # posts
