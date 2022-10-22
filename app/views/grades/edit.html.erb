@@ -1,11 +1,17 @@
-<h1>GRADOS</h1>
-<h3>Editar grado</h3>
-<%= simple_form_for(@grade) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :name, label:'Nombre'  %>
+<div class="container">
+  <h1 class="text-center">GRADOS</h1>
+  <h3 class="text-center">Editar grado</h3>
+  <div class="container card" style="width: 30rem;">
+    <%= simple_form_for(@grade) do |f| %>
+    <div class="form-inputs text-center">
+      <%= f.input :name, label:'Nombre'  %>
+    </div>
+    <div class="form-actions">
+      <ul class="list-group">
+        <li class="list-group-item text-center"><%= f.submit "Actualizar", class: "btn btn-primary m-3" %></li>
+        <li class="list-group-item text-center"><a class="mb-5"><%= link_to "Regresar", grades_path, class:"btn btn-link"%></a></li>
+      </ul>
+    </div>
+    <% end %>
   </div>
-  <div class="form-actions">
-    <%= f.submit "Actualizar", class: "btn btn-primary m-3" %>
-    <a class="mb-5"><%= link_to "Regresar", grades_path, class:"btn btn-link"%></a>
-  </div>
-<% end %>
+</div>
