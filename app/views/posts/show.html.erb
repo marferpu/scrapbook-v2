@@ -1,2 +1,9 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<div class="container">
+  <h1 class="mt-10 mb-6">Mis posts</h1>
+  <h3><%= @post.title%> (<%= @post.description%>)</h3>
+  <div>
+
+  <p>Tipo de post: <%= @post.type_activity %></p>
+    <p>Fecha del evento: <%= @post.date %></p>
+    <p>Grado: <%= @post.grade_id %></p>
+    <p> Asignatura: <%= @post.subject_id %></p>
