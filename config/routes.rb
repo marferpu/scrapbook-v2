@@ -5,4 +5,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :grades
+  resources :subjects
+  resources :grades_subjects, only: %i[create]
+  resources :courses_teachers, only: %i[create]
+  resources :classrooms, only: %i[create]
+
+  resources :posts do
+    resources :comments, only: %i[create]
+  end
+  resources :comments, only: :destroy
 end
