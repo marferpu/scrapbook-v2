@@ -1,0 +1,68 @@
+.body {
+  font: 11px/1.6 "arial", sans-serif;
+  color: #5f5c5c;
+}
+
+.rightlogin{
+  width: 410px;
+  height: 550px;
+  float: right;
+  margin: 20px 0 0 0;
+  padding: 0;
+  background-color: white;
+  border-radius: 10%;
+}
+
+.imagen{
+  background-image: url(https://mesfix.com/blog/wp-content/uploads/2019/04/LIBROS-DE-EMPRENDIMIENTO.png);
+  height: 400px;
+  width: 500px;
+  background-size: cover;
+}
+
+.imagen2{
+  background-image: url(https://i.ibb.co/Tr5xnKQ/Logo1-Scrapbook.png);
+  height: 200px;
+  width: 200px;
+  background-size: cover;
+  margin-bottom: 10px;
+}
+
+
+.access{
+  background-color: #6a256c;
+  border: 2px solid #f0f0f0;
+  border-radius: 10px;
+  background-position: 0 0;
+  margin-bottom: 20px;
+  align-items: center;
+  text-align: center;
+}
+
+.formulario{
+  width: 50%;
+  height: 50%;
+}
+
+.container{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 50px;
+}
+
+.iniciar{
+  margin-bottom: 10px;
+  text-align: center;
+
+}
+
+.sign-up{
+  text-decoration: dashed;
+  text-align: center;
+
+}
+
+.button{
+  text-align: center;
+}
