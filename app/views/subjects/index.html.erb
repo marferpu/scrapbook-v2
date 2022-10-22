@@ -8,10 +8,13 @@
         <p>Estas son las materias del currículo escolar</p>
       </div>
       <div class="col col-6">
+        <%= link_to "Agregar Materia", new_subject_path, class:"btn btn-outline-success"%>
+      </div>
+      <div class="col col-6">
         <% @subjects.each do |subject| %>
         <ul>
           <li><%= subject.name %></li>
-          <div class="">
+          <div class="col col-6">
             <%= link_to "Editar", edit_subject_path(subject), class:"btn btn-outline-primary p-0" %>
             <%= link_to "Eliminar", subject_path(subject), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"},
                 class:"btn btn-outline-primary p-0"
