@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :grades
   resources :subjects
+  # delete "subjects/:id", to: "subjects#destroy", as: "delete"
+
   resources :grades_subjects, only: %i[create]
   resources :courses_teachers, only: %i[create]
   resources :classrooms, only: %i[create]

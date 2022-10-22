@@ -11,7 +11,7 @@ class SubjectsController < ApplicationController
   def create
     @subject = Subject.new(subject_params)
     if @subject.save
-      redirect_to subject_path, notice: "Se ha agregado la materia #{@subject.name} correctamente"
+      redirect_to subjects_path, notice: "Se ha agregado la materia #{@subject.name} correctamente"
     else
       render :new, status: :unprocessable_entity
     end
@@ -22,7 +22,7 @@ class SubjectsController < ApplicationController
 
   def update
     if @subject.update(subject_params)
-      redirect_to subject_path, notice: "Se ha actualizado la materia #{@subject.name} correctamente"
+      redirect_to subjects_path, notice: "Se ha actualizado la materia #{@subject.name} correctamente"
     else
       render :edit, status: :unprocessable_entity
     end
@@ -32,8 +32,9 @@ class SubjectsController < ApplicationController
   end
 
   def destroy
+    # debugger
     @subject.destroy
-    redirect_to subject_path, notice: "Se ha eliminado la materia #{@subject.name} correctamente"
+    redirect_to subjects_path
   end
 
   private
