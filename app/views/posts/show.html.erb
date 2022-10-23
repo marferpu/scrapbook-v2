@@ -5,9 +5,15 @@
 
   <p>Tipo de post: <%= @post.type_activity %></p>
     <p>Fecha del evento: <%= @post.date %></p>
-    <p>Grado: <%= @post.grade_id %></p>
-    <p> Asignatura: <%= @post.subject_id %></p>
+    <p>Grado: <%= @post.grade.name %></p>
+    <p> Asignatura: <%= @post.subject.name %></p>
   </div>
+
+  <div>
+    <a><%= link_to "Comentar post", new_post_comment_path(@post), class:"btn btn-outline-info" %></a>
+  </div>
+
+
   <div class="d-flex">
     <% if current_user.present? && (current_user.id == @post.user_id) %>
       <a><%= link_to "Editar post", edit_post_path(@post), class:"btn btn-outline-info" %></a>
@@ -16,5 +22,20 @@
     <% else %>
       <a class="mb-5"><%= link_to "Regresar", posts_path, class:"btn btn-outline-secondary"%></a>
     <% end %>
+  </div>
+
+  <div>
+    <p><strong>Comentarios</strong></p>
+      <ul class="list-group">
+        <% @post.comments.each do |comment| %>
+          <%#<li class="list-group-item"><%= @post.user.name %></li>
+          <li class="list-group-item"><%= comment.content %></li>
+           <%= link_to "Eliminar comentario",
+            comment_path(comment),
+            data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"}
+            %>
+        <% end %>
+      </ul>
+      <br>
   </div>
 </div>
