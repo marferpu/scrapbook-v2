@@ -1,0 +1,24 @@
+<div class="container">
+<%= current_user.id %>
+<%= current_user.role %>
+
+<%= simple_form_for(@post) do |f| %>
+  
+  <div>
+    <%= f.input :title, label:"Título" %>
+    <%= f.input :type_activity, label:"Tipo", collection: ["Lúdico", "Académico"] %>
+    <%= f.input :date, html5: true %>
+    <%= f.input :description %>
+    <%= f.association :grade, collection: Grade.all %>
+    <%= f.association :subject, collection: Subject.all %>
+        
+  </div>
+  <div>
+    <%# <%= f.rich_text_area :body, label:"Contenido" %>
+  </div>
+  <div class="form-actions">
+    <%= f.submit "Guardar", class: "btn btn-primary m-3" %>
+    <a class="mb-5"><%= link_to "Regresar", @post, class:"btn btn-outline-secondary"%></a>
+  </div>
+<% end %>
+</div>
