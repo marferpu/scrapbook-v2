@@ -5,6 +5,7 @@
     <%= link_to root_path, class: "navbar-brand" do %>
       <%= image_tag "Logo2-Scrapbook.png" %>
     <% end %>
+    <strong> <%= current_user.first_name %> | <%= current_user.role %> </strong>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -17,7 +18,7 @@
             <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <strong> <%= current_user.first_name %> </strong>
+            <%= link_to "Crear_Post", new_post_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "Logo1-Scrapbook.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
