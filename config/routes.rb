@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :classrooms, only: %i[create]
 
   resources :posts do
-    resources :comments, only: %i[new]
+    resources :comments, only: %i[create]
   end
   resources :comments, only: :destroy
 end

@@ -1,17 +1,17 @@
 class CommentsController < ApplicationController
-  before_action :set_post, only: %i[new create]
+  before_action :set_post, only: %i[create]
 
-  def new
-    @comment = Comment.new
-  end
+  # def new
+  #   @comment = Comment.new
+  # end
 
   def create
     @comment = Comment.new(comment_params)
     @comment.post_id = @post.id
     if @comment.save
-      redirect_to post_path(@post)
+      redirect_to post_path(@post, anchor: "comment-#{@comment.id}")
     else
-      render :new, status: :unprocessable_entity
+      render "posts/show", status: :unprocessable_entity
     end
   end
 
