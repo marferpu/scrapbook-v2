@@ -1,2 +1,35 @@
-<h1>Subjects#edit</h1>
-<p>Find me in app/views/subjects/edit.html.erb</p>
+<div class="container">
+  <%= current_user.id %>
+  <%= current_user.role %>
+  <div class="row">
+    <% if current_user.teacher_role? %>
+      <div>
+        <h1>Editar Materia</h1>
+        <p>Haz las modificaciones que consideres necesarias</p>
+      </div>
+        <div class="col col-6">
+          <%= simple_form_for(@subject) do |f| %>
+            <% @subject.errors.full_messages.each do |error| %>
+              <div>
+                <%= error %>
+              </div>
+            <% end %>
+            <div class="form-inputs">
+              <%= f.input :name, label:"Nombre de la Materia:" %>
+            </div>
+            <div class="form-actions">
+              <%= f.submit "Actualizar", class: "btn btn-primary m-3" %>
+            </div>
+          <% end %>
+        </div>
+        <div>
+          <a class="mb-5"><%= link_to "Regresar", subjects_path, class:"btn btn-link"%></a>
+        </div>
+    <% else %>
+      <div class="col col-6">
+        <h3>¡Acceso denegado!</h3>
+        <%= link_to "Aceptar", root_path, class:"btn btn-outline-danger" %>
+      </div>
+    <% end %>
+  </div>
+</div>
