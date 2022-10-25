@@ -20,7 +20,7 @@
       <a><%= link_to "Eliminar espacio", post_path(@post), remote: true, class:"btn btn-outline-danger", data: {turbo_method: :delete, turbo_confirm: "¿Estas seguro de eliminar?"} %></a>
       <a class="mb-5"><%= link_to "Regresar", posts_path, class:"btn btn-outline-secondary"%></a>
     <% else %>
-      <a class="mb-5"><%= link_to "Regresar", posts_path, class:"btn btn-outline-secondary"%></a>
+      <%= link_to "Regresar a publicaciones", posts_path, class:"btn btn-outline"%>
     <% end %>
   </div>
 
@@ -33,17 +33,20 @@
           <%= @post.title %>
         <% else %>
           <% @post.comments.each do |comment| %>
-            <p id="comment-<%= comment.id %>"><%= comment.content %></p>
-            <small><%= link_to "Borrar comentario",
-              comment_path(comment),
-              data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"}
-              %></small>
+            <div>
+              <small><%= comment.post.user.fullname %></small>
+              <p id="comment-<%= comment.id %>"><%= comment.content %></p>
+              <small><%= link_to "Borrar comentario",
+                comment_path(comment),
+                data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"}
+                %></small>
+            </div>
           <% end %>
          <% end %>
       </div>
-      <%= link_to "Regresar a publicaciones", posts_path %>
+
       <div>
-        <%= simple_form_for([@post, @comment], remote: true) do |f| %>
+        <%= simple_form_for([@post, @comment]) do |f| %>
           <%= f.input :content, as: :text %>
           <%= f.button :submit, "Comentar", data: {turbo_method: :post} %>
         <% end %>

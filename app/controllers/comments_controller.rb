@@ -7,9 +7,9 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.post_id = @post.id
+    @comment.post = @post
     if @comment.save
-      redirect_to post_path(@post, anchor: "comment-#{@comment.id}")
+      redirect_to post_path(@post)
     else
       render "posts/show", status: :unprocessable_entity
     end
