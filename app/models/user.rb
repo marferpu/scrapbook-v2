@@ -14,4 +14,8 @@ class User < ApplicationRecord
   has_many :posts
   has_many :grades, through: :course_teachers
   enum :role, { admin: 0, teacher: 1, parent: 2, student: 3, undefine: 4 }, suffix: true
+
+  def fullname
+    "#{first_name.capitalize} #{last_name.capitalize}"
+  end
 end
