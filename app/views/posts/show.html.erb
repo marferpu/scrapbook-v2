@@ -38,7 +38,7 @@
         <% else %>
           <% @post.comments.each do |comment| %>
             <div>
-              <small><%= comment.post.user.fullname %></small>
+              <small><%= comment.user.fullname %></small>
               <p id="comment-<%= comment.id %>"><%= comment.content %></p>
               <small><%= link_to "Borrar comentario",
                 comment_path(comment),
