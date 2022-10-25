@@ -1,9 +1,11 @@
-<div class="navbar navbar-expand-lg navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-lg navbar-light navbar-lewagon "
+  data-controller="navbar"
+  data-action="scroll@window->navbar#updateNavbar">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <!--<img src="app/assets/images/Logo2-Scrapbook.png" alt="Scrapbook"> -->
-      <%= image_tag "https://i.ibb.co/kXRJmqz/Logo2-Scrapbook.png" %>
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "Logo2-Scrapbook.png" %>
     <% end %>
+    <strong> <%= current_user.first_name %> | <%= current_user.role %> </strong>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -13,13 +15,13 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
+            <%= link_to "Crear_Post", new_post_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "Logo1-Scrapbook.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
