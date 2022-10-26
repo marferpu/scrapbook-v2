@@ -1,0 +1,13 @@
+<div class='container '>
+  <h1 class='text-center'>GRADOS</h1>
+  <h4 class='text-center'>Selecciona el grado al cual quieres acceder</h4>
+  <div class='container'>
+    <ul class="list-group">
+      <% @grades.each do |grade| %>
+        <li class="list-group-item text-center">
+          <%= link_to grade.name, grade_path(grade) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

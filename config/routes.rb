@@ -5,8 +5,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  get "/pages/pizarron", to: "pages#pizarron", as: "pizarron"
   resources :grades
   resources :subjects
+  # delete "subjects/:id", to: "subjects#destroy", as: "delete"
+
   resources :grades_subjects, only: %i[create]
   resources :courses_teachers, only: %i[create]
   resources :classrooms, only: %i[create]

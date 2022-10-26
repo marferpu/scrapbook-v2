@@ -1,0 +1,22 @@
+
+<h1>Bienvenido a los Posts</h1>
+  
+        <%# <div class="p-3 border bg-light">Row column</div> %>
+    <div class="container">
+      <div class="row row-cols-4 row-cols-lg-5 g-2 g-lg-3">   
+        <% @posts.each do |post| %>
+          <div class="col">
+            <div class="card" style="padding:15px;max-width:300px;margin-top:1em">
+              <h3 class="text-uppercase"><%= post.title %></h3>
+              <p class="text-secundary">Hace <%= time_ago_in_words(post.created_at) %></p>
+              <%= link_to "Detalle", post %>
+            </div>
+          </div>
+        <% end %>
+      </div>  
+    </div>  
+        
+      
+    
+  
+
