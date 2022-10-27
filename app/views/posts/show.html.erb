@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container pt-3">
   <%# <h1 class="mt-10 mb-6">Mis posts</h1> %>
   <h1><%= @post.title%></h1>
 
@@ -51,7 +51,7 @@
 
       <div>
         <%= simple_form_for([@post, @comment]) do |f| %>
-          <%= f.input :content, as: :text %>
+          <%= f.input :content, as: :text, label:"Descripción" %>
           <%= f.button :submit, "Comentar", data: {turbo_method: :post} %>
         <% end %>
       </div>

@@ -20,6 +20,7 @@ gem "jsbundling-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
+
 gem 'turbolinks_render'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
@@ -48,7 +49,7 @@ gem "sassc-rails"
 gem "cloudinary"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 gem "devise"
 gem "autoprefixer-rails"
