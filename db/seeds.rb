@@ -10,7 +10,7 @@
 # 0->admin     1->teacher    2->parent   3->student
 
 require "open-uri"
-puts "Borando datos"
+puts "Borrando datos"
 Comment.destroy_all
 CourseTeacher.destroy_all
 GradeSubject.destroy_all
