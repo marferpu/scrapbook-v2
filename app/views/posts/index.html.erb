@@ -1,9 +1,20 @@
 
-<h1>Bienvenido a los Posts</h1>
-  
+<div class="container">
+  <h1 class="text-center">Publicaciones</h1>
+  <div class="container">
+    <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Busca una publicación"
+      %>
+      <%= submit_tag "Buscar", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
         <%# <div class="p-3 border bg-light">Row column</div> %>
     <div class="container">
-      <div class="row row-cols-4 row-cols-lg-5 g-2 g-lg-3">   
+      <div class="row row-cols-4 row-cols-lg-5 g-2 g-lg-3">
         <% @posts.each do |post| %>
           <div class="col">
             <div class="card" style="padding:15px;max-width:300px;margin-top:1em">
@@ -13,10 +24,6 @@
             </div>
           </div>
         <% end %>
-      </div>  
-    </div>  
-        
-      
-    
-  
-
+      </div>
+    </div>
+</div>
