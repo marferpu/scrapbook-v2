@@ -2,15 +2,21 @@
   <%# <h1 class="mt-10 mb-6">Mis posts</h1> %>
   <h1><%= @post.title%></h1>
 
-  <div class="lh-1">
-    <%= @post.content %>
-    <%= @post.description %>
-    <p>Tipo de post: <%= @post.type_activity %></p>
-    <p>Fecha del evento: <%= @post.date %></p>
-    <p>Grado: <%= @post.grade.name %></p>
-    <p> Asignatura: <%= @post.subject.name %></p>
-    <p> Propietario: <%= @post.user.first_name %> <%= @post.user.last_name %></p>
-    <p> Tipo Usuario: <%= @post.user.role %></p>
+  <div class=" container px-4">
+    <div class="row gx-5"> 
+      <div class="col lh-1">
+        <%= @post.description %>
+        <p>Tipo de post: <%= @post.type_activity %></p>
+        <p>Fecha del evento: <%= @post.date %></p>
+        <p>Grado: <%= @post.grade.name %></p>
+        <p> Asignatura: <%= @post.subject.name %></p>
+        <p> Propietario: <%= @post.user.first_name %> <%= @post.user.last_name %></p>
+        <p> Tipo Usuario: <%= @post.user.role %></p>
+      </div>
+      <div class="col">
+        <%= @post.content %>
+      </div>
+    </div>
   </div>
 
   <!-- <div>

@@ -15,12 +15,13 @@
   </head>
 
   <body>
-  <%= render "shared/navbar" %>
-  <%= render "shared/flashes" %>
-  <%#<%= current_user.id %>
-  <%#<%= current_user.role %>
-  <%= yield %>
-  <%= render "shared/footer" %>
-
+    <header>
+      <%= render "shared/navbar" %>
+    </header>
+    <section>
+      <%= render "shared/flashes" %>
+      <%= yield %>
+      <%= render "shared/footer" %>
+    </section>
   </body>
 </html>

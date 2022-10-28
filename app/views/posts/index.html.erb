@@ -4,9 +4,9 @@
       <h1>Bienvenido a los Posts</h1>
       <div class="row row-cols-4 row-cols-lg-5 g-2 g-lg-3">   
         <% @posts.each do |post| %>
-          <div class="col">
-            <div class="card" style="padding:15px;max-width:300px;margin-top:1em">
-              <h3 class="text-uppercase"><%= post.title %></h3>
+          <div class="col pt-3">
+            <div class="card-index card h-100">
+              <h5 class="text-uppercase"><%= post.title %></h3>
               <small class="text-muted">Hace <%= time_ago_in_words(post.created_at) %></small>
               <%= link_to "Detalle", post %>
             </div>
