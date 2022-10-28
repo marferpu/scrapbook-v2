@@ -2,7 +2,7 @@
   <%# <h1 class="mt-10 mb-6">Mis posts</h1> %>
   <h1><%= @post.title%></h1>
 
-  <div>
+  <div class="lh-1">
     <%= @post.content %>
     <%= @post.description %>
     <p>Tipo de post: <%= @post.type_activity %></p>
@@ -27,34 +27,37 @@
       <%= link_to "Regresar a publicaciones", posts_path, class:"btn btn-outline"%>
     <% end %>
   </div>
+</div>
 
-  <div>
-    <h4><strong>Comentarios</strong></h4>
-    <small><%= pluralize @post.comments.size, "comentario" %></small>
+  <div class="container pt-4">
+    <h4><b>Comentarios</b></h4>
+    <small class="text-muted"><%= pluralize @post.comments.size, "comentario" %></small>
       <div class="">
-        <% if @post.comments.blank? %>
-          ¿Tienes alguna duda o pregunta? deja tu comentario a esta publicación:
-          <%= @post.title %>
+        <% if @post.comments.blank? %><br>
+          ¿Tienes alguna duda o pregunta? Se el primero en comentar esta publicación:
+          <strong><%= @post.title %></strong>
         <% else %>
           <% @post.comments.each do |comment| %>
-            <div>
-              <small><%= comment.user.fullname %></small>
+            <div style="line-height: 50%"><br>
+              
               <p id="comment-<%= comment.id %>"><%= comment.content %></p>
+              <small class="text-muted">Por: <%= comment.user.fullname %></small>
               <small><%= link_to "Borrar comentario",
                 comment_path(comment),
                 data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"}
                 %></small>
             </div>
           <% end %>
+          <br>Puedes dejarnos más comentarios.
          <% end %>
       </div>
-
-      <div>
-        <%= simple_form_for([@post, @comment]) do |f| %>
-          <%= f.input :content, as: :text, label:"Descripción" %>
-          <%= f.button :submit, "Comentar", data: {turbo_method: :post} %>
-        <% end %>
-      </div>
-      <br>
+      <%= simple_form_for([@post, @comment]) do |f| %>
+        <%= f.input :content, as: :text, label: ".",placeholder:"Has tu comentario" %>
+        <%= f.submit "Comentar", class:"btn btn-primary btn-sm", data: {turbo_method: :post} %>
+      <% end %>
   </div>
-</div>
+  
+    
+  
+  
+
