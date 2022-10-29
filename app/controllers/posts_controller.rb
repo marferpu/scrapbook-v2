@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     if params[:query].present?
-      @posts = Post.search_by_title_and_type_activity_and_description(params[:query])
+      @posts = Post.global_search(params[:query])
     else
       @posts = Post.all
     end
@@ -29,7 +29,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update

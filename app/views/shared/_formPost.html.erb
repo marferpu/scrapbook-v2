@@ -1,17 +1,18 @@
-<div class="container">
+<div class="container col-6 justify-content: center">
 
   <%= simple_form_for(@post) do |f| %>
     
     <div>
       <%= f.input :title, label:"Título" %>
-      <%= f.input :type_activity, label:"Tipo", collection: ["Lúdico", "Académico"] %>
+      <%# <%= f.input :type_activity, label:"Tipo", collection: ["Lúdico", "Académico"] %>
+      
+      <%= f.collection_radio_buttons :type_activity, [[true, 'Lúdico'], [false, 'Académico']], :first, :last %>
       <%= f.input :date, html5: true, label:"Fecha del evento" %>
-      <%# <%= f.input :description %>
-        <div>
-          <%= f.rich_text_area :content, label:"Contenido" %>
-        </div>
+      <%# <%= f.input :description, as: :text, label:"Descripción" %>
       <%= f.association :grade, collection: Grade.all %>
       <%= f.association :subject, collection: Subject.all %>
+      <%= f.label "Descripción" %> 
+      <%= f.rich_text_area :content %>
     </div>
     
     <div class="form-actions">

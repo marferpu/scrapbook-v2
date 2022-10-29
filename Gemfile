@@ -12,6 +12,9 @@ gem "sprockets-rails"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
+# Use pg search to search app
+gem "pg_search", "~> 2.3.6"
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
@@ -20,6 +23,7 @@ gem "jsbundling-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
+
 gem 'turbolinks_render'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
@@ -48,7 +52,9 @@ gem "sassc-rails"
 gem "cloudinary"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
+
+gem "ruby-vips"
 
 gem "devise"
 gem "autoprefixer-rails"
