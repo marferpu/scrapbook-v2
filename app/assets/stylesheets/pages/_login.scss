@@ -1,6 +1,6 @@
 .body {
   font: 11px/1.6 "arial", sans-serif;
-  color: #5f5c5c;
+
 }
 
 .rightlogin{
@@ -17,8 +17,8 @@
 }
 
 .imagen{
-  height: 500px;
-  width: 500px;
+  height: 100vh;
+  width: 100vw;
   background-size: cover;
 }
 
@@ -52,10 +52,12 @@
 
 .container{
   display: flex;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
   margin-bottom: 50px;
-  background-color:  #F9D749;
 }
 
 .iniciar{

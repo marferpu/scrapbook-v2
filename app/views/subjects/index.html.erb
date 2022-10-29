@@ -2,7 +2,7 @@
   <%= current_user.id %>
   <%= current_user.role %>
   <div class="row">
-    <% if current_user.teacher_role? %>
+    <% if current_user.teacher_role? || current_user.admin_role? %>
       <div>
         <h1>Listado de Materias</h1>
         <p>Estas son las materias del currículo escolar</p>
