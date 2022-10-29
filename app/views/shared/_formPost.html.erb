@@ -5,9 +5,9 @@
     <div>
       <%= f.input :title, label:"Título" %>
       <%# <%= f.input :type_activity, label:"Tipo", collection: ["Lúdico", "Académico"] %>
-      
-      <%= f.collection_radio_buttons :type_activity, [[true, 'Lúdico'], [false, 'Académico']], :first, :last %>
-      <%= f.input :date, html5: true, label:"Fecha del evento" %>
+      <%= f.label "Tipo de post" %><br>
+      <%= f.collection_radio_buttons :type_activity, [['Lúdico'], ['Académico']], :first, :last %><br>
+      <br><%= f.input :date, html5: true, label:"Fecha del evento" %>
       <%# <%= f.input :description, as: :text, label:"Descripción" %>
       <%= f.association :grade, collection: Grade.all %>
       <%= f.association :subject, collection: Subject.all %>
