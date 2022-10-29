@@ -3,17 +3,16 @@
 
 }
 
-.rightlogin{
+.login{
   width: 410px;
   height: 550px;
-  float: right;
+  float: center;
   margin: 20px 0 0 0;
   padding: 0;
   background-color: white;
   border-radius: 10%;
   display: flex;
   justify-content: center;
-
 }
 
 .imagen{
@@ -50,7 +49,7 @@
   height: 50%;
 }
 
-.container{
+.body1{
   display: flex;
   margin: 0 auto;
   padding: 0;
@@ -58,20 +57,25 @@
   width: 100vw;
   background-size: cover;
   margin-bottom: 50px;
+  //background-color:  #F9D749;
+  background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg);
 }
 
 .iniciar{
   margin-bottom: 10px;
   text-align: center;
-
 }
 
 .sign-up{
   text-decoration: dashed;
   text-align: center;
-
 }
 
 .button{
   text-align: center;
+}
+
+.fondo{
+  background-size: cover;
+  background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg);
 }
