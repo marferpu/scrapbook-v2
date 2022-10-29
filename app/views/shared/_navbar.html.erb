@@ -1,36 +1,79 @@
-<div class="navbar navbar-expand-lg navbar-light navbar-lewagon "
+<div class="navbar navbar-expand-lg navbar-lewagon"
   data-controller="navbar"
   data-action="scroll@window->navbar#updateNavbar">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "Logo2-Scrapbook.png" %>
+      <%= image_tag "Logo2-Scrapbook.png", class: "" %>
     <% end %>
-    <strong> <%#= current_user.first_name %> | <%#= current_user.role %> </strong>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto align-items-md-center">
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
+          <li class="nav-item me-auto p-3 bd-highlight">
+            <small>
+              <a href="#" class="text-light"> <%= current_user.email %> | <%= current_user.role %> </a>
+            </small>
           </li>
-          <li class="nav-item">
-            <%= link_to "Crear_Post", new_post_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "Logo1-Scrapbook.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
+          <% if current_user.admin_role? %>
+            <li class="nav-item active text-light">
+              <%= link_to "Mi Pizarrón", "pages/pizarron", class: "nav-link text-light" %>
+            </li>
+            <li class="nav-item text-light">
+              <%= link_to "Agregar usuario", new_user_registration_path, class: "nav-link text-light" %>
+              <%#= render "devise/shared/links" %>
+            </li>
+            <li class="nav-item dropdown">
+              <%= image_tag "Logo1-Scrapbook.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "Mi Perfil", "#profile_path", class: "dropdown-item" %>
+                <%= link_to "Mis Cursos", subjects_path, class: "dropdown-item" %>
+                <%= link_to "Mis Aulas", grades_path, class: "dropdown-item" %>
+                <%= link_to "Reportar Calificaciones", "#", class: "dropdown-item" %>
+                <%= link_to "Chat", "#", class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </div>
+            </li>
+            <% elsif current_user.teacher_role? %>
+            <li class="nav-item active">
+              <%= link_to "Mi Pizarrón", "pages/pizarron", class: "nav-link text-light" %>
+            </li>
+            <li class="nav-item text-light">
+              <%= link_to "Crear post", new_post_path, class: "nav-link text-light" %>
+            </li>
+            <li class="nav-item dropdown">
+              <%= image_tag "Logo1-Scrapbook.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "Mi Perfil", "#profile_path", class: "dropdown-item" %>
+                <%= link_to "Mis Cursos", subjects_path, class: "dropdown-item" %>
+                <%= link_to "Mis Aulas", grades_path, class: "dropdown-item" %>
+                <%= link_to "Reportar Calificaciones", "#", class: "dropdown-item" %>
+                <%= link_to "Chat", "#", class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </div>
+            </li>
+            <% else %>
+              <li class="nav-item active">
+              <%= link_to "Cartelera", "pages/pizarron", class: "nav-link text-light" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Chat", "#", class: "nav-link text-light" %>
+            </li>
+            <li class="nav-item dropdown">
+              <%= image_tag "Logo1-Scrapbook.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "Mi Perfil", "#profile_path", class: "dropdown-item" %>
+                <%= link_to "Calificaciones", "#", class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              </div>
+            </li>
+            <% end %>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Login", new_user_session_path, class: "nav-light" %>
           </li>
         <% end %>
       </ul>

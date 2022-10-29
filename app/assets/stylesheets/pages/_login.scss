@@ -1,6 +1,6 @@
 .body {
   font: 11px/1.6 "arial", sans-serif;
-  color: #5f5c5c;
+
 }
 
 .login{
@@ -16,8 +16,8 @@
 }
 
 .imagen{
-  height: 500px;
-  width: 500px;
+  height: 100vh;
+  width: 100vw;
   background-size: cover;
 }
 
@@ -51,8 +51,11 @@
 
 .body1{
   display: flex;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
   margin-bottom: 50px;
   //background-color:  #F9D749;
   background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg);
