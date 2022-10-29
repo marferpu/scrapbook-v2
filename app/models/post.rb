@@ -23,5 +23,4 @@ class Post < ApplicationRecord
   associated_against: {
     rich_text_content: [:body]
   }
-
 end
