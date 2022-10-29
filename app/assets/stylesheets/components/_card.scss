@@ -26,6 +26,16 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+div.transbox {
+  background: rgba(74, 21, 75, 0.3);
+  margin: 5px auto;
+}
+
+div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+}
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
