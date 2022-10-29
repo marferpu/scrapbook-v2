@@ -24,7 +24,7 @@
   @extend .margin-top;
   label{
     @extend .text-uppercase;
-    @extend .text-secundary
+    @extend .text-secundary !optional;
   }
   &:first-of-type{
     margin-top: 0;

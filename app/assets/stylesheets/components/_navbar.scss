@@ -1,12 +1,14 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
-  background-color: #ccc;
+  background: #F5F5F5;
+  background-color: #4A154B;
   transition: 0.5s background-color ease;
+  box-shadow: rgba(0, 0, 0, 0.2);
+  color: #F5F5F5;
 }
 
 .navbar-lewagon-white {
-  background-color: white;
+  background-color: #4A154B;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -15,4 +17,17 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 100px;
+}
+
+.nav-light{
+  color: #F5F5F5;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+  text-decoration: none;
+}
+
+.navbar-lewagon a {
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
 }
