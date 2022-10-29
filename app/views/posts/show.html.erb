@@ -1,39 +1,38 @@
 <div class="container pt-3">
-  <%# <h1 class="mt-10 mb-6">Mis posts</h1> %>
-  <h1><%= @post.title%></h1>
 
   <div class=" container px-4">
     <div class="row gx-5"> 
-      <div class="col lh-1">
+      <div class="col lh-1 card">
+        <h1><%= @post.title%></h1>
         <%= @post.description %>
         <p>Tipo de post: <%= @post.type_activity %></p>
-        <p>Fecha del evento: <%= @post.date %></p>
+        <p>Fecha del evento: <%= localize @post.date, format: "%d de %B %Y" %></p>
         <p>Grado: <%= @post.grade.name %></p>
-        <p> Asignatura: <%= @post.subject.name %></p>
-        <p> Propietario: <%= @post.user.first_name %> <%= @post.user.last_name %></p>
-        <p> Tipo Usuario: <%= @post.user.role %></p>
+        <p>Asignatura: <%= @post.subject.name %></p>
+        <p>Propietario: <%= @post.user.first_name %> <%= @post.user.last_name %></p>
+        <p>Tipo Usuario: <%= @post.user.role %></p>
+        <p>Fecha creación: <%= localize @post.created_at, format: "%d de %B %Y" %></p>
+
       </div>
       <div class="col">
         <%= @post.content %>
       </div>
-    </div>
-  </div>
 
   <!-- <div>
     <a><%#= link_to "Comentar post", new_post_comment_path(@post), class:"btn btn-outline-info" %></a>
   </div> -->
 
 
-  <div class="d-flex">
-    <% if current_user.present? && (current_user.id == @post.user_id) %>
-      <a><%= link_to "Editar", edit_post_path(@post), class:"btn btn-outline-info" %></a>
-      <a><%= link_to "Eliminar", post_path(@post), class:"btn btn-outline-danger", data: {turbo_method: :delete, turbo_confirm: "¿Estas seguro de eliminar?"} %></a>
-      <a class="mb-5"><%= link_to "Regresar", posts_path, class:"btn btn-outline-secondary"%></a>
-    <% else %>
-      <%= link_to "Regresar a publicaciones", posts_path, class:"btn btn-outline"%>
-    <% end %>
+    <div class="d-flex">
+      <% if current_user.present? && (current_user.id == @post.user_id) %>
+        <a><%= link_to "Editar", edit_post_path(@post), class:"btn btn-outline-info" %></a>
+        <a><%= link_to "Eliminar", post_path(@post), class:"btn btn-outline-danger", data: {turbo_method: :delete, turbo_confirm: "¿Estas seguro de eliminar?"} %></a>
+        <a class="mb-5"><%= link_to "Regresar", posts_path, class:"btn btn-outline-secondary"%></a>
+      <% else %>
+        <%= link_to "Regresar a publicaciones", posts_path, class:"btn btn-outline"%>
+      <% end %>
+    </div>
   </div>
-</div>
 
   <div class="container pt-4">
     <h4><b>Comentarios</b></h4>
@@ -62,8 +61,6 @@
         <%= f.submit "Comentar", class:"btn btn-primary btn-sm", data: {turbo_method: :post} %>
       <% end %>
   </div>
-  
-    
-  
+</div>  
   
 

@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-lg navbar-light navbar-lewagon "
+<div class="navbar navbar-expand-lg navbar-light navbar-lewagon fixed"
   data-controller="navbar"
   data-action="scroll@window->navbar#updateNavbar">
   <div class="container-fluid">
@@ -6,7 +6,9 @@
       <%= image_tag "Logo2-Scrapbook.png" %>
     <% end %>
     <% if current_user %>
-      <strong> <%= current_user.first_name %> | <%= current_user.role %> </strong>
+      <b> <%= current_user.first_name %> | <%= current_user.role %> </b>
+    <% else %>
+      <b>Sin sesión iniciada</b>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
