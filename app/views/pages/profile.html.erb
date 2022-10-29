@@ -1,12 +1,12 @@
-<section style="background-color: #eee;">
-  <div class="container py-5">
+<section style="background-color: #eee">
+  <div class="container py-5 fondo">
     <div class="row">
       <div class="col">
         <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
           <ol class="breadcrumb mb-0">
             <li style="margin-right: 20px"><p>Bienvenido a tu perfil</p></li>
             <li style="margin-right: 20px"><span>|</span></li>
-            <li class="breadcrumb-item active" aria-current="page"><%= current_user.first_name %> <%= current_user.last_name %></li>
+            <li class="breadcrumb-item active" aria-current="page"><%#= current_user.first_name %> <%#= current_user.last_name %></li>
           </ol>
         </nav>
       </div>
@@ -16,18 +16,18 @@
       <div class="col-lg-4">
         <div class="card mb-4">
           <div class="card-body text-center">
-          <% if current_user.photo.attached? %>
+          <%# if current_user.photo.attached? %>
             <img src="<%#= cl_image_path current_user.photo.key, height: 300, crop: :fill %>" alt="avatar"
               class="rounded-circle img-fluid" style="height: 60px; width: 60px; border-radius: 50%; object-fit: cover;">
 
-          <% else %>
+          <%# else %>
             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
               class="rounded-circle img-fluid" style="width: 150px;">
-          <% end %>
+          <%# end %>
 
-            <h5 class="my-3"><%= current_user.first_name %> <%= current_user.last_name %></h5>
-            <p class="text-center"><%= link_to "Editar perfil", edit_user_registration_path, class: "text-center" %></p>
-            <p class="text-center"><%= link_to "Eliminar perfil", cancel_user_registration_path %></p>
+            <h5 class="my-3"><%#= current_user.first_name %> <%#= current_user.last_name %></h5>
+            <p class="text-center"><%#= link_to "Editar perfil", edit_user_registration_path, class: "text-center" %></p>
+            <p class="text-center"><%#= link_to "Eliminar perfil", cancel_user_registration_path %></p>
             <div class="d-flex justify-content-center mb-2">
               <button type="button" class="btn btn-outline-primary ms-1">Follow</button>
               <button type="button" class="btn btn-outline-primary ms-1">Message</button>
@@ -40,15 +40,15 @@
               <div class="col">
                 <div class="card mb-4 rounded-3 shadow-sm">
                   <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Ganancias / Reserva</h4>
+                    <h4 class="my-0 fw-normal">Mis cursos</h4>
                   </div>
                 <div class="card-body">
-                  <h1 class="card-title pricing-card-title">$400K<small class="text-muted fw-light">/mes</small></h1>
+                  <h1 class="card-title pricing-card-title"> # <small class="text-muted fw-light"> # </small></h1>
                   <ul class="list-unstyled mt-3 mb-4">
-                    <li>10 Bookings en tus coworkings</li>
-                    <li>2 Bookings Activas</li>
-                    <li>3 Propiedades Totales</li>
-                    <li>0 Reservas Realizadas</li>
+                    <li> # </li>
+                    <li> # </li>
+                    <li> # </li>
+                    <li> # </li>
                   </ul>
                   <button type="button" class="w-100 btn btn-lg btn-outline-primary">Ver Detalles</button>
                 </div>
@@ -62,7 +62,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Nombre Completo</p>
+                <p class="mb-0">Nombre Completo:</p>
               </div>
               <div class="col-sm-9">
                 <p class="text-muted mb-0"><%= current_user.first_name %> <%= current_user.last_name %></p>
@@ -71,7 +71,7 @@
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Email</p>
+                <p class="mb-0">Email:</p>
               </div>
               <div class="col-sm-9">
                 <p class="text-muted mb-0"><%= current_user.email %></p>
@@ -80,19 +80,19 @@
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Celular</p>
+                <p class="mb-0">Celular:</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"><%= current_user.phone_number %></p>
+                <p class="text-muted mb-0"><%= current_user.phone %></p>
               </div>
             </div>
             <hr>
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">DNI</p>
+                <p class="mb-0">Role:</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"><%= current_user.dni %></p>
+                <p class="text-muted mb-0"><%= current_user.role %></p>
               </div>
             </div>
             <hr>
@@ -101,7 +101,7 @@
                 <p class="mb-0">Acceso:</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"><%= "Propietario" %></p>
+                <p class="text-muted mb-0"><%#= "Propietario" %></p>
               </div>
             </div>
           </div>
@@ -110,16 +110,16 @@
           <div class="col-md-6">
             <div class="card mb-4 mb-md-0">
               <div class="card-body">
-                <p class="mb-4"><span class="text-primary font-italic me-1">Properties</span> Places</p>
-                <% current_user.places.each do |place| %>
+                <p class="mb-4"><span class="text-primary font-italic me-1">Datos del Colegio</span> #Nombre del Colegio</p>
+                <%# current_user.places.each do |place| %>
                 <div class="card">
-                  <%= link_to  place.name, place_path(place), class:"mb-1 w-100 btn btn-lg btn-outline-primary" %>
-                  <p class="mt-2 mb-1" style="font-size: .77rem; margin-left: 20px">Dirección: <%= place.address %></p>
-                  <p class="mt-2 mb-1" style="font-size: .77rem; margin-left: 20px">Ciudad: <%= place.city %></p>
-                  <p class="mt-2 mb-1 card-title pricing-card-title" style="margin-left: 20px">Precio: $<%= place.price %><small class="text-muted fw-light"> COP/mes</small></p>
+                  <%#= link_to  place.name, place_path(place), class:"mb-1 w-100 btn btn-lg btn-outline-primary" %>
+                  <p class="mt-2 mb-1" style="font-size: .77rem; margin-left: 20px">Dirección: <%#= place.address %></p>
+                  <p class="mt-2 mb-1" style="font-size: .77rem; margin-left: 20px">Ciudad: <%#= place.city %></p>
+                  <p class="mt-2 mb-1 card-title pricing-card-title" style="margin-left: 20px"><%#= place.price %><small class="text-muted fw-light"> # </small></p>
                 </div>
                 <p></p>
-                <% end %>
+                <%# end %>
                 <div class="progress rounded mb-2" style="height: 5px;">
 
                 </div>
@@ -129,27 +129,27 @@
           <div class="col-md-6">
             <div class="card mb-4 mb-md-0">
               <div class="card-body">
-                <p class="mb-4"><span class="text-primary font-italic me-1">Bookings</span> Details</p>
-                <%current_user.bookings.each do |booking| %>
+                <p class="mb-4"><span class="text-primary font-italic me-1">Aulas</span> Details</p>
+                <%current_user.grades.each do |grade| %>
                 <div class="card">
                  <div class="card-header">
-                  <p class="mb-1" style="font-size: .77rem;"><%= booking.place.name %>
+                  <p class="mb-1" style="font-size: .77rem;"><%= grade.name %>
                 </div>
                 <div class="card-body">
-                  <p class="mb-1" style="font-size: .77rem;">Dirección: <%= booking.place.address %></p>
+                  <p class="mb-1" style="font-size: .77rem;">Dirección: <%#= booking.place.address %></p>
                   <p class="mb-1" style="font-size: .77rem; color: green">Fecha de Inicio:</p>
-                  <p class="mb-1" style="font-style: bold;"><%= booking.check_in %></p>
+                  <p class="mb-1" style="font-style: bold;"><%#= booking.check_in %></p>
                   <p class="mb-1" style="font-size: .77rem; color: green">Fecha de Salida:</p>
-                  <p class="mb-1" style="font-style: bold;"><%= booking.check_out %></p>
+                  <p class="mb-1" style="font-style: bold;"><%#= booking.check_out %></p>
                   <ul class="inline-list">
                     <li class="mt-2 mb-2">
                       <a href="#" target="_blank">
-                        <%= link_to "Cancelar", booking_path(booking), class: 'btn btn-primary', data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                        <%#= link_to "Cancelar", booking_path(booking), class: 'btn btn-primary', data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
                       </a>
                     </li>
                     <li class="mt-2 mb-2">
                       <a href="#" target="_blank" class=>
-                        <%= link_to 'Cambiar fechas', edit_place_booking_path(booking.place, booking), class: 'btn btn-primary' %>
+                        <%#= link_to 'Cambiar fechas', edit_place_booking_path(booking.place, booking), class: 'btn btn-primary' %>
                       </a>
                     </li>
                   </ul>

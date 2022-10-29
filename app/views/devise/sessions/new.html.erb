@@ -1,32 +1,30 @@
-<div class="container">
-
-    <div class="imagen">
-    </div>
-      <div class="formulario">
-
+<div class="body1">
+  <div class="imagen">
+  </div>
+    <div class="formulario">
       <div>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
-        <div class="rightlogin row">
-        <div class="imagen2"></div>
-          <h2 class="iniciar">Iniciar Sesion</h2>
+        <div class="login row">
+          <div class="imagen2"></div>
+            <h2 class="iniciar">Iniciar Sesion</h2>
             <div class="button">
-            <%= f.input :email,
-                        required: false,
-                        autofocus: true,
-                        input_html: { autocomplete: "email" } %>
-            <%= f.input :password,
-                        required: false,
-                        input_html: { autocomplete: "current-password" } %>
-            <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-              <div class="access">
-                <%= f.button :submit, "Acceder" %>
-              </div>
+              <%= f.input :email,
+                          required: false,
+                          autofocus: true,
+                          input_html: { autocomplete: "email" } %>
+              <%= f.input :password,
+                          required: false,
+                          input_html: { autocomplete: "current-password" } %>
+              <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                <div class="access">
+                  <%= f.button :submit, "Acceder" %>
+                </div>
                 <!--<div class="sign-up">
                   <%#= render "devise/shared/links" %>
                 </div>-->
-              </div>
-          </div>
+            </div>
+        </div>
+      </div>
     </div>
-<% end %>
-  </div>
+  <% end %>
 </div>
