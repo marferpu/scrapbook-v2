@@ -2,7 +2,11 @@ class PostsController < ApplicationController
   before_action :set_post, except: %i[index new create]
 
   def index
-    @posts = Post.all
+    if params[:query].present?
+      @posts = Post.global_search(params[:query])
+    else
+      @posts = Post.all
+    end
   end
 
   def show
@@ -25,7 +29,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-  
   end
 
   def update
