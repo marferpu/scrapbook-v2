@@ -1,42 +1,67 @@
-<div class="cards">
-    <div class="card-category" style="background-image: url(https://i.ibb.co/VLjSFnp/open-spiral-notebook-1405082-960-720.png)">
-      <div class="transbox col col-12" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
-        <a class="d-grid p-0">
-          <%= link_to "Pizarrón Informativo", posts_path, class: "btn btn-outline" %>
-        </a>
+<div class="line-white"><hr></div>
+<div class="background-pizarron" style="background-image: url(https://i.ibb.co/3YVnm7h/piz1.png)">
+  <div class="title mt-10">
+    <h1 class="fs-1 text-center">Pizarrón Informativo</h1>
+  </div>
+  <div class="cards">
+
+    <div class="card-category" style="background-image: url(https://i.ibb.co/488gcdq/piz2.png)">
+      <div class="transbox col" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+        <div class="d-grid p-0">
+          <span class="d-flex justify-content-evenly"><%= link_to icon("fa-solid fa-circle-info", grades_path,  class:"icon")%></span>
+          <a class="d-flex justify-content-evenly">
+            <%= link_to "Mi Cartelera", posts_path, class: "btn btn-outline" %>
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="card-category" style="background-image: url(https://i.ibb.co/VLjSFnp/open-spiral-notebook-1405082-960-720.png)">
-      <div class="transbox col col-12" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
-        <a class="d-grid p-0">
-          <%= link_to "Aulas de Clase", grades_path, class: "btn btn-outline" %>
-        </a>
+    <div class="card-category" style="background-image: url(https://i.ibb.co/488gcdq/piz2.png)">
+      <div class="transbox col" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+        <div class="d-grid p-0">
+          <span class="d-flex justify-content-evenly"><%= link_to icon("fa-solid fa-users-viewfinder", grades_path,  class:"icon")%></span>
+          <a class="d-flex justify-content-evenly"><%= link_to "Aulas de Clase", grades_path, class: "btn btn-outline" %></a>
+        </div>
       </div>
     </div>
 
-    <div class="card-category" style="background-image: url(https://i.ibb.co/VLjSFnp/open-spiral-notebook-1405082-960-720.png)">
-      <div class="transbox col col-12" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
-        <a class="d-grid p-0">
-          <%= link_to "Mis Cursos", subjects_path, class: "btn btn-outline" %>
-        </a></div>
+    <div class="card-category" style="background-image: url(https://i.ibb.co/488gcdq/piz2.png)">
+      <div class="transbox col" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+        <div class="d-grid p-0">
+          <span class="d-flex justify-content-evenly"><%= link_to icon("fa-solid fa-paperclip", subjects_path,  class:"icon")%></span>
+          <a class="d-flex justify-content-evenly">
+            <%= link_to "Mis Cursos", subjects_path, class: "btn btn-outline" %>
+          </a></div>
+      </div>
     </div>
 
-    <div class="card-category" style="background-image: url(https://i.ibb.co/VLjSFnp/open-spiral-notebook-1405082-960-720.png)">
-      <div class="transbox col col-12" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
-        <a class="d-grid p-0">
-          <%= link_to "Calificaciones", subjects_path, class: "btn btn-outline" %></a></div>
+    <div class="card-category" style="background-image: url(https://i.ibb.co/488gcdq/piz2.png)">
+      <div class="transbox col" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+        <div class="d-grid p-0">
+          <span class="d-flex justify-content-evenly"><%= link_to icon("fa-solid fa-book", grades_path,  class:"icon")%></span>
+          <a class="d-flex justify-content-evenly">
+            <%= link_to "Calificaciones", subjects_path, class: "btn btn-outline" %>
+          </a></div>
+      </div>
     </div>
 
-    <div class="card-category" style="background-image: url(https://i.ibb.co/VLjSFnp/open-spiral-notebook-1405082-960-720.png)">
-      <div class="transbox col col-12" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
-        <a class="d-grid p-0">
-          <%= link_to "Citación de Acudientes", subjects_path, class: "btn btn-outline" %></a></div>
+    <div class="card-category" style="background-image: url(https://i.ibb.co/488gcdq/piz2.png)">
+      <div class="transbox col" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+        <div class="d-grid p-0">
+          <span class="d-flex justify-content-evenly"><%= link_to icon("fa-regular fa-calendar-days", grades_path,  class:"icon")%></span>
+          <a class="d-flex justify-content-evenly">
+            <%= link_to "Citaciones", subjects_path, class: "btn btn-outline" %>
+          </a></div>
+      </div>
     </div>
 
-    <div class="card-category" style="background-image: url(https://i.ibb.co/VLjSFnp/open-spiral-notebook-1405082-960-720.png)">
-      <div class="transbox col col-12" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
-        <a class="d-grid p-0">
-          <%= link_to "Chat", subjects_path, class: "btn btn-outline" %></a></div>
+    <div class="card-category" style="background-image: url(https://i.ibb.co/488gcdq/piz2.png)">
+      <div class="transbox col" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+        <div class="d-grid p-0">
+          <span class="d-flex justify-content-evenly"><%= link_to icon("fa-regular fa-comment", grades_path,  class:"icon")%></span>
+          <a class="d-flex justify-content-evenly">
+            <%= link_to "Chat", subjects_path, class: "btn btn-outline" %>
+          </a></div>
     </div>
+  </div>
 </div>

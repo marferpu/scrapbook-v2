@@ -31,3 +31,9 @@
   font-family: 'Roboto', sans-serif;
   text-align: center;
 }
+
+hr {
+  background-color: $white-sb;
+  border: 5px solid $white-sb;
+  border-bottom-style: dashed;
+}

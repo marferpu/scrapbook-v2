@@ -1,20 +1,15 @@
-$purple-sb: rgb(74, 21, 75);
-$blue-sb: #112453;
-$yellow-sb: #F9D749;
-$blue-light-sb: #68E7FB;
-
 
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
-  padding: 8%;
+  padding: 4% 10% 14% 10%;
 }
 .card-index {
-  padding:15px;
+  padding: 15px;
   max-height:12rem;
-  margin-top:1em
-  background-color rgba(101,13,58,0.8);
+  margin-top: 1em;
+  background-color: rgba(101,13,58,0.8);
 }
 .card-category {
   background-size: cover;
@@ -24,26 +19,53 @@ $blue-light-sb: #68E7FB;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 28px;
   font-weight: 500px;
-  font-family: 'Roboto', sans-serif;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
 div.transbox {
-  background-color: $blue-light-sb;
+  background-color: $yellow-sb;
   background-size: cover;
   opacity: 0.7;
-  color: black
+}
+
+div.title {
+  color: $white-sb;
+  font-weight: 700px;
+  font-size: 25rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin: 1% auto;
 }
 
 div.transbox a {
-  margin: 0% 25%;
+  margin: 0% 28%;
   font-weight: bold;
   text-decoration: none;
-  text-justify: center;
+  font-size: 1.2em;
+}
+
+.background-pizarron {
+  padding-top: 1%;
+  background-size: contain;
+}
+
+.icon {
+  font-size: 1.5rem;
+  color: black;
+  margin: 0.1rem;
+  display: inline;
+}
+
+.icon:hover {
+  color: $white-sb;
+}
+
+.line-white {
+  height: 0.1vh;
+  background-color: $white-sb;
+  background-size: cover;
 }
 
 // Smallest device
