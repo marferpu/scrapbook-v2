@@ -1,51 +1,42 @@
 <div class="cards">
-  <% if current_user.teacher_role? %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2017/08/06/20/36/school-2596090_960_720.png)">
-      <strong><%= link_to "Pizarrón Informativo", posts_path, class: "btn btn-outline" %></strong>
+    <div class="card-category" style="background-image: url(https://i.ibb.co/VLjSFnp/open-spiral-notebook-1405082-960-720.png)">
+      <div class="transbox col col-12" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+        <a class="d-grid p-0">
+          <%= link_to "Pizarrón Informativo", posts_path, class: "btn btn-outline" %>
+        </a>
+      </div>
     </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2016/05/20/14/14/open-spiral-notebook-1405082_960_720.png)">
-      <strong><%= link_to "Aulas de Clase", grades_path, class: "btn btn-outline" %></strong>
+    <div class="card-category" style="background-image: url(https://i.ibb.co/VLjSFnp/open-spiral-notebook-1405082-960-720.png)">
+      <div class="transbox col col-12" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+        <a class="d-grid p-0">
+          <%= link_to "Aulas de Clase", grades_path, class: "btn btn-outline" %>
+        </a>
+      </div>
     </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2022/10/19/20/16/background-7533503_960_720.jpg)">
-      <div class="transbox"><p><%= link_to "Mis Cursos", subjects_path, class: "btn btn-outline" %></p></div>
+    <div class="card-category" style="background-image: url(https://i.ibb.co/VLjSFnp/open-spiral-notebook-1405082-960-720.png)">
+      <div class="transbox col col-12" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+        <a class="d-grid p-0">
+          <%= link_to "Mis Cursos", subjects_path, class: "btn btn-outline" %>
+        </a></div>
     </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2020/09/24/16/50/board-5599231_960_720.png)">
-      <strong><%= link_to "Calificaciones", subjects_path, class: "btn btn-outline" %></strong>
+    <div class="card-category" style="background-image: url(https://i.ibb.co/VLjSFnp/open-spiral-notebook-1405082-960-720.png)">
+      <div class="transbox col col-12" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+        <a class="d-grid p-0">
+          <%= link_to "Calificaciones", subjects_path, class: "btn btn-outline" %></a></div>
     </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2020/01/21/16/56/owl-4783407_960_720.png)">
-      <strong><%= link_to "Citación de Acudientes", subjects_path, class: "btn btn-outline" %></strong>
+    <div class="card-category" style="background-image: url(https://i.ibb.co/VLjSFnp/open-spiral-notebook-1405082-960-720.png)">
+      <div class="transbox col col-12" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+        <a class="d-grid p-0">
+          <%= link_to "Citación de Acudientes", subjects_path, class: "btn btn-outline" %></a></div>
     </div>
 
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/cYd8DtR/Banner1.png)">
-      <strong><%= link_to "Chat", subjects_path, class: "btn btn-outline" %></strong>
+    <div class="card-category" style="background-image: url(https://i.ibb.co/VLjSFnp/open-spiral-notebook-1405082-960-720.png)">
+      <div class="transbox col col-12" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+        <a class="d-grid p-0">
+          <%= link_to "Chat", subjects_path, class: "btn btn-outline" %></a></div>
     </div>
-  <% else %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/cYd8DtR/Banner1.png)">
-      <strong><%= link_to "Pizarrón Informativo", posts_path, class: "btn btn-outline" %></strong>
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/cYd8DtR/Banner1.png)">
-      <strong><%= link_to "Aulas de Clase", grades_path, class: "btn btn-outline" %></strong>
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/cYd8DtR/Banner1.png)">
-      <strong><%= link_to "Mis Cursos", subjects_path, class: "btn btn-outline" %></strong>
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/cYd8DtR/Banner1.png)">
-      <strong><%= link_to "Calificaciones", subjects_path, class: "btn btn-outline" %></strong>
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/cYd8DtR/Banner1.png)">
-      <strong><%= link_to "Citación de Acudientes", subjects_path, class: "btn btn-outline" %></strong>
-    </div>
-
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://i.ibb.co/cYd8DtR/Banner1.png)">
-      <strong><%= link_to "Chat", subjects_path, class: "btn btn-outline" %></strong>
-    </div>
-  <% end %>
 </div>
