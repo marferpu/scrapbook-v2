@@ -1,7 +1,18 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: %i[show edit update destroy]
+  # before_action :set_posts, only: %i[index]
   def index
-    @subjects = Subject.all
+    # @posts = Post.all
+    if current_user.admin_role?
+      @subjects = Subject.all
+    else
+      @subjects = []
+      @posts = current_user.posts
+      @posts.each do |post|
+        @subjects << post.subject_id
+      end
+    end
+    @subjects = delete_repited_number(@subjects)
   end
 
   def new
@@ -45,5 +56,22 @@ class SubjectsController < ApplicationController
 
   def set_subject
     @subject = Subject.find(params[:id])
+  end
+
+  # def set_posts
+  #   @posts = Post.find(params[:id])
+  # end
+  def delete_repited_number(array)
+      for i in 0...array.length
+        dato = array[i]
+        encontrado = 0
+        for j in 0...array.length
+          if(dato == array[j] && i!=j)
+            array.delete_at(i)
+            encontrado  += 1
+          end
+        end
+      end
+      return array
   end
 end
