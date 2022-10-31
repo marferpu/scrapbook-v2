@@ -1,9 +1,13 @@
 <%# Banner %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.ibb.co/cYd8DtR/Banner1.png);">
+<div class="banner" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.pixabay.com/photo/2020/08/09/09/30/woman-5474990_960_720.jpg); opacity: 1.6;">
   <div class="container">
-    <h1> <strong>Scrapbook</strong> joint people </h1>
-    <p><span data-controller="typed-js"></span></p>
-    <a ><%= link_to "Posts", posts_path, class:"btn btn-flat"%></a>
+    <% if user_signed_in?  %>
+      <h1 class="fs-1 mb-2 mt-4" style="color: $white-sb;">Scrapbook</h1>
+      <p class="fs-3" style="color: white;"><span data-controller="typed-js"></span></p>
+    <% else %>
+      <h1 class="fs-1 mb-2 mt-4" style="color: $white-sb;">Scrapbook</h1>
+      <p class="fs-3" style="color: $white-sb;"><span data-controller="typed-js"></span></p>
+      <a ><%= link_to "Más Infotmción", new_user_session_path, class:"btn btn-primary mt-6"%></a>
+    <% end %>
   </div>
 </div>
-
