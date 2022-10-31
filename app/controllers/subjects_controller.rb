@@ -1,8 +1,7 @@
 class SubjectsController < ApplicationController
   before_action :set_subject, only: %i[show edit update destroy]
-  # before_action :set_posts, only: %i[index]
+
   def index
-    # @posts = Post.all
     if current_user.admin_role?
       @subjects = Subject.all
     else
@@ -58,9 +57,6 @@ class SubjectsController < ApplicationController
     @subject = Subject.find(params[:id])
   end
 
-  # def set_posts
-  #   @posts = Post.find(params[:id])
-  # end
   def delete_repited(array)
       for i in 0...array.length
         dato = array[i]

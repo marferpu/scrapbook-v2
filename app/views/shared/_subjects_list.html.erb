@@ -8,9 +8,10 @@
         </div>
         <div class="d-flex w-100 justify-content-end bd-highlight mb-3">
             <div class="me-auto p-0 bd-highlight"><small>Jornada: Única</small></div>
-            <a class="m-1 bd-highlight"><%= link_to "Editar", edit_subject_path(subject), class:"btn btn-success p-1" %></a>
+            <a class="m-1 bd-highlight"><%= link_to "Ver", subject_path(subject), class:"btn btn-success p-x-15 p-y-0 " %></a>
+            <a class="m-1 bd-highlight"><%= link_to "Editar", edit_subject_path(subject), class:"btn btn-success p-x-15 p-y-0" %></a>
             <a class="m-1 bd-highlight"><%= link_to "Eliminar", subject_path(subject), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"},
-                class:"btn btn-success p-1"
+                class:"btn btn-success p-x-15 p-y-0"
             %></a>
         </div>
       </a>
@@ -22,13 +23,16 @@
           <h5 class="mb-1" style="font-family: $letter2;"><%= Subject.find(subject).name %></h5>
           <small><%= Subject.find(subject).created_at %></small>
         </div>
-        <small>Jornada: Única</small>
+        <div class="d-flex w-100 justify-content-end bd-highlight mb-3">
+          <div class="me-auto p-0 bd-highlight"><small>Jornada: Única</small></div>
+          <a class="m-1 bd-highlight"><%= link_to "Ver", subject_path(subject), class:"btn btn-success p-x-15 p-y-0" %></a>
+        </div>
       </a>
     <% end %>
   <% else %>
     <div class="d-flex w-100 justify-content-between">
       <h3 class="mb-10">¡Acceso denegado!</h3>
-      <%= link_to "Aceptar", root_path, class:"btn btn-outline-danger" %>
+      <%= link_to "Aceptar", root_path, class:"btn btn-outline-danger btn-sm" %>
     </div>
   <% end %>
 </div>

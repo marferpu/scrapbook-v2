@@ -6,7 +6,7 @@
     </div>
     <% if current_user.admin_role? %>
       <div class="d-flex w-100 justify-content-end mb-3">
-        <%= link_to "Agregar Materia", new_subject_path, class:"btn btn-success"%>
+        <%= link_to "Agregar Asignatura", new_subject_path, class:"btn btn-primary"%>
       </div>
     <% end %>
     <%= render "shared/subjects_list" %>
