@@ -6,7 +6,9 @@
         <h1><%= @post.title%></h1>
         <%= @post.description %>
         <p>Tipo de post: <%= @post.type_activity %></p>
-        <p>Fecha del evento: <%= localize @post.date, format: "%d de %B %Y" %></p>
+        <% if @post.date %>
+          <p>Fecha del evento: <%= localize @post.date, format: "%d de %B %Y" %></p>
+        <% end %>
         <p>Grado: <%= @post.grade.name %></p>
         <p>Asignatura: <%= @post.subject.name %></p>
         <p>Propietario: <%= @post.user.first_name %> <%= @post.user.last_name %></p>
@@ -58,7 +60,7 @@
       </div>
       <%= simple_form_for([@post, @comment]) do |f| %>
         <%= f.input :content, as: :text, label: ".",placeholder:"Has tu comentario" %>
-        <%= f.submit "Comentar", class:"btn btn-primary btn-sm", data: {turbo_method: :post} %>
+        <%= f.submit "Comentar", class:" btn-flat:hover btn-sm", data: {turbo_method: :post} %>
       <% end %>
   </div>
 </div>  
