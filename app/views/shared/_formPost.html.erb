@@ -5,8 +5,10 @@
     <div>
       <%= f.input :title, label:"Título" %>
       <%# <%= f.input :type_activity, label:"Tipo", collection: ["Lúdico", "Académico"] %>
-
-      <%= f.collection_radio_buttons :type_activity, [['Lúdico'], ['Académico']], :first, :last %>
+      <div class="mb-2 d-flex justify-content-around">
+        <div><p>Tipo de Actividad:</p></div>
+        <div class="d-flex justify-content-around"><%= f.collection_radio_buttons :type_activity, [['Lúdico'], ['Académico']], :first, :last %></div>
+      </div>
       <%= f.input :date, html5: true, label:"Fecha del evento" %>
       <%# <%= f.input :description, as: :text, label:"Descripción" %>
       <%= f.association :grade, collection: Grade.all %>

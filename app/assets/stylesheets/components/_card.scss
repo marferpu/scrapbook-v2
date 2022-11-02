@@ -26,13 +26,13 @@
 }
 
 div.transbox {
-  background-color: $yellow-sb;
+  background-color: $purple-sb;
   background-size: cover;
   opacity: 0.7;
 }
 
 div.title {
-  color: $white-sb;
+  color: black;
   font-weight: 700px;
   font-size: 25rem;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -53,13 +53,13 @@ div.transbox a {
 
 .icon {
   font-size: 1.5rem;
-  color: black;
+  color: $white-sb;
   margin: 0.1rem;
   display: inline;
 }
 
 .icon:hover {
-  color: $white-sb;
+  color: $yellow-sb;
 }
 
 .line-white {
