@@ -1,5 +1,5 @@
 
-<% if current_user.teacher_role? %>
+<% if current_user.teacher_role? || current_user.admin_role? %>
   <%= render "shared/pizarron_teacher" %>
 <% else %>
   <%= render "shared/pizarron_parents" %>

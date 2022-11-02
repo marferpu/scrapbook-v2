@@ -1,7 +1,7 @@
 <div class="container col-6 justify-content: center">
 
   <%= simple_form_for(@post) do |f| %>
-    
+
     <div>
       <%= f.input :title, label:"Título" %>
       <%# <%= f.input :type_activity, label:"Tipo", collection: ["Lúdico", "Académico"] %>
@@ -11,10 +11,10 @@
       <%# <%= f.input :description, as: :text, label:"Descripción" %>
       <%= f.association :grade, collection: Grade.all %>
       <%= f.association :subject, collection: Subject.all %>
-      <%= f.label "Descripción" %> 
+      <%= f.label "Descripción" %>
       <%= f.rich_text_area :content %>
     </div>
-    
+
     <div class="form-actions">
       <%= f.submit "Guardar", class: "btn btn-primary m-3" %>
       <a class="mb-5"><%= link_to "Regresar", posts_path, class:"btn btn-outline-secondary"%></a>

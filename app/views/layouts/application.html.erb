@@ -5,9 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan&family=Open+Sans&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <script>
+        FontAwesomeConfig = {
+          mutateApproach: 'sync'
+        }
+      </script>
+
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%# <%= stylesheet_include_tag "application", "data-turbo-track": "reload", defer: true %>
