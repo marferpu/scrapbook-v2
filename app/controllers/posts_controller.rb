@@ -5,7 +5,11 @@ class PostsController < ApplicationController
     if params[:query].present?
       @posts = Post.global_search(params[:query])
     else
-      @posts = Post.all
+      if current_user.admin_role?
+        @posts = Post.all
+      else
+        @posts = current_user.posts
+      end
     end
   end
 

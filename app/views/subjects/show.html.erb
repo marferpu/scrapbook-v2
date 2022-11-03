@@ -1,2 +1,23 @@
-<h1>Subjects#show</h1>
-<p>Find me in app/views/subjects/show.html.erb</p>
+<div class="background-pizarron" style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg); background-size: cover;">
+  <div class="card bg-dark text-white">
+    <img src="https://i.ibb.co/wLdgWvB/bg-5-pizarra.png" class="card-img" alt="background">
+    <div class="card-img-overlay">
+      <br>
+      <div class="container">
+        <h3 class="card-title">Asignatura:</h3>
+        <h1 class="card-title text-center"><%= @subject.name %></h1>
+        <label for="description">Descripción:</label>
+        <p id="description" class="card-text mt-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit odio aspernatur corporis mollitia nihil modi cumque accusantium atque tenetur ab facere perspiciatis necessitatibus, recusandae molestias temporibus id voluptate </p>
+        <p class="card-text">Grados donde se dicta</p>
+        <% @subject.grades.each do |grade| %>
+          <ul class="list-group list-group-horizontal">
+            <li class="list-group-item-horizontal"><%= grade.name %></li>
+          </ul>
+        <% end %>
+        <div class="d-flex align-items-end justify-content-end">
+          <a class=""><%= link_to "Regresar", subjects_path, class:"btn btn-outline-primary"%></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

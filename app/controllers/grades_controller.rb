@@ -2,7 +2,11 @@ class GradesController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :set_grade, only: %i[show edit update destroy]
   def index
-    @grades = Grade.all
+    if current_user.admin_role?
+      @grades = Grade.all
+    else
+      @grades = current_user.grades
+    end
   end
 
   def new

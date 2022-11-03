@@ -20,6 +20,51 @@ Grade.destroy_all
 Subject.destroy_all
 User.destroy_all
 
+# user teachers
+profe11 = User.new(first_name:"Dana", last_name: "Soto", role: 1,
+  email: "dana@email.com", password: "123456")
+#
+photo11 = URI.open("https://infoes.goconqr.com/files/2017/05/mate12.jpg")
+profe11.photo.attach(io: photo11, filename: "profe11.png", content_type: "image/png")
+profe11.save
+profe12 = User.new(first_name:"Sebas", last_name: "Soto", role: 1,
+email: "sebas@email.com", password: "123456")
+#
+photo12 = URI.open("https://img.freepik.com/fotos-premium/profesor-explicando-reaccion-quimica-estudiantes-cuando-nino-escuela-mirando-placa-petri-traves-microscopio_274689-15217.jpg?w=826")
+profe12.photo.attach(io: photo12, filename: "profe12.png", content_type: "image/png")
+profe12.save
+profe13 = User.new(first_name:"Carlos", last_name: "Quinto", role: 1,
+  email: "cquinto@email.com", password: "123456")
+#
+photo13 = URI.open("http://4.bp.blogspot.com/-8gIcMlI1Ttw/VkpwVoEVQPI/AAAAAAAAJp8/qvvyj-Xi-8g/s1600/502760.jpg")
+profe13.photo.attach(io: photo13, filename: "profe13.png", content_type: "image/png")
+profe13.save
+profe14 = User.new(first_name:"Carmen", last_name: "Canos", role: 1,
+email: "carca@email.com", password: "123456")
+#
+photo14 = URI.open("https://cdn.techtitute.com/techtitute/cursos/00895718/recursos/contenidos/maestria-online-formaci%C3%B3n-del-profesor-de-f%C3%ADsica-y-qu%C3%ADmica-en-educaci%C3%B3n-secundaria.jpg")
+profe14.photo.attach(io: photo14, filename: "profe14.png", content_type: "image/png")
+profe14.save
+profe15 = User.new(first_name:"Maria", last_name: "Dona", role: 1,
+email: "dona@email.com", password: "123456")
+#
+photo15 = URI.open("https://fotografias.lasexta.com/clipping/cmsimages02/2016/04/07/732C634F-9D10-4011-8C7E-2DC2453237FD/58.jpg")
+profe15.photo.attach(io: photo15, filename: "profe15.png", content_type: "image/png")
+profe15.save
+profe16 = User.new(first_name:"jorge", last_name: "Ceballos", role: 1,
+email: "jorgec2@email.com", password: "123456")
+#
+photo16 = URI.open("https://thumbs.dreamstime.com/z/padres-que-hablan-para-comunicar-con-el-ni-o-concepto-real-de-la-forma-vida-gente-familia-tres-personas-pap%C3%A1-mam%C3%A1-y-su-hijo-del-153722307.jpg")
+profe16.photo.attach(io: photo16, filename: "profe16.png", content_type: "image/png")
+profe16.save
+profe17 = User.new(first_name:"ivanio", last_name: "Casas", role: 1,
+email: "ivancasas@email.com", password: "123456")
+#
+photo17 = URI.open("https://thumbs.dreamstime.com/z/happy-young-adult-mother-cute-child-enjoy-talking-relaxing-sit-sofa-understanding-mom-friend-having-sincere-conversation-164954528.jpg")
+profe17.photo.attach(io: photo17, filename: "profe17.png", content_type: "image/png")
+profe17.save
+
+
 # user students
 puts "Creando usuarios"
 student1 = User.new(first_name: "Ana", last_name: "Ariel", role: 3,
@@ -39,7 +84,7 @@ student3 = User.new(first_name: "Hana", last_name: "Argel", role: 3,
                     email: "hana@email.com", password: "123456"
                     )
 #
-photo3 = URI.open("https://w7.pngwing.com/pngs/51/204/png-transparent-graphy-student-homework-student-hand-people-higher-education.png")
+photo3 = URI.open("https://previews.123rf.com/images/dolgachov/dolgachov1311/dolgachov131102912/24117616-la-educaci%C3%B3n-y-la-escuela-concepto-una-sonrisa-de-ni%C3%B1a-estudiante-con-el-libro-y-las-gafas-en-el-sue.jpg")
 student3.photo.attach(io: photo3, filename: "student3.png", content_type: "image/png")
 student3.save
 student4 = User.new(first_name: "Carlos", last_name: "Ariel", role: 3,
@@ -91,50 +136,6 @@ student10 = User.new(first_name:"Camilo", last_name: "Soto", role: 3,
 photo10 = URI.open("https://previews.123rf.com/images/dolgachov/dolgachov1711/dolgachov171101175/89513306-ni%C3%B1o-estudiante-feliz-escribiendo-en-el-cuaderno-en-casa.jpg")
 student10.photo.attach(io: photo10, filename: "student10.png", content_type: "image/png")
 student10.save
-
-# user teachers
-profe11 = User.new(first_name:"Dana", last_name: "Soto", role: 1,
-                    email: "dana@email.com", password: "123456")
-#
-photo11 = URI.open("https://infoes.goconqr.com/files/2017/05/mate12.jpg")
-profe11.photo.attach(io: photo11, filename: "profe11.png", content_type: "image/png")
-profe11.save
-profe12 = User.new(first_name:"Sebas", last_name: "Soto", role: 1,
-                  email: "sebas@email.com", password: "123456")
-#
-photo12 = URI.open("https://img.freepik.com/fotos-premium/profesor-explicando-reaccion-quimica-estudiantes-cuando-nino-escuela-mirando-placa-petri-traves-microscopio_274689-15217.jpg?w=826")
-profe12.photo.attach(io: photo12, filename: "profe12.png", content_type: "image/png")
-profe12.save
-profe13 = User.new(first_name:"Carlos", last_name: "Quinto", role: 1,
-                    email: "cquinto@email.com", password: "123456")
-#
-photo13 = URI.open("http://4.bp.blogspot.com/-8gIcMlI1Ttw/VkpwVoEVQPI/AAAAAAAAJp8/qvvyj-Xi-8g/s1600/502760.jpg")
-profe13.photo.attach(io: photo13, filename: "profe13.png", content_type: "image/png")
-profe13.save
-profe14 = User.new(first_name:"Carmen", last_name: "Canos", role: 1,
-                  email: "carca@email.com", password: "123456")
-#
-photo14 = URI.open("https://cdn.techtitute.com/techtitute/cursos/00895718/recursos/contenidos/maestria-online-formaci%C3%B3n-del-profesor-de-f%C3%ADsica-y-qu%C3%ADmica-en-educaci%C3%B3n-secundaria.jpg")
-profe14.photo.attach(io: photo14, filename: "profe14.png", content_type: "image/png")
-profe14.save
-profe15 = User.new(first_name:"Maria", last_name: "Dona", role: 1,
-                  email: "dona@email.com", password: "123456")
-#
-photo15 = URI.open("https://fotografias.lasexta.com/clipping/cmsimages02/2016/04/07/732C634F-9D10-4011-8C7E-2DC2453237FD/58.jpg")
-profe15.photo.attach(io: photo15, filename: "profe15.png", content_type: "image/png")
-profe15.save
-profe16 = User.new(first_name:"jorge", last_name: "Ceballos", role: 1,
-                  email: "jorgec2@email.com", password: "123456")
-#
-photo16 = URI.open("https://thumbs.dreamstime.com/z/padres-que-hablan-para-comunicar-con-el-ni-o-concepto-real-de-la-forma-vida-gente-familia-tres-personas-pap%C3%A1-mam%C3%A1-y-su-hijo-del-153722307.jpg")
-profe16.photo.attach(io: photo16, filename: "profe16.png", content_type: "image/png")
-profe16.save
-profe17 = User.new(first_name:"ivanio", last_name: "Casas", role: 1,
-                  email: "ivancasas@email.com", password: "123456")
-#
-photo17 = URI.open("https://thumbs.dreamstime.com/z/happy-young-adult-mother-cute-child-enjoy-talking-relaxing-sit-sofa-understanding-mom-friend-having-sincere-conversation-164954528.jpg")
-profe17.photo.attach(io: photo17, filename: "profe17.png", content_type: "image/png")
-profe17.save
 
 # user parents
 
