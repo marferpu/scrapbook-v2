@@ -63,7 +63,7 @@
     <small class="text-muted"><%= pluralize @post.comments.size, "comentario" %></small>
       <div class="">
         <% if @post.comments.blank? %><br>
-          ¿Tienes alguna duda o pregunta? Se el primero en comentar esta publicación:
+          ¿Tienes alguna duda o pregunta?<br> Se el primero en comentar esta publicación:
           <strong><%= @post.title %></strong>
         <% else %>
           <% @post.comments.each do |comment| %>
