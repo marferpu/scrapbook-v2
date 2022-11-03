@@ -1,7 +1,7 @@
 <div class="body1">
-  <div class="imagen">
-  </div>
-    <div class="formulario">
+  <!--<div class="imagen">
+  </div>-->
+    <div class="formulario ">
       <div>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: false }) do |f| %>
         <div class="login row">
@@ -17,11 +17,11 @@
                           input_html: { autocomplete: "current-password" } %>
               <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
                 <div class="access">
-                  <%= f.button :submit, "Acceder" %>
+                  <%= f.button :submit, "Acceder", class:"btn-hover text-light fw-bold" %>
                 </div>
-                <!--<div class="sign-up">
-                  <%#= render "devise/shared/links" %>
-                </div>-->
+                <div class="sign-up">
+                  <%= render "devise/shared/links" %>
+                </div>
             </div>
         </div>
       </div>

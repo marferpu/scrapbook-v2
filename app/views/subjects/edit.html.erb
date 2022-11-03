@@ -1,8 +1,26 @@
-<div class="container">
-  <%= current_user.id %>
-  <%= current_user.role %>
-  <div class="row">
-    <% if current_user.teacher_role? %>
+<div class="background-pizarron" style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg); background-size: cover;">
+  <div class="container mt-10">
+    <% if current_user.admin_role?%>
+    <div class="">
+      <h1>Editar Asignatura</h1>
+      <p>Modifica la información de esta asignatura</p>
+    </div>
+      <%= render 'shared/subject_form' %>
+
+      <div class="row g-1 d-flex align-items-end justify-content-end">
+        <a class="mb-5"><%= link_to "Regresar", subjects_path, class:"btn btn-link"%></a>
+      </div>
+    <% else %>
+      <div class="row g-1 d-flex align-items-center justify-content-center">
+        <h3 class="mb-3">¡Acceso denegado!</h3>
+        <%= link_to "Aceptar", root_path, class:"btn btn-outline-danger" %>
+      </div>
+    <% end %>
+  </div>
+
+
+  <div class="visually-hidden">
+    <% if current_user.teacher_role? || current_user.admin_role?%>
       <div>
         <h1>Editar Materia</h1>
         <p>Haz las modificaciones que consideres necesarias</p>

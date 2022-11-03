@@ -1,9 +1,11 @@
 // Import Google fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Amaranth:wght@400;700&family=Chilanka&family=Kalam:wght@300;400;700&family=Mochiy+Pop+P+One&family=Open+Sans&family=Roboto:wght@300;500&family=Wendy+One&display=swap');
 // Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+$body-font: 'Amaranth', 'Roboto', "Helvetica", "sans-serif";
+$headers-font: 'Wendy One', sans-serif, 'Open Sans';
+$letter2: 'Amaranth', sans-serif;
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
