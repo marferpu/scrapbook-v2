@@ -42,19 +42,19 @@
         </div> -->
       <div class="d-flex">
         <% if current_user.present? && (current_user.id == @post.user_id) %>
-        <div class="p-2">
-          <a><%= link_to "Editar", edit_post_path(@post), class:"btn btn-flat" %></a>
-        </div>
-        <div class="p-2">
-          <a><%= link_to "Eliminar", post_path(@post), class:"btn btn-flat", data: {turbo_method: :delete, turbo_confirm: "¿Estas seguro de eliminar?"} %></a>
-        </div>
-        <div class="ms-auto p-2">
-          <a><%= link_to "Regresar a publicaciones", posts_path, class:"btn btn-flat"%></a>
-        </div>
+          <div class="p-2">
+            <a><%= link_to "Editar", edit_post_path(@post), class:"btn btn-flat" %></a>
+          </div>
+          <div class="p-2">
+            <a><%= link_to "Eliminar", post_path(@post), class:"btn btn-flat", data: {turbo_method: :delete, turbo_confirm: "¿Estas seguro de eliminar?"} %></a>
+          </div>
+          <div class="ms-auto p-2">
+            <a><%= link_to "Regresar a publicaciones", posts_path, class:"btn btn-flat"%></a>
+          </div>
         <% else %>
-        <div class="ms-auto p-2">
-          <a><%= link_to "Regresar a publicaciones", posts_path, class:"btn btn-flat"%></a>
-        </div>
+          <div class="ms-auto p-2">
+            <a><%= link_to "Regresar a publicaciones", posts_path, class:"btn btn-flat"%></a>
+          </div>
         <% end %>
       </div>
 
@@ -77,15 +77,15 @@
                 %></small>
             </div>
           <% end %>
-          <br>Puedes dejarnos más comentarios.
-         <% end %>
-      </div>
-      <%= simple_form_for([@post, @comment]) do |f| %>
-        <%= f.input :content, as: :text, label: ".",placeholder:"Escribe un comentario" %>
-        <%= f.submit "Comentar", class:" btn btn-flat btn-flat:hover", data: {turbo_method: :post} %>
-      <% end %>
-  </div>
-</div>
+        </div>
+        <%= simple_form_for([@post, @comment]) do |f| %>
+          <%= f.input :content, as: :text, label: ".",placeholder:"Has tu comentario" %>
+          <%= f.submit "Comentar", class:" btn-flat:hover btn-sm", data: {turbo_method: :post} %>
+        <% end %>
+    </div>
+  </div>  
+</div>  
+  
 
 
     </div>
