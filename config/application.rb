@@ -2,17 +2,7 @@ require_relative "boot"
 
 require "rails/all"
 
-config.after_initialize do
-  ActionText::ContentHelper.allowed_attributes.add 'style'
-  ActionText::ContentHelper.allowed_attributes.add 'controls'
-  ActionText::ContentHelper.allowed_attributes.add 'poster'
 
-  ActionText::ContentHelper.allowed_tags.add 'video'
-  ActionText::ContentHelper.allowed_tags.add 'audio'
-  ActionText::ContentHelper.allowed_tags.add 'source'
-  ActionText::ContentHelper.allowed_tags.add 'embed'
-  ActionText::ContentHelper.allowed_tags.add 'iframe'
-end
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -29,7 +19,17 @@ module ScrapbookV2
     config.load_defaults 7.0
     I18n.available_locales = [:en, :es]
     # config.i18n.default_locale = :es
-
+    config.after_initialize do
+      ActionText::ContentHelper.allowed_attributes.add 'style'
+      ActionText::ContentHelper.allowed_attributes.add 'controls'
+      ActionText::ContentHelper.allowed_attributes.add 'poster'
+    
+      ActionText::ContentHelper.allowed_tags.add 'video'
+      ActionText::ContentHelper.allowed_tags.add 'audio'
+      ActionText::ContentHelper.allowed_tags.add 'source'
+      ActionText::ContentHelper.allowed_tags.add 'embed'
+      ActionText::ContentHelper.allowed_tags.add 'iframe'
+    end
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
