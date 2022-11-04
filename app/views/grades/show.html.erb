@@ -1,20 +1,22 @@
-<div class='container center-block'>
-  <h1 class='text-center'><%= @grade.name %></h1>
-  <%= link_to "Regresar", grades_path%>
-  <div class="center-block">
-    <h2 class='text-center'>Publicaciones</h2>
-  </div>
+<div style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg)">
+  <div class='container center-block'>
+    <h1 class='text-center'><%= @grade.name %></h1>
+    <%= link_to "Regresar", grades_path%>
+    <div class="center-block">
+      <h2 class='text-center'>Publicaciones</h2>
+    </div>
 
-  <div class="d-flex">
-    <%#las siguientes opciones son solo para admin%>
-    <% if current_user.present? && (current_user.role == "admin") %>
-      <a><%= link_to "Agregar un grado", new_grade_path(@grade) %></a>
-      <a><%= link_to "Editar grado", edit_grade_path %></a>
-      <a><%= link_to "Borrar grado", grade_path(@grade), data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"} %></a>
-    <% else %>
-      <div class="d-flex-inline">
-        <a class="mb-5"><%= link_to "Regresar", grades_path, class:"btn btn-link"%></a>
-      </div>
-    <% end %>
+    <div class="d-flex">
+      <%#las siguientes opciones son solo para admin%>
+      <% if current_user.present? && (current_user.role == "admin") %>
+        <a><%= link_to "Agregar un grado", new_grade_path(@grade) %></a>
+        <a><%= link_to "Editar grado", edit_grade_path %></a>
+        <a><%= link_to "Borrar grado", grade_path(@grade), data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"} %></a>
+      <% else %>
+        <div class="d-flex-inline">
+          <a class="mb-5"><%= link_to "Regresar", grades_path, class:"btn btn-link"%></a>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

@@ -1,13 +1,15 @@
-<div class='container '>
-  <h1 class='text-center'>GRADOS</h1>
-  <h4 class='text-center'>Selecciona el grado al cual quieres acceder</h4>
-  <div class='container'>
-    <ul class="list-group">
-      <% @grades.each do |grade| %>
-        <li class="list-group-item text-center">
-          <%= link_to grade.name, grade_path(grade) %>
-        </li>
-      <% end %>
-    </ul>
+<div style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg)">
+  <div class='container '>
+    <h1 class='text-center'>GRADOS</h1>
+    <h4 class='text-center'>Selecciona el grado al cual quieres acceder</h4>
+    <div class='container'>
+      <ul class="list-group">
+        <% @grades.each do |grade| %>
+          <li class="list-group-item text-center">
+            <%= link_to grade.name, grade_path(grade) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
