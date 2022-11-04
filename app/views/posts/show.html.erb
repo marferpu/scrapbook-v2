@@ -14,49 +14,49 @@
       </div>
 
 
-      <div class="container overflow-hidden text-center card">
-        <div class="row gx-10">
-          <div class="col">
-            <div class="p-3 border-end bg-white">
+      <div class="container px-4 text-center mt-4">
+        <div class="row gx-5">
+          <div class="card col">
+            <div class=" p-3 bg-white ">
               <%= @post.description %>
               <p>Tipo de post: <%= @post.type_activity %></p>
               <% if @post.date %>
                 <p>Fecha del evento: <%= localize @post.date, format: "%d de %B %Y" %></p>
               <% end %>
-
               <p>Fecha creación: <%= localize @post.created_at, format: "%d de %B %Y" %></p>
               <%= @post.content %>
             </div>
           </div>
 
 
-          <div class="col">
-            <div class="p-3 bg-white">insertar imagen</div>
+          <div class=" card col">
+            <div class=" p-3 bg-white">
+              <%= @post.documents %>
+            </div>
           </div>
         </div>
       </div>
 
-
-    <div class="container px-4">
-      <div class="col mt-11">
         <!-- <div>
           <a><%#= link_to "Comentar post", new_post_comment_path(@post), class:"btn btn-outline-info" %></a>
         </div> -->
-        <div class="d-flex justify-content-start">
-          <% if current_user.present? && (current_user.id == @post.user_id) %>
-            <a><%= link_to "Editar", edit_post_path(@post), class:"btn btn-flat" %></a>
-            <a><%= link_to "Eliminar", post_path(@post), class:"btn btn-flat", data: {turbo_method: :delete, turbo_confirm: "¿Estas seguro de eliminar?"} %></a>
-            <a class="mb-5"><%= link_to "Regresar", posts_path, class:"btn btn-flat"%></a>
+      <div class="d-flex">
+        <% if current_user.present? && (current_user.id == @post.user_id) %>
+        <div class="p-2">
+          <a><%= link_to "Editar", edit_post_path(@post), class:"btn btn-flat" %></a>
         </div>
-        <div class="d-flex justify-content-end">
-          <% else %>
-            <a><%= link_to "Regresar a publicaciones", posts_path, class:"btn btn-outline"%></a>
-          <% end %>
+        <div class="p-2">
+          <a><%= link_to "Eliminar", post_path(@post), class:"btn btn-flat", data: {turbo_method: :delete, turbo_confirm: "¿Estas seguro de eliminar?"} %></a>
         </div>
-
+        <div class="ms-auto p-2">
+          <a><%= link_to "Regresar a publicaciones", posts_path, class:"btn btn-flat"%></a>
         </div>
+        <% else %>
+        <div class="ms-auto p-2">
+          <a><%= link_to "Regresar a publicaciones", posts_path, class:"btn btn-flat"%></a>
+        </div>
+        <% end %>
       </div>
-    </div>
 
   <div class="container pt-4 card text-center">
     <h4><b>Comentarios</b></h4>
