@@ -14,7 +14,7 @@
         <a><%= link_to "Borrar grado", grade_path(@grade), data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"} %></a>
       <% else %>
         <div class="d-flex-inline">
-          <a class="mb-5"><%= link_to "Regresar", grades_path, class:"btn btn-link"%></a>
+          <a class="mb-5"><%= link_to "Regresar", grades_path, class:"btn btn-flat"%></a>
         </div>
       <% end %>
     </div>
