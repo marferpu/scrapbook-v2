@@ -1,0 +1,10 @@
+<div class="container pt-3">
+    <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Busca una publicación"
+      %>
+      <%= submit_tag "Buscar", class: "btn-flat:hover" %>
+    <% end %>
+  </div>

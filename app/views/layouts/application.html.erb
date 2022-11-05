@@ -17,7 +17,7 @@
 
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-      
+
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%# <%= stylesheet_include_tag "application", "data-turbo-track": "reload", defer: true %>
@@ -27,10 +27,12 @@
   <body>
     <header>
       <%= render "shared/navbar" %>
-    </header>
-    <section>
       <%= render "shared/flashes" %>
+    </header>
+    <section class="vh-100">
       <%= yield %>
+    </section>
+    <section class="mt-5">
       <%= render "shared/footer" %>
     </section>
   </body>

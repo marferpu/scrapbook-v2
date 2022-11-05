@@ -1,26 +1,21 @@
-  <div class="container pt-3">
-    <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Busca una publicación"
-      %>
-      <%= submit_tag "Buscar", class: "btn-flat:hover" %>
-    <% end %>
-  </div>
-        <%# <div class="p-3 border bg-light">Row column</div> %>
-    <div class="container pt-3">
-      <h1>Bienvenido a los Posts</h1>
-      <div class="row row-cols-4 row-cols-lg-5 g-2 g-lg-3">   
-        <% @posts.each do |post| %>
-          <div class="col pt-3">
-            <div class="card-index card h-100">
-              <h5 class="text-uppercase"><%= post.title %></h3>
-              <small class="text-muted">Hace <%= time_ago_in_words(post.created_at) %></small>
-              <%= link_to "Detalle", post %>
-            </div>
+<div class="background-pizarron visibility-hidden" style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg); background-size: cover;">
+  <div class="container mt-4">
+    <div>
+      <div class="d-flex flex-row justify-content-between">
+        <h1>Listado de Posts</h1>
+        <%= link_to pizarron_path do %>
+          <div class="">
+            <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border border-dark"></i>
           </div>
         <% end %>
+      </div>
+      <p>Organiza tus posts</p>
+    </div>
+    <div>
+      <%= render "shared/search_posts" %>
+    </div>
+      <div class="row row-cols-4 row-cols-lg-5 g-2 g-lg-3">
+        <%= render "shared/posts_list" %>
       </div>
     </div>
 </div>

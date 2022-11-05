@@ -1,7 +1,10 @@
 <div class="background-pizarron" style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg); background-size: cover;">
   <div class="container">
     <div>
-      <h1>Listado de Materias</h1>
+      <div class="d-flex flex-row justify-content-between">
+        <h1>Listado de Materias</h1>
+        <%= link_to icon("fa-solid fa-circle-left", pizarron_path,  class:"fs-1 icon-return rounded-circle border border-dark")%>
+      </div>
       <p>Estas son las materias del currículo escolar</p>
     </div>
     <% if current_user.admin_role? %>
