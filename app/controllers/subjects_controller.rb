@@ -8,7 +8,7 @@ class SubjectsController < ApplicationController
       @subjects = []
       @posts = current_user.posts
       @posts.each do |post|
-        @subjects << Subject.find(post.subject_id).name
+        @subjects << Subject.find(post.subject_id)
       end
     end
     @subjects = delete_repited(@subjects)
