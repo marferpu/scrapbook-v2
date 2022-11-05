@@ -51,16 +51,26 @@ div.transbox a {
   background-size: contain;
 }
 
-.icon {
+.icon-p {
   font-size: 1.5rem;
   color: $white-sb;
   margin: 0.1rem;
   display: inline;
 }
 
-.icon:hover {
-  color: $yellow-sb;
+.icon-p:hover {
+  color: $blue-light-sb;
+  opacity: 0.8;
 }
+
+.icon-return {
+  color: $blue-light-sb;
+}
+
+.icon-return:hover {
+  color: $purple-sb;
+}
+
 
 .line-white {
   height: 0.1vh;

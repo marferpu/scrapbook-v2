@@ -1,18 +1,18 @@
-<div style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg)">
-  <div class='container '>
-    <h1 class='text-center'>GRADOS</h1>
-    <h4 class='text-center'>Selecciona el grado al cual quieres acceder</h4>
-    <div class='container'>
-      <ul class="list-group">
-        <% @grades.each do |grade| %>
-          <li class="list-group-item text-center">
-            <%= link_to grade.name, grade_path(grade) %>
-          </li>
-        <% end %>
-      </ul>
+<div class="background-pizarron visibility-hidden" style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg); background-size: cover;">
+  <div class="container mt-4">
+    <div>
+      <div class="d-flex flex-row justify-content-between">
+        <h1>Listado de Grados</h1>
+        <%= link_to icon("fa-solid fa-circle-left", pizarron_path,  class:"fs-1 icon-return rounded-circle border border-dark")%>
+      </div>
+      <p>Estos son los niveles escolares de la institución</p>
     </div>
-    <div class="d-flex-inline">
-      <a class="mb-5"><%= link_to "Regresar", grades_path, class:"btn btn-flat"%></a>
-    </div>
+    <% if current_user.admin_role? %>
+      <div class="d-flex w-100 justify-content-end mb-3">
+        <%= link_to "Agregar nuevo nivel", new_grade_path, class:"btn btn-primary"%>
+      </div>
+    <% end %>
+    <%= render "shared/grades_list" %>
   </div>
+  <br><br>
 </div>
