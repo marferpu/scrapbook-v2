@@ -19,7 +19,7 @@
 
           <% @grade.posts.each do |post| %>
             <%# if post.grade_id == @grade.id && ( post.user_id == current_user.id ) %>
-            <div class="card-product gap-2">
+            <div class="card-product">
               <img src="https://i.ibb.co/2shmq28/milad-fakurian-PGd-W-b-HDbp-I-unsplash.jpg"/>
                 <!--<img src="https://i.ibb.co/2shmq28/milad-fakurian-PGd-W-b-HDbp-I-unsplash.jpg" />-->
                   <div class="card-product-infos">
@@ -49,25 +49,29 @@
             <a><%= link_to "Crear un Post", new_post_path(@post) %></a>
           </div>
 
-          <div class="card-product">
-            <i class="fa-regular fa-calendar-day"></i>
-            <% @grade.posts.each do |post| %>
-              <% if post.grade_id == @grade.id && ( post.user_id == current_user.id ) %>
-              <!--<img src="https://i.ibb.co/2shmq28/milad-fakurian-PGd-W-b-HDbp-I-unsplash.jpg" />-->
-              <div class="card-product-infos">
-                <div>
-                  <h2><%= post.title %></h2>
-                  <p><strong>Fecha de Publicación:</strong><%= post.date %></p>
-                </div>
-                <div>
-                  <%= link_to "Ver detalles", post_path, class:"btn btn-link" %>
-                  <%= link_to "Editar", edit_post_path %>
-                  <%= link_to "Eliminar", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"} %></a>
-                </div>
-              </div>
-              <% end %>
-            <% end %>
-          </div>
+          <% @grade.posts.each do |post| %>
+            <%# if post.grade_id == @grade.id && ( post.user_id == current_user.id ) %>
+            <div class="card-product">
+              <img src="https://i.ibb.co/2shmq28/milad-fakurian-PGd-W-b-HDbp-I-unsplash.jpg"/>
+                <!--<img src="https://i.ibb.co/2shmq28/milad-fakurian-PGd-W-b-HDbp-I-unsplash.jpg" />-->
+                  <div class="card-product-infos">
+                    <div>
+                      <h2><%= post.title %></h2>
+                      <p><strong>Asignatura:</strong><%= post.subject.name %></p>
+                      <p><strong>Fecha de Publicación:</strong><%= post.date %></p>
+                    </div>
+                    <div>
+                      <% if post.user_id == current_user.id %>
+                        <%= link_to "Ver detalles", post_path(post), class:"btn btn-link" %>
+                        <%= link_to "Editar", edit_post_path(post) %>
+                        <%= link_to "Eliminar", post_path(post), data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"} %></a>
+                      <% end %>
+                    </div>
+                  </div>
+            </div>
+            <%# end %>
+          <% end %>
+
       <% else %>
         <div class="d-flex w-100 justify-content-between">
           <h3 class="mb-10">¡Acceso denegado!</h3>
