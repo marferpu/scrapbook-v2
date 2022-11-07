@@ -23,7 +23,9 @@ class GradesController < ApplicationController
   end
 
   def show
-    @posts = @grade.posts
+    @grade = Grade.find(params[:id])
+    @post = Post.new
+    @post.grade_id = @grade.id
   end
 
   def edit; end
