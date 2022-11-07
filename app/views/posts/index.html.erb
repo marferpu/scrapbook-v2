@@ -1,16 +1,19 @@
-<div class="background-pizarron visibility-hidden" style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg); background-size: cover;">
+
   <div class="container mt-4">
     <div>
       <div class="d-flex flex-row justify-content-between">
         <h1>Listado de Posts</h1>
         <%= link_to pizarron_path do %>
           <div class="">
-            <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border border-dark"></i>
+            <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle"></i>
           </div>
         <% end %>
       </div>
-      <p>Organiza tus posts</p>
+      <div>
+        <p>Estas viendo los posts que has creado en todas tus materias</p>
+      </div>
     </div>
+
     <div>
       <%= render "shared/search_posts" %>
     </div>

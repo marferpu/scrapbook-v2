@@ -25,15 +25,17 @@
   </head>
 
   <body>
-    <header>
-      <%= render "shared/navbar" %>
-      <%= render "shared/flashes" %>
-    </header>
-    <section class="vh-100">
-      <%= yield %>
-    </section>
-    <section class="mt-5">
-      <%= render "shared/footer" %>
-    </section>
+    <div class="col-md-12">
+      <header>
+        <%= render "shared/navbar" %>
+        <%= render "shared/flashes" %>
+      </header>
+      <section id="wrapper" class="">
+        <%= yield %>
+      </section>
+      <footer id="" class="mt-5">
+        <%= render "shared/footer" %>
+      </footer>
+    </div>
   </body>
 </html>

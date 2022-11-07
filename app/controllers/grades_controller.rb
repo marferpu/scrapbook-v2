@@ -22,7 +22,9 @@ class GradesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @posts = @grade.posts
+  end
 
   def edit; end
 

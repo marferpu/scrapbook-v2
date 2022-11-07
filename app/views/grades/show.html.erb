@@ -1,20 +1,74 @@
 <div style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg)">
   <div class='container center-block'>
-    <h1 class='text-center'><%= @grade.name %></h1>
-    <%= link_to "Regresar", grades_path%>
-    <div class="center-block">
-      <h2 class='text-center'>Publicaciones</h2>
-    </div>
+    <div class="d-flex flex-row justify-content-between">
+        <h1><%= @grade.name %></h1>
+        <%= link_to grades_path do %>
+          <div class="">
+            <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border shadow"></i>
+          </div>
+        <% end %>
+      </div>
+      <div>
+        <p>Estas viendo las Publicaciones realizadas para este grado</p>
+      </div>
+      <% if current_user.admin_role? %>
+        <div class="d-flex flex-column">
+          <div class="align-self-end">
+            <a><%= link_to "Agregar un grado", new_grade_path(@grade) %></a>
+          </div>
 
-    <div class="d-flex">
-      <%#las siguientes opciones son solo para admin%>
-      <% if current_user.present? && (current_user.role == "admin") %>
-        <a><%= link_to "Agregar un grado", new_grade_path(@grade) %></a>
-        <a><%= link_to "Editar grado", edit_grade_path %></a>
-        <a><%= link_to "Borrar grado", grade_path(@grade), data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"} %></a>
+          <div class="card-product">
+            <h1>existo</h1>
+            <% @grade do |post| %>
+              <% if post.grade_id == @grade.id %>
+              <!--<img src="https://i.ibb.co/2shmq28/milad-fakurian-PGd-W-b-HDbp-I-unsplash.jpg"/>-->
+              <div class="card-product-infos">
+                <div>
+                  <h2><%= post.title %></h2>
+                  <p><strong>Fecha de Publicación:</strong><%= post.date %></p>
+                </div>
+                <div>
+                  <%= link_to "Ver detalles", post_path, class:"btn btn-link" %>
+                </div>
+              </div>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="flex-row justify-content-end">
+            <a><%= link_to "Agregar un grado", new_grade_path(@grade) %></a>
+            <a><%= link_to "Editar grado", edit_grade_path %></a>
+            <a><%= link_to "Eliminar grado", grade_path(@grade), data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"} %></a>
+          </div>
+
+      <% elsif current_user.teacher_role? %>
+        <div class="d-flex flex-column">
+          <div class="align-self-end">
+            <a><%= link_to "Crear un Post", new_post_path(@post) %></a>
+          </div>
+
+          <div class="card-product">
+            <i class="fa-regular fa-calendar-day"></i>
+            <% @grade.posts do |post| %>
+              <% if post.grade_id == @grade.id && ( post.user_id == current_user.id ) %>
+              <!--<img src="https://i.ibb.co/2shmq28/milad-fakurian-PGd-W-b-HDbp-I-unsplash.jpg" />-->
+              <div class="card-product-infos">
+                <div>
+                  <h2><%= post.title %></h2>
+                  <p><strong>Fecha de Publicación:</strong><%= post.date %></p>
+                </div>
+                <div>
+                  <%= link_to "Ver detalles", post_path, class:"btn btn-link" %>
+                  <%= link_to "Editar", edit_post_path %>
+                  <%= link_to "Eliminar", post_path(@post), data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"} %></a>
+                </div>
+              </div>
+              <% end %>
+            <% end %>
+          </div>
       <% else %>
-        <div class="d-flex-inline">
-          <a class="mb-5"><%= link_to "Regresar", grades_path, class:"btn btn-flat"%></a>
+        <div class="d-flex w-100 justify-content-between">
+          <h3 class="mb-10">¡Acceso denegado!</h3>
+          <%= link_to "Aceptar", root_path, class:"btn btn-outline-danger btn-sm" %>
         </div>
       <% end %>
     </div>

@@ -1,11 +1,21 @@
-<div class="background-pizarron" style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg); background-size: cover;">
   <div class="card bg-dark text-white">
     <img src="https://i.ibb.co/wLdgWvB/bg-5-pizarra.png" class="card-img" alt="background">
     <div class="card-img-overlay">
       <br>
       <div class="container">
-        <h3 class="card-title">Asignatura:</h3>
-        <h1 class="card-title text-center"><%= @subject.name %></h1>
+
+        <div class="d-flex flex-row justify-content-between">
+          <h3 class="card-title">Asignatura:</h3>
+          <%= link_to subjects_path do %>
+              <div class="">
+                <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border border-dark"></i>
+              </div>
+          <% end %>
+        </div>
+        <div>
+          <h1 class="card-title text-center"><%= @subject.name %></h1>
+        </div>
+
         <label for="description">Descripción:</label>
         <p id="description" class="card-text mt-10">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit odio aspernatur corporis mollitia nihil modi cumque accusantium atque tenetur ab facere perspiciatis necessitatibus, recusandae molestias temporibus id voluptate </p>
         <p class="card-text">Grados donde se dicta</p>
@@ -20,4 +30,3 @@
       </div>
     </div>
   </div>
-</div>

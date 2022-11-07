@@ -3,9 +3,15 @@
     <div>
       <div class="d-flex flex-row justify-content-between">
         <h1>Listado de Materias</h1>
-        <%= link_to icon("fa-solid fa-circle-left", pizarron_path,  class:"fs-1 icon-return rounded-circle border border-dark")%>
+        <%= link_to pizarron_path do %>
+          <div class="">
+            <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border border-dark"></i>
+          </div>
+        <% end %>
       </div>
-      <p>Estas son las materias del currículo escolar</p>
+      <div>
+        <p>Estas son las materias del currículo escolar</p>
+      </div>
     </div>
     <% if current_user.admin_role? %>
       <div class="d-flex w-100 justify-content-end mb-3">

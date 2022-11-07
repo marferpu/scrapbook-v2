@@ -1,3 +1,15 @@
-.border{
-  height: 200px; width: 200x; border-radius: 50%; object-fit: cover;
+.border-sb{
+  height: 360px;
+  width: 360x;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.just-space{
+  min-height: 80px;
+
+}
+
+.height-profile{
+  min-height: 448px;
 }
