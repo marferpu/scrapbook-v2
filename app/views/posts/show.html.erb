@@ -32,17 +32,23 @@
 
             <div class=" card col">
               <div class=" p-3 bg-white">
-                <%= @post.documents %>
+                <% if @post.type_activity == "academico" %>
+                  <img src="https://1.bp.blogspot.com/-TltGhTcvO2w/XvEr8w7AbRI/AAAAAAAAAB0/Q9eLEdYSpjYlM0iHgmikwpAN_5_lZVmogCK4BGAsYHg/s626/ninos-felices-estudiando-juntos_97632-819.jpg"/>
+                <% else  %>
+                  <img src="https://cdn.goconqr.com/uploads/media/image/15600771/desktop_40ef8bd4-6ffe-4881-8eca-d0768e22d073.jpg"/>
+                <% end %>
               </div>
             </div>
           </div>
         </div>
+
 
           <!-- <div>
             <a><%#= link_to "Comentar post", new_post_comment_path(@post), class:"btn btn-outline-info" %></a>
           </div> -->
         <div class="d-flex">
           <% if current_user.present? && (current_user.id == @post.user_id) %>
+
           <div class="p-2">
             <a><%= link_to "Editar", edit_post_path(@post), class:"btn btn-flat" %></a>
           </div>
@@ -52,12 +58,14 @@
           <div class="ms-auto p-2">
             <a><%= link_to "Regresar a publicaciones", posts_path, class:"btn btn-flat"%></a>
           </div>
+
           <% else %>
           <div class="ms-auto p-2">
             <a><%= link_to "Regresar a publicaciones", posts_path, class:"btn btn-flat"%></a>
           </div>
           <% end %>
         </div>
+
 
     <div class="container pt-4 card text-center">
       <h4><b>Comentarios</b></h4>
@@ -82,11 +90,13 @@
           <% end %>
         </div>
         <%= simple_form_for([@post, @comment]) do |f| %>
+
           <%= f.input :content, as: :text, label: ".",placeholder:"Escribe un comentario" %>
           <%= f.submit "Comentar", class:" btn btn-flat btn-flat:hover", data: {turbo_method: :post} %>
         <% end %>
     </div>
   </div>
+
 
 
       </div>
