@@ -6,10 +6,23 @@
   padding: 4% 10% 10% 10%;
 }
 .card-index {
+  width: 100%;
   padding: 15px;
   max-height:12rem;
   margin-top: 1em;
-  background-color: rgba(101,13,58,0.8);
+  border-radius: 6px;
+  overflow: hidden;
+  background: #eeee;
+  box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+  cursor: default;
+  transition: all 400ms ease;
+  // text-decoration: none;
+  // display: inline-block;
+}
+.card-index:hover {
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+  transform: translateY(-3%);
+  
 }
 .card-category {
   background-size: cover;
