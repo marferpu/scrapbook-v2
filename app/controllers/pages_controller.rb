@@ -1,8 +1,10 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
+  skip_before_action :authenticate_user!, only: %i[home about]
 
   def home
   end
 
-  ## {Marce}: como conectar otra vista adicional a home, pero que se acceda desde el usuario loggeado
+  def about
+  end
+
 end

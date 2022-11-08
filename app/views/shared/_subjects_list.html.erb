@@ -1,34 +1,49 @@
 <div class="list-group">
   <% if current_user.admin_role? %>
-    <% @subjects.each do |subject| %>
-      <a href="#" class="list-group-item list-group-item-action gap-1" aria-current="true">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1" style="font-family: $letter2;"><%= subject.name %></h5>
-          <small><%= Subject.find(subject.id).created_at %></small>
+  <div class="d-flex w-100 justify-content-end mb-3">
+        <%= link_to "Agregar Asignatura", new_subject_path, class:"btn btn-flat"%>
+      </div>
+    <% @subjects.each_with_index do |subject, num| %>
+
+      <div class="card-product">
+        <div class="d-flex justify-content-center align-middle" style="background-image: url(https://cdn.pixabay.com/photo/2016/05/20/14/14/open-spiral-notebook-1405082_960_720.png); background-size:cover; height:120px; width: 185px;">
+              <h1 class="fs-1 mt-5"><%= num + 1 %></h1>
+            </div>
+            <div class="card-product-infos">
+              <div>
+                <h2><%= subject.name %></h2>
+                <p><small><%= subject.created_at %></small></p>
+                <p><small>Jornada: Única</small></p>
+              </div>
+              <div class="d-flex justify-content-end">
+                <%= link_to "Ver detalles", subject_path(subject), class:"btn btn-card" %>
+                <%= link_to "Editar", edit_subject_path(subject), class:"btn btn-card" %>
+                <%= link_to "Eliminar",  subject_path(subject), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                  class:"btn btn-card" %>
+              </div>
+            </div>
         </div>
-        <div class="d-flex w-100 justify-content-end bd-highlight mb-3">
-            <div class="me-auto p-0 bd-highlight"><small>Jornada: Única</small></div>
-            <a class="m-1 bd-highlight"><%= link_to "Ver", subject_path(subject), class:"btn btn-success p-x-15 p-y-0 " %></a>
-            <a class="m-1 bd-highlight"><%= link_to "Editar", edit_subject_path(subject), class:"btn btn-success p-x-15 p-y-0" %></a>
-            <a class="m-1 bd-highlight"><%= link_to "Eliminar", subject_path(subject), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"},
-                class:"btn btn-success p-x-15 p-y-0"
-            %></a>
-        </div>
-      </a>
     <% end %>
   <% elsif current_user.teacher_role? %>
-    <% @subjects.each do |subject| %>
-      <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-        <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1" style="font-family: $letter2;"><%= subject.name %></h5>
-          <small><%= Subject.find(subject.id).created_at %></small>
-        </div>
-        <div class="d-flex w-100 justify-content-end bd-highlight mb-3">
-          <div class="me-auto p-0 bd-highlight"><small>Jornada: Única</small></div>
-          <a class="m-1 bd-highlight"><%= link_to "Ver", subject_path(subject), class:"btn btn-success p-x-15 p-y-0" %></a>
-        </div>
-      </a>
-    <% end %>
+
+    <% @subjects.each_with_index do |subject, num| %>
+          <div class="card-product">
+            <div class="d-flex justify-content-center align-middle" style="background-image: url(https://cdn.pixabay.com/photo/2016/05/20/14/14/open-spiral-notebook-1405082_960_720.png); background-size:cover; height:120px; width: 185px;">
+              <h1 class="fs-1 mt-5"><%= num + 1 %></h1>
+            </div>
+
+              <div class="card-product-infos">
+              <div>
+                <h2><%= subject.name %></h2>
+                <p><small><%= subject.created_at %></small></p>
+                <p><small>Jornada: Única</small></p>
+              </div>
+                <div class="d-flex justify-content-end">
+                  <%= link_to "Ver detalles", subject_path(subject), class:"btn btn-card" %>
+                </div>
+              </div>
+          </div>
+        <% end %>
   <% else %>
     <div class="d-flex w-100 justify-content-between">
       <h3 class="mb-10">¡Acceso denegado!</h3>
