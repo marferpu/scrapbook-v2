@@ -1,9 +1,14 @@
 <% @posts.each do |post| %>
           <div class="col pt-3">
             <div class="card-index card h-100">
-              <h5 class="text-uppercase"><%= post.title %></h3>
-              <small class="text-muted">Hace <%= time_ago_in_words(post.created_at) %></small>
-              <%= link_to "Detalle", post, class: "btn btn-card" %>
+              <div class="card-header">
+                <h6 class="text-uppercase"><%= post.title %></h6>
+              </div>
+              <div class="card-body">
+              <small class="text-muted mt-4">Hace <%= time_ago_in_words(post.created_at) %></small>
+              <%= link_to "Detalle", post %>
+              </div>
             </div>
           </div>
         <% end %>
+
