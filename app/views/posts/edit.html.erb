@@ -1,16 +1,21 @@
-<div class="container">
+
+
+<div class="container col-12 justify-content: center pt-3">
 
   <div class="d-flex flex-row justify-content-between">
-          <h1 class="mt-10 mb-6 text-center">Modificar Post</h1>
+          <h1 >Modifica tu Post</h1>
           <%= link_to posts_path do %>
               <div class="">
-                <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border border-dark"></i>
+                <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border shadow"></i>
               </div>
           <% end %>
         </div>
-        <div>
+        <div class="my-4">
           <p>Estas a punto de modificar tu post <strong><%=  @post.title %></strong>
           del curso <strong><%= @post.grade.name %></strong> y asignatura <strong><%= @post.subject.name %></strong> </p><br>
+        </div>
+        <div class="container col-8 justify-content: center pt-3">
           <%= render "shared/formPost" %>
         </div>
+
 </div>

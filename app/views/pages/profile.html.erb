@@ -61,7 +61,8 @@
                     </div>
                   </div>
 
-                  <button type="button" class="w-100 btn btn-primary"><%= link_to "Editar Perfil", edit_user_registration_path, class: "text-center" %></button>
+                  <button type="button" class="btn btn-flat"><%= link_to "Editar Perfil", edit_user_registration_path,
+                                                                class: "text-center text-white text-decoration-none" %></button>
                 </div>
               </div>
             </ul>
@@ -102,7 +103,7 @@
                   </div>
                   <% end %>
                   <div class="d-flex align-items-end justify-content-end position-absolute bottom-0 end-0 ">
-                    <%= link_to "Ver más", subjects_path, class: "btn btn-primary text-center m-3", type: "button" %>
+                    <%= link_to "Ir a Asignaturas", subjects_path, class: "btn btn-card mb-4 me-4", type: "button" %>
                   </div>
                 </div>
               </div>
@@ -118,6 +119,9 @@
                     </div>
                   </div>
                   <% end %>
+                  <div class="d-flex align-items-end justify-content-end position-absolute bottom-0 end-0 ">
+                    <%= link_to "Ir a grados", grades_path, class: "btn btn-card mb-4 me-4", type: "button" %>
+                  </div>
                 </div>
               </div>
             </div>

@@ -1,15 +1,15 @@
 
-<div class="container col-4 justify-content: center pt-3">
+<div class="container col-12 justify-content: center pt-3">
 
   <div class="d-flex flex-row justify-content-between">
           <h1 >Escribir un Post</h1>
           <%= link_to posts_path do %>
               <div class="">
-                <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border border-dark"></i>
+                <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border shadow"></i>
               </div>
           <% end %>
         </div>
-        <div>
+        <div class="container col-8 justify-content: center pt-3">
           <p>Estas escribiendo un nuevo post</p>
           <%= render "shared/formPost" %>
         </div>

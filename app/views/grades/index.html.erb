@@ -17,7 +17,7 @@
             <a><%= link_to "Agregar nuevo grado", new_grade_path, class:"btn btn-flat" %></a>
           </div>
 
-      <% @grades.each_with_index do |grade, num| %>
+        <% @grades.each_with_index do |grade, num| %>
           <div class="card-product">
             <div class="d-flex justify-content-center align-middle" style="background-image: url(https://i.ibb.co/JHNZpJk/markus-winkler-af-W1hht0-NSs-unsplash.jpg); background-size:cover; height:120px; width: 120px;">
               <h1 class="fs-1 mt-5"><%= num + 1 %></h1>
