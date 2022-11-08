@@ -1,5 +1,5 @@
 <div class="card" style="padding:15px;max-width:300px;margin-top:1em">
   <h3 class="text-uppercase"><%= post.title %></h3>
-  <p class="text-secundary"><%= post.created_at %></p>
-  <%= link_to "Ver más", post %>
+  <p class="text-secundary"><%= post.created_at, format: "%d de %B %Y" %></p>
+  <%= link_to "Ver más", post, class: "btn btn-card" %>
 </div>

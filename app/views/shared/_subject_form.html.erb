@@ -1,20 +1,5 @@
 <div class="d-flex flex-column bd-highlight">
-  <div class="visually-hidden">
-  <%= simple_form_for(@subject) do |f| %>
-    <% @subject.errors.full_messages.each do |error| %>
-      <div>
-        <%= error %>
-      </div>
-     <% end %>
-    <div class="form-inputs hidden">
-      <%= f.input :name, label:"Asignatura:", placeholder:"nueva asignatura", class:"flex-fill" %>
-    </div>
-    <div class="form-actions hidden">
-      <a href=""><%= f.submit "Guardar", class: "btn btn-primary m-3" %></a>
-    </div>
-  <% end %>
-  </div>
-
+  
   <%= simple_form_for(@subject) do |f| %>
             <% @subject.errors.full_messages.each do |error| %>
               <div>
@@ -24,8 +9,8 @@
             <div class="form-inputs bd-highlight flex-fill">
               <%= f.input :name, label:"Asignatura:", placeholder:"nueva asignatura" %>
             </div>
-            <div class="form-actions d-flex align-self-center justify-content-center">
-              <%= f.submit "Guardar", class: "btn btn-primary m-3" %>
+            <div class="form-actions d-flex align-self-center justify-content-center mb-4">
+              <%= f.submit "Guardar", class: "btn btn-flat" %>
             </div>
           <% end %>
 </div>

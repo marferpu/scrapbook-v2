@@ -1,24 +1,18 @@
-<div class="background-pizarron" style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg); background-size: cover;">
-  <div class="container">
-    <div>
-      <div class="d-flex flex-row justify-content-between">
-        <h1>Listado de Materias</h1>
-        <%= link_to pizarron_path do %>
-          <div class="">
-            <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border border-dark"></i>
-          </div>
-        <% end %>
-      </div>
-      <div>
-        <p>Estas son las materias del currículo escolar</p>
-      </div>
-    </div>
-    <% if current_user.admin_role? %>
-      <div class="d-flex w-100 justify-content-end mb-3">
-        <%= link_to "Agregar Asignatura", new_subject_path, class:"btn btn-primary"%>
-      </div>
-    <% end %>
+<div class="container">
+  <div class="d-flex flex-row justify-content-between">
+    <h1 class="text-center">Listado de Asignaturas</h1>
+      <%= link_to pizarron_path do %>
+        <div class="">
+          <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border shadow"></i>
+        </div>
+      <% end %>
+  </div>
+  <div>
+    <p>Estas son las asignaturas del currículo escolar</p>
+  </div>
+
+  <div class="d-flex flex-column">
     <%= render "shared/subjects_list" %>
   </div>
-  <br><br>
+  <br>
 </div>
