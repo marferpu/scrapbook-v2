@@ -1,23 +1,18 @@
-<div class="background-pizarron" style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg); background-size: cover;">
-  <div class="container mt-10">
+<div class="card m-4">
+  <div class="container mt-4">
     <% if current_user.admin_role?%>
 
-    <div class="d-flex flex-row justify-content-between">
-      <h1>Nueva Asignatura</h1>
-      <%= link_to subjects_path do %>
-          <div class="">
-            <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border border-dark"></i>
-          </div>
-      <% end %>
-    </div>
-    <div>
-      <p>Escribe la materia que deseas incluir en el currículo escolarar</p>
-      <%= render 'shared/subject_form' %>
-    </div>
-
-
-      <div class="row g-1 d-flex align-items-end justify-content-end">
-        <a class="mb-5"><%= link_to "Regresar", subjects_path, class:"btn btn-link"%></a>
+      <div class="d-flex flex-row justify-content-between">
+        <h1>Nueva Asignatura</h1>
+        <%= link_to subjects_path do %>
+            <div class="">
+              <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border shadow"></i>
+            </div>
+        <% end %>
+      </div>
+      <div>
+        <p>Escribe la asignatura que deseas incluir en el currículo escolar</p>
+        <%= render 'shared/subject_form' %>
       </div>
     <% else %>
       <div class="row g-1 d-flex align-items-center justify-content-center">

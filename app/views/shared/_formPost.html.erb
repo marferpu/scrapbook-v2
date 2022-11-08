@@ -11,15 +11,14 @@
       </div>
       <%= f.input :date, html5: true, label:"Fecha del evento" %>
       <%# <%= f.input :description, as: :text, label:"Descripción" %>
-      <%= f.association :grade, collection: Grade.all %>
-      <%= f.association :subject, collection: Subject.all %>
+      <%= f.association :grade, collection: Grade.all, label:"Grado al que pertenece el post" %>
+      <%= f.association :subject, collection: Subject.all, label:"Asignatura del post" %>
       <%= f.label "Descripción" %>
       <%= f.rich_text_area :content %>
     </div>
 
     <div class="form-actions">
-      <%= f.submit "Guardar", class: "btn btn-primary m-3" %>
-      <a class="mb-5"><%= link_to "Regresar", posts_path, class:"btn btn-outline-secondary"%></a>
+      <%= f.submit "Guardar", class: "btn btn-flat" %>
     </div>
   <% end %>
 </div>
