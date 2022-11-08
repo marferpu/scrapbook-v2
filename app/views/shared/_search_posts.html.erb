@@ -1,10 +1,10 @@
-<div class="container pt-3">
+<div class="container col-12 pt-3" accept-charset="UTF-8" method="get">
     <%= form_with url: posts_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "form-control",
+        class: "form-control string required",
         placeholder: "Busca una publicación"
       %>
-      <%= submit_tag "Buscar", class: "btn-flat" %>
+      <%= submit_tag "Buscar", class: "btn btn-flat" %>
     <% end %>
-  </div>
+</div>
