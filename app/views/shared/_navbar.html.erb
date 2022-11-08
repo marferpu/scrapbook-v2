@@ -27,7 +27,13 @@
               <%#= render "devise/shared/links" %>
             </li>
             <li class="nav-item dropdown">
-              <%= image_tag "Logo1-Scrapbook.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% if current_user.photo.attached? %>
+                <img src="<%= cl_image_path current_user.photo.key, crop: :fill %>" alt="avatar"
+                  class="avatar dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <% else %>
+                <%= image_tag "Logo1-Scrapbook.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% end %>
+
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Mi Perfil", profile_path, class: "dropdown-item" %>
                 <%= link_to "Mis Cursos", subjects_path, class: "dropdown-item" %>
@@ -73,7 +79,6 @@
             <% end %>
         <% else %>
           <li class="nav-item">
-            <b>Sin sesión iniciada </b>
             <%= link_to "Login", new_user_session_path, class: "nav-light" %>
           </li>
         <% end %>

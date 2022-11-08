@@ -1,18 +1,66 @@
-<div class="background-pizarron visibility-hidden" style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg); background-size: cover;">
-  <div class="container mt-4">
-    <div>
-      <div class="d-flex flex-row justify-content-between">
-        <h1>Listado de Grados</h1>
-        <%= link_to icon("fa-solid fa-circle-left", pizarron_path,  class:"fs-1 icon-return rounded-circle border border-dark")%>
-      </div>
-      <p>Estos son los niveles escolares de la institución</p>
-    </div>
+<div class="container">
+  <div class="d-flex flex-row justify-content-between">
+    <h1 class="text-center">Listado de Grados</h1>
+      <%= link_to pizarron_path do %>
+        <div class="">
+          <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border shadow"></i>
+        </div>
+      <% end %>
+  </div>
+  <div>
+    <p>Estos son los niveles escolares de la institución</p>
+  </div>
+
     <% if current_user.admin_role? %>
-      <div class="d-flex w-100 justify-content-end mb-3">
-        <%= link_to "Agregar nuevo nivel", new_grade_path, class:"btn btn-primary"%>
+      <div class="d-flex flex-column">
+          <div class="align-self-end mb-4">
+            <a><%= link_to "Agregar nuevo grado", new_grade_path, class:"btn btn-flat" %></a>
+          </div>
+
+      <% @grades.each_with_index do |grade, num| %>
+          <div class="card-product">
+            <div class="d-flex justify-content-center align-middle" style="background-image: url(https://i.ibb.co/JHNZpJk/markus-winkler-af-W1hht0-NSs-unsplash.jpg); background-size:cover; height:120px; width: 120px;">
+              <h1 class="fs-1 mt-5"><%= num + 1 %></h1>
+            </div>
+            <div class="card-product-infos">
+              <div>
+                <h2><%= grade.name %></h2>
+                <p><small><%= grade.created_at %></small></p>
+                <p><small>Jornada: Única</small></p>
+              </div>
+              <div class="d-flex justify-content-end">
+                <%= link_to "Ver detalles", grade_path(grade), class:"btn btn-card" %>
+                <%= link_to "Editar", edit_grade_path(grade), class:"btn btn-card" %>
+                <%= link_to "Eliminar", grade_path(grade), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                  class:"btn btn-card" %>
+              </div>
+            </div>
+        </div>
+      <% end %>
+    <% elsif current_user.teacher_role? %>
+        <% @grades.each_with_index do |grade, num| %>
+          <div class="card-product">
+            <div class="d-flex justify-content-center align-middle" style="background-image: url(https://i.ibb.co/JHNZpJk/markus-winkler-af-W1hht0-NSs-unsplash.jpg); background-size:cover; height:120px; width: 120px;">
+              <h1 class="fs-1 mt-5"><%= num + 1 %></h1>
+            </div>
+
+              <div class="card-product-infos">
+                <div>
+                  <h2><%= grade.name %></h2>
+                  <p><small><%= grade.created_at %></small></p>
+                  <p><small>Jornada: Única</small></p>
+                </div>
+                <div class="d-flex justify-content-end">
+                  <%= link_to "Ver detalles", grade_path(grade), class:"btn btn-card" %>
+                </div>
+              </div>
+          </div>
+
+        <% end %>
+    <% else %>
+      <div class="d-flex w-100 justify-content-between">
+        <h3 class="mb-10">¡Acceso denegado!</h3>
+        <%= link_to "Aceptar", root_path, class:"btn btn-outline-danger btn-sm" %>
       </div>
     <% end %>
-    <%= render "shared/grades_list" %>
-  </div>
-  <br><br>
 </div>

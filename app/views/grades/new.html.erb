@@ -1,6 +1,15 @@
 <div class="container">
-  <h1 class="text-center">GRADOS</h1>
-  <h3 class="text-center">Agregar un nuevo grado</h3>
+  <div class="d-flex flex-row justify-content-between">
+    <h1 class="text-center">GRADOS ESCOLARES</h1>
+      <%= link_to grades_path do %>
+        <div class="">
+          <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border shadow"></i>
+        </div>
+      <% end %>
+  </div>
+  <div>
+    <p>Estas a punto de incluir un nuevo grado al currículo escolar</p>
+  </div>
 
   <div class="container card" style="width: 30rem;">
     <%= simple_form_for(@grade) do |f| %>
@@ -9,8 +18,7 @@
     </div>
     <div class="form-actions">
       <ul class="list-group">
-        <li class="list-group-item text-center"><%= f.submit "Guardar", class: "btn btn-primary m-3" %></li>
-        <li class="list-group-item text-center"><a class="mb-5"><%= link_to "Regresar", grades_path, class:"btn btn-link"%></a></li>
+        <li class="list-group-item text-center"><%= f.submit "Guardar", class: "btn btn-flat" %></li>
       </ul>
     </div>
     <% end %>

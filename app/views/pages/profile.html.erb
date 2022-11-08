@@ -1,52 +1,41 @@
-<section style="background-color: #eee">
-  <div class="container py-5 fondo">
+
+  <div class="container py-5">
     <div class="row">
-      <div class="col">
-        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4">
-          <ol class="breadcrumb mb-0">
-            <li style="margin-right: 20px"><h1>Bienvenido a tu perfil<h1></li>
-            <li style="margin-right: 20px"><h1><%= current_user.first_name %></h1></li>
-            <li class="breadcrumb-item active" aria-current="page"><%#= current_user.first_name %> <%#= current_user.last_name %></li>
-          </ol>
+      <div class="col col-12 d-flex">
+        <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4 flex-fill text-center">
+          <h1> Perfil de <%= current_user.first_name %></h1>
         </nav>
       </div>
     </div>
-
     <div class="row">
-      <div class="col-lg-4">
-        <div class="card mb-4 border">
-          <div class="card-body text-center">
-          <% if current_user.photo.attached? %>
-            <img src="<%= cl_image_path current_user.photo.key, height: 300, crop: :fill %>" alt="avatar"
-              class="rounded-circle img-fluid" style="height: 60px; width: 60px; border-radius: 50%; object-fit: cover;">
-          <% else %>
-            <img src="https://img.freepik.com/fotos-premium/profesor-explicando-reaccion-quimica-estudiantes-cuando-nino-escuela-mirando-placa-petri-traves-microscopio_274689-15217.jpg?w=826" alt="avatar"
-              class="rounded-circle img-fluid" style="width: 150px; height: 150px">
-          <% end %>
-
-            <h5 class="my-3"><%#= current_user.first_name %> <%#= current_user.last_name %></h5>
-            <p class="text-center"><%#= link_to "Editar perfil", edit_user_registration_path, class: "text-center" %></p>
-            <p class="text-center"><%#= link_to "Eliminar perfil", cancel_user_registration_path %></p>
+      <div class="col-lg-4 d-flex flex-column justify-content-center">
+        <div class="card mb-4 border-sb" >
+          <div class="card-body d-flex justify-content-center">
+            <% if current_user.photo.attached? %>
+              <img src="<%= cl_image_path current_user.photo.key, height: 300, crop: :fill %>" alt="avatar"
+                class="rounded-circle img-fluid mt-3" style="height: 250px; width: 250px; border-radius: 50%; object-fit: cover;">
+            <% else %>
+              <img src="https://img.freepik.com/fotos-premium/profesor-explicando-reaccion-quimica-estudiantes-cuando-nino-escuela-mirando-placa-petri-traves-microscopio_274689-15217.jpg?w=826" alt="avatar"
+                class="rounded-circle img-fluid" style="width: 250px; height: 250px">
+            <% end %>
+          </div>
             <div class="d-flex justify-content-center mb-5">
               <a type="button" class="btn btn-link ms-1">Editar Foto</a>
             </div>
-          </div>
+
         </div>
         <div class="card mb-4 mb-lg-0">
           <div class="card-body p-0">
             <ul class="list-group list-group-flush rounded-3">
               <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm">
-                  <div class="card-header py-3">
+                <div class="card mb-4 rounded-3 shadow-sm px-2">
+                  <div class="card-header py-3 mb-3">
                     <h4 class="my-0 fw-normal">Datos Personales</h4>
                   </div>
-                <div class="card-body">
-                  <h1 class="card-title pricing-card-title"> <small class="text-muted fw-light"></small></h1>
-                  <ul class="list-unstyled mt-3 mb-4">
-                  <div class="card-body">
+                  <div class="px-3 mb-4">
                     <div class="row">
                       <div class="col-sm-6">
-                        <p class="mb-0">Nombre Completo:</p>
+                        <p class="mb-0"><strong>Nombre Completo:</strong></p>
                       </div>
                     <div class="col-sm-6">
                       <p class="text-muted mb-0 p-0"><%= current_user.first_name %> <%= current_user.last_name %></p>
@@ -55,7 +44,7 @@
                     <hr>
                   <div class="row">
                     <div class="col-sm-6">
-                      <p class="mb-0">Email:</p>
+                      <p class="mb-0"><strong>Email:</strong></p>
                     </div>
                     <div class="col-sm-6">
                       <p class="text-muted mb-0"><%= current_user.email %></p>
@@ -64,15 +53,15 @@
                   <hr>
                     <div class="row">
                       <div class="col-sm-6">
-                        <p class="mb-0">Role:</p>
+                        <p class="mb-0"><strong>Rol:</strong></p>
                       </div>
                       <div class="col-sm-6">
                         <p class="text-muted mb-0"><%= current_user.role %></p>
                       </div>
                     </div>
+                  </div>
 
-                  </ul>
-                  <button type="button" class="w-100 btn btn-lg btn-outline-primary">Editar Datos</button>
+                  <button type="button" class="w-100 btn btn-primary"><%= link_to "Editar Perfil", edit_user_registration_path, class: "text-center" %></button>
                 </div>
               </div>
             </ul>
@@ -80,16 +69,20 @@
         </div>
       </div>
       <div class="col-lg-8">
+        <div class="col-sm-12 just-space">
+        </div>
         <div class="card mb-4 mr-4">
           <div class="card-body">
             <div class="row">
-              <div class="col-sm-6">
-                <p class="mb-2">Datos de la Institución: San Juán de la Cruz</p>
+              <div class="col-sm-12">
+                <p class="mb-2"><strong>Datos de la Institución:</strong> INSTITUCIÓN EDUCATIVA POLIEDUCATIVA</p>
               </div>
               <div class="col-sm-12">
                 <div class="card">
-                  <p class="mt-2 mb-1" style="font-size: 1rem; margin-left: 20px">Dirección: Calle Sur 30 # 83-90 </p>
-                  <p class="mt-2 mb-1" style="font-size: 1rem; margin-left: 20px">Ciudad: Medellín - Colombia </p>
+                  <br>
+                  <p class="mt-2 mb-1" style="font-size: 1rem; margin-left: 20px"><strong>Dirección:</strong> Calle Sur 30 # 83-90 </p>
+                  <p class="mt-2 mb-1" style="font-size: 1rem; margin-left: 20px"><strong>Ciudad:</strong> Medellín - Colombia </p>
+                  <br>
                 </div>
               </div>
             </div>
@@ -97,10 +90,10 @@
         </div>
         <div class="">
           <div class="row d-flex w-100">
-            <div class="col-md-6">
+            <div class="col-md-6 ">
               <div class="card mb-4 text-center">
-                <div class="card-body">
-                  <p class="mb-4"><span class="text-primary font-italic me-1">Mis Cursos</span></p>
+                <div class="card-body height-profile">
+                  <p class="mb-4"><span class="text-primary me-1"><strong>Mis Asignaturas</strong></span></p>
                     <%current_user.subjects.each do |subject| %>
                   <div class="card">
                     <div class="card-header mb-2">
@@ -108,13 +101,16 @@
                     </div>
                   </div>
                   <% end %>
+                  <div class="d-flex align-items-end justify-content-end position-absolute bottom-0 end-0 ">
+                    <%= link_to "Ver más", subjects_path, class: "btn btn-primary text-center m-3", type: "button" %>
+                  </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="card mb-4 text-center">
-                <div class="card-body ">
-                  <p class="mb-4"><span class="text-primary font-italic me-1">Aulas</span></p>
+            <div class="col-md-6 ">
+              <div class="card mb-4 text-center ">
+                <div class="card-body height-profile">
+                  <p class="mb-4"><span class="text-primary font-italic me-1"><strong>Aulas de clase</strong></span></p>
                     <%current_user.grades.each do |grade| %>
                   <div class="card">
                     <div class="card-header mb-2">
@@ -130,4 +126,3 @@
       </div>
     </div>
   </div>
-</section>
