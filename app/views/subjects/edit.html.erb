@@ -1,12 +1,18 @@
 <div class="background-pizarron" style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg); background-size: cover;">
   <div class="container mt-10">
     <% if current_user.admin_role?%>
-    <div class="">
+    <div class="d-flex flex-row justify-content-between">
       <h1>Editar Asignatura</h1>
-      <p>Modifica la información de esta asignatura</p>
+      <%= link_to subjects_path do %>
+          <div class="">
+            <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle"></i>
+          </div>
+      <% end %>
     </div>
+    <div>
+      <p>Modifica la información de esta asignatura</p>
       <%= render 'shared/subject_form' %>
-
+    </div>
       <div class="row g-1 d-flex align-items-end justify-content-end">
         <a class="mb-5"><%= link_to "Regresar", subjects_path, class:"btn btn-link"%></a>
       </div>

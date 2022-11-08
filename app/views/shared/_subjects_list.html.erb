@@ -20,8 +20,8 @@
     <% @subjects.each do |subject| %>
       <a href="#" class="list-group-item list-group-item-action" aria-current="true">
         <div class="d-flex w-100 justify-content-between">
-          <h5 class="mb-1" style="font-family: $letter2;"><%= Subject.find(subject).name %></h5>
-          <small><%= Subject.find(subject).created_at %></small>
+          <h5 class="mb-1" style="font-family: $letter2;"><%= subject.name %></h5>
+          <small><%= Subject.find(subject.id).created_at %></small>
         </div>
         <div class="d-flex w-100 justify-content-end bd-highlight mb-3">
           <div class="me-auto p-0 bd-highlight"><small>Jornada: Única</small></div>

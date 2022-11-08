@@ -1,67 +1,82 @@
 <div class="line-white"><hr></div>
-<div class="background-pizarron" style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg)">
+<!--<div class="background-pizarron" style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg)">
+-->
   <div class="title mt-10">
     <h1 class="fs-1 text-center">Pizarrón Informativo</h1>
   </div>
   <div class="cards">
 
-    <div class="card-category" style="background-image: url(https://i.ibb.co/488gcdq/piz2.png)">
-      <div class="transbox col" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
-        <div class="d-grid p-0">
-          <span class="d-flex justify-content-evenly"><%= link_to icon("fa-solid fa-circle-info", grades_path,  class:"icon")%></span>
-          <a class="d-flex justify-content-evenly">
-            <%= link_to "Mi Cartelera", posts_path, class: "btn btn-outline text-light" %>
-          </a>
+      <div class="card-category" style="background-image: url(https://i.ibb.co/488gcdq/piz2.png)">
+      <%= link_to posts_path do %>
+        <div class="transbox col" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
+          <div class="d-grid p-0">
+            <span class="d-flex justify-content-evenly icon-p"><i class="fa-solid fa-circle-info fs-1"></i></span>
+            <a class="d-flex justify-content-evenly">
+              <%= link_to "Mi Cartelera", posts_path, class: "btn btn-outline text-light" %>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
+
 
     <div class="card-category" style="background-image: url(https://i.ibb.co/488gcdq/piz2.png)">
+    <%= link_to grades_path do %>
       <div class="transbox col" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
         <div class="d-grid p-0">
-          <span class="d-flex justify-content-evenly"><%= link_to icon("fa-solid fa-users-viewfinder", grades_path,  class:"icon")%></span>
+          <span class="d-flex justify-content-evenly icon-p"><i class="fa-solid fa-users-viewfinder fs-1"></i></span>
           <a class="d-flex justify-content-evenly"><%= link_to "Aulas de Clase", grades_path, class: "btn btn-outline text-light" %></a>
         </div>
       </div>
     </div>
+  <% end %>
+
 
     <div class="card-category" style="background-image: url(https://i.ibb.co/488gcdq/piz2.png)">
+    <%= link_to subjects_path do %>
       <div class="transbox col" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
         <div class="d-grid p-0">
-          <span class="d-flex justify-content-evenly"><%= link_to icon("fa-solid fa-paperclip", subjects_path,  class:"icon")%></span>
+          <span class="d-flex justify-content-evenly icon-p"><i class="fa-solid fa-paperclip fs-1"></i></span>
           <a class="d-flex justify-content-evenly">
             <%= link_to "Mis Cursos", subjects_path, class: "btn btn-outline text-light" %>
           </a></div>
       </div>
     </div>
+  <% end %>
 
+  <%= link_to grades_path do %>
     <div class="card-category visually-hidden" style="background-image: url(https://i.ibb.co/488gcdq/piz2.png)">
       <div class="transbox col" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
         <div class="d-grid p-0">
-          <span class="d-flex justify-content-evenly"><%= link_to icon("fa-solid fa-book", grades_path,  class:"icon")%></span>
+          <span class="d-flex justify-content-evenly icon-p"><i class="fa-solid fa-book fs-1"></i></span>
           <a class="d-flex justify-content-evenly">
             <%= link_to "Calificaciones", subjects_path, class: "btn btn-outline" %>
           </a></div>
       </div>
     </div>
+  <% end %>
 
+  <%= link_to grades_path do %>
     <div class="card-category visually-hidden" style="background-image: url(https://i.ibb.co/488gcdq/piz2.png)">
       <div class="transbox col" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
         <div class="d-grid p-0">
-          <span class="d-flex justify-content-evenly"><%= link_to icon("fa-regular fa-calendar-days", grades_path,  class:"icon")%></span>
+          <span class="d-flex justify-content-evenly icon-p"><i class="fa-regular fa-calendar-days fs-1"></i></span>
           <a class="d-flex justify-content-evenly">
             <%= link_to "Citaciones", subjects_path, class: "btn btn-outline" %>
           </a></div>
       </div>
     </div>
+  <% end %>
 
+  <%= link_to grades_path do %>
     <div class="card-category visually-hidden" style="background-image: url(https://i.ibb.co/488gcdq/piz2.png)">
       <div class="transbox col" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url()">
         <div class="d-grid p-0">
-          <span class="d-flex justify-content-evenly"><%= link_to icon("fa-regular fa-comment", grades_path,  class:"icon")%></span>
+          <span class="d-flex justify-content-evenly icon-p"><i class="fa-regular fa-comment fs-1"></i></span>
           <a class="d-flex justify-content-evenly">
             <%= link_to "Chat", subjects_path, class: "btn btn-outline" %>
           </a></div>
     </div>
   </div>
 </div>
+  <% end %>

@@ -1,6 +1,16 @@
 <div class="container">
-  <h1 class="mt-10 mb-6 text-center">Modificar Post</h1>
-  <%# <%= current_user.id %>
-  <%# <%= current_user.role %>
-  <%= render "shared/formPost" %>
+
+  <div class="d-flex flex-row justify-content-between">
+          <h1 class="mt-10 mb-6 text-center">Modificar Post</h1>
+          <%= link_to posts_path do %>
+              <div class="">
+                <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border border-dark"></i>
+              </div>
+          <% end %>
+        </div>
+        <div>
+          <p>Estas a punto de modificar tu post <strong><%=  @post.title %></strong>
+          del curso <strong><%= @post.grade.name %></strong> y asignatura <strong><%= @post.subject.name %></strong> </p><br>
+          <%= render "shared/formPost" %>
+        </div>
 </div>

@@ -1,13 +1,24 @@
 <%# Banner %>
-<div class="banner" style="background-image: url(https://i.pinimg.com/originals/ed/b6/ac/edb6acb94c1eed282be36b11e297a5be.jpg); opacity: 1.6;">
-  <div class="container">
+<div class="banner" style="background-image: url(https://i.ibb.co/JHNZpJk/markus-winkler-af-W1hht0-NSs-unsplash.jpg); opacity: 1.6;">
+  <div class="container me-3 mb-3 d-flex justify-content-evenly">
+    <h1 class="fs-1 me-3 mt-4" style="color: black;">Scrapbook</h1>
+  </div>
+  <div class="container max-height-banner mt-2 d-flex justify-content-end">
     <% if user_signed_in?  %>
-      <h1 class="fs-1 mb-2 mt-4" style="color: black;">Scrapbook</h1>
+      <br>
       <p class="fs-3" style="color: black;"><span data-controller="typed-js"></span></p>
     <% else %>
-      <h1 class="fs-1 mb-2 mt-4" style="color: $white-sb;">Scrapbook</h1>
-      <p class="fs-3" style="color: $white-sb;"><span data-controller="typed-js"></span></p>
-      <a ><%= link_to "Más Infotmción", new_user_session_path, class:"btn btn-primary mt-6"%></a>
+      <br>
+      <div class="mb-4">
+          <p class="fs-3"><span data-controller="typed-js"></span></p>
+      </div>
+  </div>
+      <br>
+      <div class="container me-3 d-flex justify-content-end">
+          <div class="">
+            <a ><%= link_to "Más Informción", new_user_session_path, class:"btn btn-primary"%></a>
+          </div>
+      </div>
     <% end %>
   </div>
 </div>

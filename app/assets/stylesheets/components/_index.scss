@@ -6,3 +6,17 @@
 @import "banner";
 @import "button";
 @import "card";
+@import "footer";
+@import "card_product";
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+#wrapper {
+  min-height: 100%;
+  position: relative;
+}

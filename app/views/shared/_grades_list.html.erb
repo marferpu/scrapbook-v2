@@ -1,0 +1,40 @@
+
+  <% if current_user.admin_role? %>
+    <% @grades.each do |grade| %>
+      <div class="card-product">
+        <img src="https://i.ibb.co/JHNZpJk/markus-winkler-af-W1hht0-NSs-unsplash.jpg"/>
+                  <div class="card-product-infos">
+                    <div>
+                      <h2><%= grade.name %></h2>
+                      <p><small><%= grade.created_at %></small></p>
+                      <p><small>Jornada: Única</small></p>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <%= link_to "Ver detalles", grade_path(grade), class:"btn btn-card" %>
+                        <%= link_to "Editar", edit_grade_path(grade), class:"btn btn-card" %>
+                        <%= link_to "Eliminar", grade_path(grade), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                         class:"btn btn-card" %>
+                    </div>
+                  </div>
+            </div>
+          <% end %>
+  <% elsif current_user.teacher_role? %>
+    <% @grades.each do |grade| %>
+      <div class="card-product">
+        <img src="https://i.ibb.co/JHNZpJk/markus-winkler-af-W1hht0-NSs-unsplash.jpg"/>
+                  <div class="card-product-infos">
+                    <div>
+                      <h2><%= grade.name %></h2>
+                      <p><small><%= grade.created_at %></small></p>
+                      <p><small>Jornada: Única</small></p>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <%= link_to "Ver detalles", grade_path(grade), class:"btn btn-card" %>
+        </div>
+    <% end %>
+  <% else %>
+    <div class="d-flex w-100 justify-content-between">
+      <h3 class="mb-10">¡Acceso denegado!</h3>
+      <%= link_to "Aceptar", root_path, class:"btn btn-outline-danger btn-sm" %>
+    </div>
+  <% end %>

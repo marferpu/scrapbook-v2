@@ -1,22 +1,87 @@
-<div style="background-image: url(https://cdn.pixabay.com/photo/2019/06/10/11/35/learning-4264032_960_720.jpg)">
-  <div class='container center-block'>
-    <h1 class='text-center'><%= @grade.name %></h1>
-    <%= link_to "Regresar", grades_path%>
-    <div class="center-block">
-      <h2 class='text-center'>Publicaciones</h2>
-    </div>
 
-    <div class="d-flex">
-      <%#las siguientes opciones son solo para admin%>
-      <% if current_user.present? && (current_user.role == "admin") %>
-        <a><%= link_to "Agregar un grado", new_grade_path(@grade) %></a>
-        <a><%= link_to "Editar grado", edit_grade_path %></a>
-        <a><%= link_to "Borrar grado", grade_path(@grade), data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"} %></a>
-      <% else %>
-        <div class="d-flex-inline">
-          <a class="mb-5"><%= link_to "Regresar", grades_path, class:"btn btn-flat"%></a>
+  <div class='container center-block'>
+    <div class="d-flex flex-row justify-content-between">
+      <h1><%= @grade.name %></h1>
+      <%= link_to grades_path do %>
+        <div class="">
+          <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle border shadow"></i>
         </div>
       <% end %>
     </div>
+      <div>
+        <p>Estas viendo las Publicaciones realizadas para este grado</p>
+      </div>
+
+      <% if current_user.admin_role? %>
+        <div class="d-flex flex-column">
+          <div class="align-self-end mb-4">
+            <a><%= link_to "Agregar un grado", new_grade_path(@grade), class:"btn btn-flat" %></a>
+          </div>
+
+          <% @grade.posts.each do |post| %>
+            <div class="card-product">
+              <% if post.type_activity == "lúdico" %>
+                <img src="https://i.ibb.co/FBVbbbP/tamanna-rumee-Ft-JEat-S7-Q4-unsplash.jpg"/>
+              <% else %>
+                <img src="https://i.ibb.co/5MTwfdw/tamanna-rumee-CIfgsywk-4-unsplash.jpg"/>
+              <% end %>
+                  <div class="card-product-infos">
+                    <div>
+                      <h2><%= post.title %></h2>
+                      <p><strong>Asignatura: </strong><%= post.subject.name %></p>
+                      <p><strong>Fecha de Publicación: </strong><span><%= post.created_at %></span></p>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <%= link_to "Ver detalles", post_path(post), class:"btn btn-card" %>
+                    </div>
+                  </div>
+            </div>
+          <% end %>
+          <div class="flex-row justify-content-end">
+            <a><%= link_to "Agregar un grado", new_grade_path(@grade), class:"btn btn-flat" %></a>
+            <a><%= link_to "Editar grado", edit_grade_path(@grade), class:"btn btn-flat" %></a>
+            <a><%= link_to "Eliminar grado", grade_path(@grade), class:"btn btn-flat", data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"} %></a>
+          </div>
+
+      <% elsif current_user.teacher_role? %>
+
+        <div class="d-flex flex-column">
+          <div class="align-self-end mb-4">
+            <a><%= link_to "Crear un Post", new_post_path(@post), class:"btn btn-flat" %></a>
+          </div>
+
+           <% if @grade.posts.blank? %><br>
+            <p><strong>¡Aún no tienes Posts para este grado!</strong> <br> Crea tu primer Post </p>
+          <% else %>
+            <% @grade.posts.each do |post| %>
+              <div class="card-product">
+              <% if post.type_activity == "lúdico" %>
+                <img src="https://i.ibb.co/FBVbbbP/tamanna-rumee-Ft-JEat-S7-Q4-unsplash.jpg"/>
+              <% else %>
+                <img src="https://i.ibb.co/5MTwfdw/tamanna-rumee-CIfgsywk-4-unsplash.jpg"/>
+              <% end %>
+                    <div class="card-product-infos">
+                      <div>
+                        <h2><%= post.title %></h2>
+                        <p><strong>Asignatura: </strong><%= post.subject.name %></p>
+                        <p><strong>Fecha de Publicación: </strong><span><%= post.created_at %></span></p>
+                      </div>
+                      <div class="d-flex justify-content-end">
+                        <% if post.user_id == current_user.id %>
+                          <%= link_to "Ver detalles", post_path(post), class:"btn btn-card" %>
+                          <%= link_to "Editar", edit_post_path(post), class:"btn btn-card" %>
+                          <%= link_to "Eliminar", post_path(post), class:"btn btn-card", data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"} %></a>
+                        <% end %>
+                      </div>
+                    </div>
+              </div>
+            <% end %>
+          <% end %>
+      <% else %>
+        <div class="d-flex w-100 justify-content-between">
+          <h3 class="mb-10">¡Acceso denegado!</h3>
+          <%= link_to "Aceptar", root_path, class:"btn btn-outline-danger btn-sm" %>
+        </div>
+      <% end %>
+    
   </div>
-</div>

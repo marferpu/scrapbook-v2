@@ -223,27 +223,27 @@ post1.save
 
 post2 = Post.new(title: "Museo El Castillo", description: "El lunes 24 de octubre tendremos la salida pedagógica al museo el castillo ubicado en el poblado. Saldremos del colegio a las 9 AM y regresaremos a la 1 PM.
   Recuerden que iremos con uniforme de educación física.", type_activity: "ludico", user_id: profe11.id, grade_id: grade3.id, subject_id: sub4.id)
-documents2 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQYFaQj3EfSdByeXDRq-zXwzjU1LElvBZQjA&usqp=CU")
+documents2 = URI.open("https://pbs.twimg.com/profile_images/1437894208006901763/2w_2cYNA_400x400.jpg")
 post2.documents.attach(io: documents2, filename: "documents2.png", content_type: "image/png")
 post2.save
 
 post3 = Post.new(title: "Planetario", description: "Este miércoles 19 de octubre realizaremos la visita al planetario de medellín. El bus nos recogerá en el colegio a las 8
   AM (estar puntuales). Los estudiantes deben llevar lonchera suficiente, ya que regresaremos a las 12 M al colegio.
   Iremos con uniforme de educación física", type_activity: "ludico", user_id: profe17.id, grade_id: grade2.id, subject_id: sub2.id)
-documents3 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT20qmcnPRhZ8IYBnLJYCYdOqckwLFspDrIhg&usqp=CAU")
+documents3 = URI.open("https://cr00.epimg.net/radio/imagenes/2019/07/02/medellin/1562018671_803189_1562019244_noticia_normal.jpg")
 post3.documents.attach(io: documents3, filename: "documents3.png", content_type: "image/png")
 post3.save
 
 post4 = Post.new(title: "Parque Explora", description: "Este miércoles 26 de octubre realizaremos la visita al parque explora de medellín. El bus nos recogerá en el colegio a las 8
   AM (estar puntuales). Los estudiantes deben llevar lonchera suficiente, ya que regresaremos a las 12 M al colegio.
   Iremos con uniforme de educación física", type_activity: "ludico", user_id: profe16.id, grade_id: grade6.id, subject_id: sub4.id)
-documents4 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStOClOWfdhVxORKMqAvU-WWC7B6NZwXS7Wbw&usqp=CAU")
+documents4 = URI.open("https://viajaporcolombia.com/images/parqueexplora.jpg")
 post4.documents.attach(io: documents4, filename: "documents4.png", content_type: "image/png")
 post4.save
 
 post5 = Post.new(title: "Jardín botánico", description: "El martes 07 de noviembre tendremos la salida pedagógica al jardín botánico de Medellín. Saldremos del colegio a las 9 AM y regresaremos a la 1 PM.
   Recuerden que iremos con uniforme de educación física.", type_activity: "ludico", user_id: profe15.id, grade_id: grade1.id, subject_id: sub3.id)
-documents5 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS30SpMsoxlumiAYPMLtvkQqlwOT-91Ec2x4A&usqp=CAU")
+documents5 = URI.open("https://arquitecturaviva.com/assets/uploads/obras/44806/av_imagen.jpeg")
 post5.documents.attach(io: documents5, filename: "documents5.png", content_type: "image/png")
 post5.save
 
