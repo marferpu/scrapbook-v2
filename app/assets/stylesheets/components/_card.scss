@@ -44,6 +44,18 @@
 
 }
 
+.card-header {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-body-post{
+  height: 100px;
+  width: 100px;
+}
+
 div.transbox {
   background-color: $purple-sb;
   background-size: cover;
