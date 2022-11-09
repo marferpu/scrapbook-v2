@@ -243,7 +243,7 @@ post4.save
 
 post5 = Post.new(title: "Jardín botánico", description: "El martes 07 de noviembre tendremos la salida pedagógica al jardín botánico de Medellín. Saldremos del colegio a las 9 AM y regresaremos a la 1 PM.
   Recuerden que iremos con uniforme de educación física.", type_activity: "Lúdico", user_id: profe15.id, grade_id: grade1.id, subject_id: sub3.id)
-documents5 = URI.open("https://arquitecturaviva.com/assets/uploads/obras/44806/av_imagen.jpeg")
+documents5 = URI.open("https://vivirenelpoblado.com/wp-content/uploads/2020/06/Jard%C3%ADn-Bot%C3%A1nico-Medell%C3%ADn.jpg")
 post5.documents.attach(io: documents5, filename: "documents5.png", content_type: "image/png")
 post5.save
 
