@@ -29,7 +29,7 @@
                     <div>
                       <h2><%= post.title %></h2>
                       <p><strong>Asignatura: </strong><%= post.subject.name %></p>
-                      <p><strong>Fecha de Publicación: </strong><span><%= post.created_at %></span></p>
+                      <p><strong>Fecha de Publicación: </strong><span><%= localize post.created_at, format: "%d %B %Y" %></span></p>
                     </div>
                     <div class="d-flex justify-content-end">
                         <%= link_to "Ver detalles", post_path(post), class:"btn btn-card" %>
@@ -64,7 +64,7 @@
                       <div>
                         <h2><%= post.title %></h2>
                         <p><strong>Asignatura: </strong><%= post.subject.name %></p>
-                        <p><strong>Fecha de Publicación: </strong><span><%= post.created_at %></span></p>
+                        <p><strong>Fecha de Publicación: </strong><span><%= localize post.created_at, format: "%d %B %Y" %></span></p>
                       </div>
                       <div class="d-flex justify-content-end">
                         <% if post.user_id == current_user.id %>
