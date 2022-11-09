@@ -179,7 +179,7 @@ admin23.save
 
 # subjects
 
-sub1 = Subject.new(name: "Matemáticas")
+sub1 = Subject.new(name: "Matematicas")
 sub1.save
 sub2 = Subject.new(name: "Ciencias naturales")
 sub2.save
