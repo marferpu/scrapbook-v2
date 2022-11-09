@@ -6,7 +6,9 @@
   padding: 4% 10% 10% 10%;
 }
 .card-index {
-  width: 100%;
+  display: wrap;
+  width: 200px;
+  height: 200px;
   padding: 10px;
   max-height: 12rem;
   margin-top: 1em;
@@ -27,7 +29,8 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 300px;
+  width: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,6 +45,17 @@
   box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
   transform: translateY(-3%);
 
+}
+
+.card-header {
+  max-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-body-post{
+  height: 40px;
 }
 
 div.transbox {
