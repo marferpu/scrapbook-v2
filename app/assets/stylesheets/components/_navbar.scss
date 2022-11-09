@@ -1,14 +1,14 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: #F5F5F5;
-  background-color: $blue-sb;
+  background-color: $gray2-sb;
   transition: 0.5s background-color ease;
   box-shadow: rgba(0, 0, 0, 0.2);
-  color: #F5F5F5;
+  color: $purple-sb;
 }
 
 .navbar-lewagon-white {
-  background-color: $rose-sb;
+  background-color: $yellow-sb;
 }
 
 .navbar-lewagon .navbar-collapse {
