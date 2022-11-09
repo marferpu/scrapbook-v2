@@ -179,7 +179,7 @@ admin23.save
 
 # subjects
 
-sub1 = Subject.new(name: "Matematicas")
+sub1 = Subject.new(name: "Matemáticas")
 sub1.save
 sub2 = Subject.new(name: "Ciencias naturales")
 sub2.save
@@ -187,6 +187,18 @@ sub3 = Subject.new(name: "Sociales")
 sub3.save
 sub4 = Subject.new(name: "Consejería")
 sub4.save
+sub5 = Subject.new(name: "Lengua castellana")
+sub5.save
+sub6 = Subject.new(name: "Inglés")
+sub6.save
+sub7 = Subject.new(name: "Artística")
+sub7.save
+sub8 = Subject.new(name: "Educación física")
+sub8.save
+sub9 = Subject.new(name: "Ética y valores")
+sub9.save
+sub10 = Subject.new(name: "Filosofía")
+sub10.save
 
 # grades
 grade11 = Grade.new(name: "Primero")
