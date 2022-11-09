@@ -179,7 +179,7 @@ admin23.save
 
 # subjects
 
-sub1 = Subject.new(name: "Matematicas")
+sub1 = Subject.new(name: "Matemáticas")
 sub1.save
 sub2 = Subject.new(name: "Ciencias naturales")
 sub2.save
@@ -216,64 +216,64 @@ grade7.save
 # posts
 
 post1 = Post.new(title: "Aeroparque Juan Pablo II", description: "Este viernes 21 de octubre nos iremos de excursión al aeroparque Juan pablo II. Deben estar puntuales en el colegio a las 8 AM.
-  Recuerden traer vestido de baño y alimentación.", type_activity: "ludico", user_id: profe12.id, grade_id: grade4.id, subject_id: sub2.id)
+  Recuerden traer vestido de baño y alimentación.", type_activity: "Lúdico", user_id: profe12.id, grade_id: grade4.id, subject_id: sub2.id)
 documents1 = URI.open("http://colombiamaspositiva.com/wp-content/uploads/2021/03/jp2.jpg")
 post1.documents.attach(io: documents1, filename: "documents1.png", content_type: "image/png")
 post1.save
 
 post2 = Post.new(title: "Museo El Castillo", description: "El lunes 24 de octubre tendremos la salida pedagógica al museo el castillo ubicado en el poblado. Saldremos del colegio a las 9 AM y regresaremos a la 1 PM.
-  Recuerden que iremos con uniforme de educación física.", type_activity: "ludico", user_id: profe11.id, grade_id: grade3.id, subject_id: sub4.id)
+  Recuerden que iremos con uniforme de educación física.", type_activity: "Lúdico", user_id: profe11.id, grade_id: grade3.id, subject_id: sub4.id)
 documents2 = URI.open("https://pbs.twimg.com/profile_images/1437894208006901763/2w_2cYNA_400x400.jpg")
 post2.documents.attach(io: documents2, filename: "documents2.png", content_type: "image/png")
 post2.save
 
 post3 = Post.new(title: "Planetario", description: "Este miércoles 19 de octubre realizaremos la visita al planetario de medellín. El bus nos recogerá en el colegio a las 8
   AM (estar puntuales). Los estudiantes deben llevar lonchera suficiente, ya que regresaremos a las 12 M al colegio.
-  Iremos con uniforme de educación física", type_activity: "ludico", user_id: profe17.id, grade_id: grade2.id, subject_id: sub2.id)
+  Iremos con uniforme de educación física", type_activity: "Lúdico", user_id: profe17.id, grade_id: grade2.id, subject_id: sub2.id)
 documents3 = URI.open("https://cr00.epimg.net/radio/imagenes/2019/07/02/medellin/1562018671_803189_1562019244_noticia_normal.jpg")
 post3.documents.attach(io: documents3, filename: "documents3.png", content_type: "image/png")
 post3.save
 
 post4 = Post.new(title: "Parque Explora", description: "Este miércoles 26 de octubre realizaremos la visita al parque explora de medellín. El bus nos recogerá en el colegio a las 8
   AM (estar puntuales). Los estudiantes deben llevar lonchera suficiente, ya que regresaremos a las 12 M al colegio.
-  Iremos con uniforme de educación física", type_activity: "ludico", user_id: profe16.id, grade_id: grade6.id, subject_id: sub4.id)
+  Iremos con uniforme de educación física", type_activity: "Lúdico", user_id: profe16.id, grade_id: grade6.id, subject_id: sub4.id)
 documents4 = URI.open("https://viajaporcolombia.com/images/parqueexplora.jpg")
 post4.documents.attach(io: documents4, filename: "documents4.png", content_type: "image/png")
 post4.save
 
 post5 = Post.new(title: "Jardín botánico", description: "El martes 07 de noviembre tendremos la salida pedagógica al jardín botánico de Medellín. Saldremos del colegio a las 9 AM y regresaremos a la 1 PM.
-  Recuerden que iremos con uniforme de educación física.", type_activity: "ludico", user_id: profe15.id, grade_id: grade1.id, subject_id: sub3.id)
+  Recuerden que iremos con uniforme de educación física.", type_activity: "Lúdico", user_id: profe15.id, grade_id: grade1.id, subject_id: sub3.id)
 documents5 = URI.open("https://arquitecturaviva.com/assets/uploads/obras/44806/av_imagen.jpeg")
 post5.documents.attach(io: documents5, filename: "documents5.png", content_type: "image/png")
 post5.save
 
-post6 = Post.new(title: "Taller porcentajes - 7°", description: "Teniendo en cuenta los diferentes ejemplos vistos en clase, resolver el taller de manera individual. Fecha máxima de entrega: viernes 21 de octubre.", type_activity: "academico", user_id: profe14.id, grade_id: grade4.id, subject_id: sub1.id)
+post6 = Post.new(title: "Taller porcentajes - 7°", description: "Teniendo en cuenta los diferentes ejemplos vistos en clase, resolver el taller de manera individual. Fecha máxima de entrega: viernes 21 de octubre.", type_activity: "Académico", user_id: profe14.id, grade_id: grade4.id, subject_id: sub1.id)
 documents6 = URI.open("https://colegioconcepcionlosangeles.cl/pdf_2020/guias_2020/17_08_2020/matematica/ma_leiva/7mo-basico-matematica-guia-porcentaje.pdf")
 post6.documents.attach(io: documents6, filename: "documents6.png", content_type: "file/pdf")
 post6.save
 
 post7 = Post.new(title: "Seres Vivos - 6°", description: "Según la clasificación de los seres vivos, resolver el siguiente taller en los grupos previamente organizados en el aula de clase.
   El taller será fundamental para la evaluación de fin de periodo.
-  Fecha de entrega: Lunes 31 de octubre.", type_activity: "academico", user_id: profe13.id, grade_id: grade2.id, subject_id: sub2.id)
+  Fecha de entrega: Lunes 31 de octubre.", type_activity: "Académico", user_id: profe13.id, grade_id: grade2.id, subject_id: sub2.id)
 documents7 = URI.open("https://www.webcolegios.com/file/241599.pdf")
 post7.documents.attach(io: documents7, filename: "documents7.png", content_type: "file/pdf")
 post7.save
 
 post8 = Post.new(title: "Capas de la tierra - 5°", description: "Realizar el siguiente taller sobre las diferentes capas de la tierra, diligenciarlo con letra legible y ordenada. Seguir detalladamente las instrucciones.
-  Fecha de entrega: Jueves 20 de octubre", type_activity: "academico", user_id: profe12.id, grade_id: grade1.id, subject_id: sub3.id)
+  Fecha de entrega: Jueves 20 de octubre", type_activity: "Académico", user_id: profe12.id, grade_id: grade1.id, subject_id: sub3.id)
 documents8 = URI.open("https://www.colegiocolonos.cl/upload/textos/aprendizaje-remoto-6o-basico-9bd49c93a34e2aa722142ca8820954d1.pdf")
 post8.documents.attach(io: documents8, filename: "documents8.png", content_type: "file/pdf")
 post8.save
 
 post9 = Post.new(title: "Edad media - 8°", description: "A partir de las diferentes exposiciones realizadas en clase, resolver el siguiente taller sobre la edad media y el sistema feudal.
-  El taller será sustentado de manera oral la próxima clase del 4 de noviembre.", type_activity: "academico", user_id: profe11.id, grade_id: grade3.id, subject_id: sub3.id)
+  El taller será sustentado de manera oral la próxima clase del 4 de noviembre.", type_activity: "Académico", user_id: profe11.id, grade_id: grade3.id, subject_id: sub3.id)
 documents9 = URI.open("https://www.webcolegios.com/file/3f049e.pdf")
 post9.documents.attach(io: documents9, filename: "documents9.png", content_type: "file/pdf")
 post9.save
 
 post10 = Post.new(title: "Identidades trigonométricas - 10°", description: "Teniendo en cuenta las identidades trigonométricas vistas en clase, resolver el taller en las parejas previamente formadas en el aula.
   El taller tendrá un valor del 10% en la nota del la prueba de fin de periodo.
-  Fecha de entrega: martes 15 de noviembre.", type_activity: "academico", user_id: profe11.id, grade_id: grade6.id, subject_id: sub1.id)
+  Fecha de entrega: martes 15 de noviembre.", type_activity: "Académico", user_id: profe11.id, grade_id: grade6.id, subject_id: sub1.id)
 documents10 = URI.open("https://eduardomath.files.wordpress.com/2011/01/taller-identidades-trigonometricas1-10c2ba.pdf")
 post10.documents.attach(io: documents10, filename: "documents10.png", content_type: "file/pdf")
 post10.save

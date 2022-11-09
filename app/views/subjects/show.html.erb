@@ -19,8 +19,23 @@
         </div>
         <div class="mt-4">
           <label for="description"><strong>Descripción:</strong></label>
-          <p id="description" class="card-text mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit odio aspernatur corporis mollitia nihil modi cumque accusantium atque tenetur ab facere perspiciatis necessitatibus, recusandae molestias temporibus id voluptate </p>
+          <% case @subject.name %>
+          <% when "Matemáticas"%>
+            <p id="description" class="card-text mb-2">
+            El estudio de las matemáticas asegura a los estudiantes el desarrollo de competencias como el manejo de instrumentos de análisis, modelación, cálculo, medición y
+            estimación del mundo. Mejorar la capacidad de
+            precisión de problemas y las posibilidades de predicción.</p>
+          <% when "Ciencias naturales"%>
+            <p id="description" class="card-text mb-2">
+            Las Ciencias Naturales se conciben como una de las diversas formas de ver la vida, de interpretarla, buscando la construcción de modelos explicativos, la formulación de predicciones e hipótesis, la construcción de teorías, principios, conceptos, y la aplicación de procedimientos que posibiliten entender, argumentar, contrastar, proponer y valorar hechos biológicos, físicos, químicos y ecológicos. </p>
+          <% when "Sociales"%>
+            <p id="description" class="card-text mb-2">
+            Las ciencias sociales brindan a los estudiantes las herramientas necesarias para aprender a leer e interpretar la realidad social, basada en “la curiosidad por los seres humanos y por las organizaciones a las cuales pertenecen, a partir de la observación personal y social, la recolección de la información y la discusión con otro. </p>
+          <% when "Consejería"%>
+            <p id="description" class="card-text mb-2">
+            La consejería de grupo brinda un espacio de acercamiento constante del lider consejero de grupo a los estudiantes de su curso, con el fin de asesorarlos y acompañarlos en los diferentes procesos de discernimiento que se presenten en el diario vivir. </p>
           <p class="card-text"><strong>Grados relacionados: </strong></p>
+          <% end %>
           <% @subject.grades.each do |grade| %>
             <div class="mb-4 ms-4">
               <ul class="list-group list-group-horizontal">
