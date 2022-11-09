@@ -24,7 +24,7 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
+  <body style="min-height:100vh" >
     <div class="col-12">
       <header>
         <%= render "shared/navbar" %>
@@ -34,7 +34,7 @@
         <%= yield %>
       </div>
 
-      <footer id="" class="mt-5">
+      <footer id="" class="mt-5 pt-5">
         <%= render "shared/footer" %>
       </footer>
     </div>
