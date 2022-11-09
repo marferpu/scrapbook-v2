@@ -7,8 +7,8 @@
 }
 .card-index {
   width: 100%;
-  padding: 15px;
-  max-height:12rem;
+  padding: 10px;
+  max-height: 12rem;
   margin-top: 1em;
   border-radius: 6px;
   overflow: hidden;
@@ -22,7 +22,7 @@
 .card-index:hover {
   box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
   transform: translateY(-3%);
-  
+
 }
 .card-category {
   background-size: cover;
@@ -36,6 +36,12 @@
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-category:hover {
+  box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+  transform: translateY(-3%);
+
 }
 
 div.transbox {
@@ -72,12 +78,12 @@ div.transbox a {
 }
 
 .icon-p:hover {
-  color: $blue-light-sb;
+  color: $blue-sb;
   opacity: 0.8;
 }
 
 .icon-return {
-  color: $blue-light-sb;
+  color: $blue-sb;
 }
 
 .icon-return:hover {

@@ -3,7 +3,7 @@
   data-action="scroll@window->navbar#updateNavbar">
   <div class="container-fluid">
     <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "Logo2-Scrapbook.png", class: "" %>
+      <%= image_tag "Logo2-Scrapbook.png" %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +31,7 @@
                 <img src="<%= cl_image_path current_user.photo.key, crop: :fill %>" alt="avatar"
                   class="avatar dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <% else %>
-                <%= image_tag "Logo3-Scrapbook.png", class: "avatar dropdown-toggle rounded", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <%= image_tag "Logo1-Scrapbook.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <% end %>
 
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -51,7 +51,7 @@
               <%= link_to "Crear post", new_post_path, class: "nav-link text-light" %>
             </li>
             <li class="nav-item dropdown">
-              <%= image_tag "Logo3-Scrapbook.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag "Logo1-Scrapbook.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Mi Perfil", profile_path, class: "dropdown-item" %>
                 <%= link_to "Mis Cursos", subjects_path, class: "dropdown-item" %>
@@ -69,7 +69,7 @@
               <%= link_to "Chat", "#", class: "nav-link text-light" %>
             </li>
             <li class="nav-item dropdown">
-              <%= image_tag "Logo3-Scrapbook.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag "Logo1-Scrapbook.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Mi Perfil", profile_path, class: "dropdown-item" %>
                 <%= link_to "Calificaciones", "#", class: "dropdown-item" %>
