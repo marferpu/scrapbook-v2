@@ -20,7 +20,7 @@
         <div class="mt-4">
           <label for="description"><strong>Descripción:</strong></label>
           <% case @subject.name %>
-          <% when "Matematicas"%>
+          <% when "Matemáticas"%>
             <p id="description" class="card-text mb-2">
             El estudio de las matemáticas asegura a los estudiantes el desarrollo de competencias como el manejo de instrumentos de análisis, modelación, cálculo, medición y
             estimación del mundo. Mejorar la capacidad de
@@ -35,6 +35,31 @@
             <p id="description" class="card-text mb-2">
             La consejería de grupo brinda un espacio de acercamiento constante del lider consejero de grupo a los estudiantes de su curso, con el fin de asesorarlos y acompañarlos en los diferentes procesos de discernimiento que se presenten en el diario vivir. </p>
           <p class="card-text"><strong>Grados relacionados: </strong></p>
+          <% when "Lengua castellana"%>
+            <p id="description" class="card-text mb-2">
+            La enseñanza de la Lengua Castellana y Literatura tiene como objetivo el desarrollo en los estudiantes de la capacidad de comprender y expresarse oralmente y por escrito de forma adecuada en las diferentes situaciones de la actividad social y cultural.
+            Integrar los conocimientos sobre la lengua y las normas del uso lingüístico para escribir y hablar de forma adecuada, coherente y correcta, y para comprender textos orales y escritos. </p>
+            <p class="card-text"><strong>Grados relacionados: </strong></p>
+          <% when "Inglés"%>
+            <p id="description" class="card-text mb-2">
+            El área de inglés permite a los estudiantes desarrollar las habilidades comunicativas propias del idioma, para generar en el individuo un acercamiento con otras culturas y diversas manifestaciones del pensamiento, extendiendo su capacidad para integrar saberes, para comprender la realidad mundial y percibir sus alcances en el contexto colombiano.. </p>
+            <p class="card-text"><strong>Grados relacionados: </strong></p>
+          <% when "Artística"%>
+            <p id="description" class="card-text mb-2">
+            La asignatura de artística permite utilizar los conocimientos artísticos en la observación y el análisis de situaciones y objetos de la realidad cotidiana y de diferentes manifestaciones del mundo del arte y la cultura, para comprenderlos mejor y formar un gusto propio.. </p>
+            <p class="card-text"><strong>Grados relacionados: </strong></p>
+          <% when "Educación física"%>
+            <p id="description" class="card-text mb-2">
+            La educación física permite conocer, utilizar y valorar su cuerpo y el movimiento como medio de exploración, descubrimiento y disfrute de sus posibilidades motrices, de relación con las demás personas y como recurso para organizar su tiempo libre. </p>
+            <p class="card-text"><strong>Grados relacionados: </strong></p>
+          <% when "Ética y valores"%>
+            <p id="description" class="card-text mb-2">
+            El área de educación Ética y valores humanos se orienta a la formación de estudiantes en el ámbito de la reflexión de problemas morales y la construcción de valores personales, sociales, familiares, económicos y políticos. </p>
+            <p class="card-text"><strong>Grados relacionados: </strong></p>
+          <% when "Filosofía"%>
+            <p id="description" class="card-text mb-2">
+            La fiolosofía busca ahondar o profundizar sobre los razonamientos lógicos de todo lo que nos rodea, es aquella que busca entender las causas y los fines de cualquier fenómeno. Es decir, la filosofía busca por medio de razonamientos o deducciones dar respuesta a conceptos abstractos o explicar la existencia de ciertos elementos, como podría ser explicar el porqué de la razón, de la existencia, del ser o de la moral. </p>
+            <p class="card-text"><strong>Grados relacionados: </strong></p>
           <% end %>
           <% @subject.grades.each do |grade| %>
             <div class="mb-4 ms-4">
