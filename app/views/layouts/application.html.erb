@@ -24,17 +24,17 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body style="min-height:100vh" >
+  <body >
     <div class="col-12">
       <header>
         <%= render "shared/navbar" %>
         <%= render "shared/flashes" %>
       </header>
-      <div class="col-12">
+      <div class="col-12" style="min-height:100vh">
         <%= yield %>
       </div>
 
-      <footer id="" class="mt-5 pt-5">
+      <footer id="" class="mt-0 pt-0">
         <%= render "shared/footer" %>
       </footer>
     </div>
