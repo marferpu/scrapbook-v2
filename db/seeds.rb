@@ -228,13 +228,13 @@ grade7.save
 # posts
 
 post1 = Post.new(title: "Aeroparque Juan Pablo II", description: "Este viernes 21 de octubre nos iremos de excursión al aeroparque Juan pablo II. Deben estar puntuales en el colegio a las 8 AM.
-  Recuerden traer vestido de baño y alimentación.", type_activity: "Lúdico", user_id: profe12.id, grade_id: grade4.id, subject_id: sub2.id)
+  Recuerden traer vestido de baño y alimentación.", type_activity: "Lúdico", user_id: profe13.id, grade_id: grade4.id, subject_id: sub2.id)
 documents1 = URI.open("http://colombiamaspositiva.com/wp-content/uploads/2021/03/jp2.jpg")
 post1.documents.attach(io: documents1, filename: "documents1.png", content_type: "image/png")
 post1.save
 
 post2 = Post.new(title: "Museo El Castillo", description: "El lunes 24 de octubre tendremos la salida pedagógica al museo el castillo ubicado en el poblado. Saldremos del colegio a las 9 AM y regresaremos a la 1 PM.
-  Recuerden que iremos con uniforme de educación física.", type_activity: "Lúdico", user_id: profe11.id, grade_id: grade3.id, subject_id: sub4.id)
+  Recuerden que iremos con uniforme de educación física.", type_activity: "Lúdico", user_id: profe13.id, grade_id: grade3.id, subject_id: sub4.id)
 documents2 = URI.open("https://pbs.twimg.com/profile_images/1437894208006901763/2w_2cYNA_400x400.jpg")
 post2.documents.attach(io: documents2, filename: "documents2.png", content_type: "image/png")
 post2.save
@@ -273,13 +273,13 @@ post7.documents.attach(io: documents7, filename: "documents7.png", content_type:
 post7.save
 
 post8 = Post.new(title: "Capas de la tierra - 5°", description: "Realizar el siguiente taller sobre las diferentes capas de la tierra, diligenciarlo con letra legible y ordenada. Seguir detalladamente las instrucciones.
-  Fecha de entrega: Jueves 20 de octubre", type_activity: "Académico", user_id: profe12.id, grade_id: grade1.id, subject_id: sub3.id)
+  Fecha de entrega: Jueves 20 de octubre", type_activity: "Académico", user_id: profe13.id, grade_id: grade1.id, subject_id: sub3.id)
 documents8 = URI.open("https://www.colegiocolonos.cl/upload/textos/aprendizaje-remoto-6o-basico-9bd49c93a34e2aa722142ca8820954d1.pdf")
 post8.documents.attach(io: documents8, filename: "documents8.png", content_type: "file/pdf")
 post8.save
 
 post9 = Post.new(title: "Edad media - 8°", description: "A partir de las diferentes exposiciones realizadas en clase, resolver el siguiente taller sobre la edad media y el sistema feudal.
-  El taller será sustentado de manera oral la próxima clase del 4 de noviembre.", type_activity: "Académico", user_id: profe11.id, grade_id: grade3.id, subject_id: sub3.id)
+  El taller será sustentado de manera oral la próxima clase del 4 de noviembre.", type_activity: "Académico", user_id: profe13.id, grade_id: grade3.id, subject_id: sub3.id)
 documents9 = URI.open("https://www.webcolegios.com/file/3f049e.pdf")
 post9.documents.attach(io: documents9, filename: "documents9.png", content_type: "file/pdf")
 post9.save
@@ -339,15 +339,15 @@ g_sub10.save
 
 # course teachers
 
-c_tcher1 = CourseTeacher.new(user_id: profe12.id, grade_id: grade4.id)
+c_tcher1 = CourseTeacher.new(user_id: profe13.id, grade_id: grade4.id)
 c_tcher1.save
-c_tcher2 = CourseTeacher.new(user_id: profe11.id, grade_id: grade3.id)
+c_tcher2 = CourseTeacher.new(user_id: profe13.id, grade_id: grade3.id)
 c_tcher2.save
-c_tcher3 = CourseTeacher.new(user_id: profe17.id, grade_id: grade2.id)
+c_tcher3 = CourseTeacher.new(user_id: profe13.id, grade_id: grade2.id)
 c_tcher3.save
 c_tcher4 = CourseTeacher.new(user_id: profe16.id, grade_id: grade6.id)
 c_tcher4.save
-c_tcher5 = CourseTeacher.new(user_id: profe15.id, grade_id: grade1.id)
+c_tcher5 = CourseTeacher.new(user_id: profe13.id, grade_id: grade1.id)
 c_tcher5.save
 c_tcher6 = CourseTeacher.new(user_id: profe14.id, grade_id: grade4.id)
 c_tcher6.save
