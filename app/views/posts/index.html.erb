@@ -2,7 +2,7 @@
   <div class="container mt-4">
     <div>
       <div class="d-flex flex-row justify-content-between">
-        <h1 style="color:#4717f6">Listado de Posts</h1>
+        <h1>Mis Publicaciones</h1>
         <%= link_to pizarron_path do %>
           <div class="">
             <i class="fa-solid fa-circle-left fs-1 icon-return rounded-circle"></i>
@@ -10,14 +10,14 @@
         <% end %>
       </div>
       <div>
-        <p style="color:#8eaebd">Estas viendo los posts que has creado en todas tus materias</p>
+        <p>Estas viendo los posts que has creado en todas tus materias</p>
       </div>
     </div>
 
     <div>
       <%= render "shared/search_posts" %>
     </div>
-      <div class="row row-cols-4 row-cols-lg-5 g-2 g-lg-3">
+      <div class="row row-cols-3">
         <%= render "shared/posts_list" %>
       </div>
     </div>

@@ -6,21 +6,27 @@
   padding: 4% 10% 10% 10%;
 }
 .card-index {
-  display: wrap;
-  width: 200px;
-  height: 200px;
+  width: 100%;
   padding: 10px;
   max-height: 12rem;
   margin-top: 1em;
   border-radius: 6px;
   overflow: hidden;
-  background: #eeee;
+  background: white;
   box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
   cursor: default;
   transition: all 400ms ease;
   // text-decoration: none;
   // display: inline-block;
 }
+
+.card-post {
+  width: 250px;
+  margin-right: 10px;
+  display: flex;
+  flex: 1;
+}
+
 .card-index:hover {
   box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
   transform: translateY(-3%);
@@ -29,15 +35,14 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 300px;
-  width: 350px;
+  height: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   font-weight: 500px;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 6px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
@@ -47,16 +52,6 @@
 
 }
 
-.card-header {
-  max-height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-body-post{
-  height: 40px;
-}
 
 div.transbox {
   background-color: $purple-sb;
@@ -65,7 +60,7 @@ div.transbox {
 }
 
 div.title {
-  color: black;
+  color: $gray-sb;
   font-weight: 700px;
   font-size: 25rem;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -86,7 +81,7 @@ div.transbox a {
 
 .icon-p {
   font-size: 1.5rem;
-  color: $white-sb;
+  color: $white-bg;
   margin: 0.1rem;
   display: inline;
 }
@@ -107,7 +102,7 @@ div.transbox a {
 
 .line-white {
   height: 0.1vh;
-  background-color: $white-sb;
+  background-color: $white-bg;
   background-size: cover;
 }
 

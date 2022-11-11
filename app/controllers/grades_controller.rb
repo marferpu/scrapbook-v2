@@ -7,6 +7,7 @@ class GradesController < ApplicationController
     else
       @grades = current_user.grades
     end
+    @grades = delete_repited(@grades)
   end
 
   def new
@@ -51,5 +52,19 @@ class GradesController < ApplicationController
 
   def set_grade
     @grade = Grade.find(params[:id])
+  end
+
+  def delete_repited(array)
+    for i in 0...array.length
+      dato = array[i]
+      encontrado = 0
+      for j in 0...array.length
+        if(dato.eql?(array[j]) && i!=j)
+          array.delete_at(i)
+          encontrado  += 1
+        end
+      end
+    end
+    return array
   end
 end

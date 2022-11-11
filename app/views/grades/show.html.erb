@@ -37,8 +37,7 @@
                   </div>
             </div>
           <% end %>
-          <div class="flex-row justify-content-end">
-            <a><%= link_to "Agregar un grado", new_grade_path(@grade), class:"btn btn-flat" %></a>
+          <div class="flex-row justify-content-end mt-4">
             <a><%= link_to "Editar grado", edit_grade_path(@grade), class:"btn btn-flat" %></a>
             <a><%= link_to "Eliminar grado", grade_path(@grade), class:"btn btn-flat", data: {turbo_method: :delete, turbo_confirm: "Estás seguro?"} %></a>
           </div>
