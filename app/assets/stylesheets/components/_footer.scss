@@ -1,16 +1,17 @@
 .footer {
-  background: #F4F4F4;
+  background: $white-sb;
   display: flex;
   align-items: center;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
+  margin-top: 10px;
 }
 .footer-links {
   display: flex;
   align-items: center;
 }
 .footer-links a {
-  color: black;
+  color: $purple-sb;
   opacity: 0.15;
   text-decoration: none;
   font-size: 24px;
