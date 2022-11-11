@@ -36,7 +36,7 @@ profe12.save
 profe13 = User.new(first_name:"Carlos", last_name: "Quinto", role: 1,
   email: "cquinto@email.com", password: "123456")
 #
-photo13 = URI.open("http://4.bp.blogspot.com/-8gIcMlI1Ttw/VkpwVoEVQPI/AAAAAAAAJp8/qvvyj-Xi-8g/s1600/502760.jpg")
+photo13 = URI.open("https://infoes.goconqr.com/files/2017/05/mate12.jpg")
 profe13.photo.attach(io: photo13, filename: "profe13.png", content_type: "image/png")
 profe13.save
 profe14 = User.new(first_name:"Carmen", last_name: "Canos", role: 1,
@@ -173,7 +173,7 @@ padre22.save
 admin23 = User.new(first_name:"Mario", last_name: "Zapata", role: 0,
                   email: "mario@email.com", password: "123456")
 #
-photo23 = URI.open("https://infoes.goconqr.com/files/2017/05/mate12.jpg")
+photo23 = URI.open("http://4.bp.blogspot.com/-8gIcMlI1Ttw/VkpwVoEVQPI/AAAAAAAAJp8/qvvyj-Xi-8g/s1600/502760.jpg")
 admin23.photo.attach(io: photo23, filename: "admin23.png", content_type: "image/png")
 admin23.save
 
