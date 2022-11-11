@@ -34,7 +34,7 @@ photo12 = URI.open("https://img.freepik.com/fotos-premium/profesor-explicando-re
 profe12.photo.attach(io: photo12, filename: "profe12.png", content_type: "image/png")
 profe12.save
 profe13 = User.new(first_name:"Carlos", last_name: "Quinto", role: 1,
-  email: "cquinto@email.com", password: "123456")
+  email: "cquinto@email.com", password: "123456", filename: "admin23.png")
 #
 photo13 = URI.open("https://infoes.goconqr.com/files/2017/05/mate12.jpg")
 profe13.photo.attach(io: photo13, filename: "profe13.png", content_type: "image/png")
