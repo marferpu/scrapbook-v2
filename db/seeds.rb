@@ -38,7 +38,7 @@ profe13 = User.new(first_name:"Carlos", last_name: "Quinto", role: 1,
   email: "cquinto@email.com", password: "123456")
 #
 photo13 = URI.open("https://infoes.goconqr.com/files/2017/05/mate12.jpg")
-profe13.photo.attach(io: photo23, filename: "admin23.png", content_type: "image/png")
+profe13.photo.attach(io: photo13, filename: "admin23.png", content_type: "image/png")
 profe13.save
 
 
