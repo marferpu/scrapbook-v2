@@ -95,7 +95,7 @@
               <div class="card mb-4 text-center">
                 <div class="card-body height-profile">
                   <p class="mb-4"><span class="text-primary me-1"><strong>Mis Asignaturas</strong></span></p>
-                    <%current_user.subjects.each do |subject| %>
+                    <% current_user.subjects.each do |subject| %>
                   <div class="card">
                     <div class="card-header mb-2">
                       <p class="mb-1" style="font-size: .82rem;"><%= subject.name %>
