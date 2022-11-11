@@ -33,12 +33,15 @@ email: "sebas@email.com", password: "123456")
 photo12 = URI.open("https://img.freepik.com/fotos-premium/profesor-explicando-reaccion-quimica-estudiantes-cuando-nino-escuela-mirando-placa-petri-traves-microscopio_274689-15217.jpg?w=826")
 profe12.photo.attach(io: photo12, filename: "profe12.png", content_type: "image/png")
 profe12.save
+
 profe13 = User.new(first_name:"Carlos", last_name: "Quinto", role: 1,
-  email: "cquinto@email.com", password: "123456", filename: "admin23.png")
+  email: "cquinto@email.com", password: "123456")
 #
 photo13 = URI.open("https://infoes.goconqr.com/files/2017/05/mate12.jpg")
-profe13.photo.attach(io: photo13, filename: "profe13.png", content_type: "image/png")
+profe13.photo.attach(io: photo23, filename: "admin23.png", content_type: "image/png")
 profe13.save
+
+
 profe14 = User.new(first_name:"Carmen", last_name: "Canos", role: 1,
 email: "carca@email.com", password: "123456")
 #
