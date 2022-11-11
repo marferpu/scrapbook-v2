@@ -270,7 +270,7 @@ post6.save
 
 post7 = Post.new(title: "Seres Vivos - 6°", description: "Según la clasificación de los seres vivos, resolver el siguiente taller en los grupos previamente organizados en el aula de clase.
   El taller será fundamental para la evaluación de fin de periodo.
-  Fecha de entrega: Lunes 31 de octubre.", type_activity: "Académico", user_id: profe13.id, grade_id: grade2.id, subject_id: sub2.id)
+  Fecha de entrega: Lunes 31 de octubre.", type_activity: "Académico", user_id: profe11.id, grade_id: grade2.id, subject_id: sub2.id)
 documents7 = URI.open("https://www.webcolegios.com/file/241599.pdf")
 post7.documents.attach(io: documents7, filename: "documents7.png", content_type: "file/pdf")
 post7.save

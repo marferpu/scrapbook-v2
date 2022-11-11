@@ -1,13 +1,14 @@
 class GradesController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :set_grade, only: %i[show edit update destroy]
+
   def index
     if current_user.admin_role?
       @grades = Grade.all
     else
       @grades = current_user.grades
     end
-    @grades = delete_repited(@grades)
+    # @grades = delete_repited(@grades)
   end
 
   def new
@@ -54,17 +55,17 @@ class GradesController < ApplicationController
     @grade = Grade.find(params[:id])
   end
 
-  def delete_repited(array)
-    for i in 0...array.length
-      dato = array[i]
-      encontrado = 0
-      for j in 0...array.length
-        if(dato.eql?(array[j]) && i!=j)
-          array.delete_at(i)
-          encontrado  += 1
-        end
-      end
-    end
-    return array
-  end
+  # def delete_repited(array)
+  #   for i in 0...array.length
+  #     dato = array[i]
+  #     encontrado = 0
+  #     for j in 0...array.length
+  #       if (dato.eql?(array[j]) && i != j)
+  #         array.delete_at(i)
+  #         encontrado += 1
+  #       end
+  #     end
+  #   end
+  #   return array
+  # end
 end

@@ -64,7 +64,7 @@ class SubjectsController < ApplicationController
         for j in 0...array.length
           if(dato.eql?(array[j]) && i!=j)
             array.delete_at(i)
-            encontrado  += 1
+            encontrado += 1
           end
         end
       end
